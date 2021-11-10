@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import '../../css/login_style.css'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import Switch_log from './Switch_log';
+//import Switch_log from './Switch_log';
 
 
 function Create_info() {

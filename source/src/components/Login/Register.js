@@ -6,7 +6,9 @@ import {signup} from '../authentication/startup'
 import {useRef, useState} from 'react';
 
 function Register() {
+    // biến để chờ thực hiện xong sign up mới cho làm tiếp 
     const[Waiting, setWaiting] = useState(false);
+    // gồm có 3 giá trị nhận vào là email, password, confirm
     const floatingInputEmail = useRef()
     const floatingPassword = useRef()
     const floatingPasswordConfirm = useRef()

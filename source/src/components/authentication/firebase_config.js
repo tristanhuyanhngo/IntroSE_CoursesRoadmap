@@ -15,3 +15,4 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 export default auth 
+// lấy địa chỉ thông tin của firebase mà nhóm sử dụng (auth)

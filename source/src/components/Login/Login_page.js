@@ -2,11 +2,11 @@
 import '../../css/login_style.css'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 // import {witch_log} from './login_script'
-import Switch_log from './Switch_log';
-import Login from './Login';
+//import Switch_log from './Switch_log';
+//import Login from './Login';
 import Register from './Register';
 import Card_img from './Card_img';
-import Create_info from './Create_info';
+//import Create_info from './Create_info';
 
 function Login_page() {
 

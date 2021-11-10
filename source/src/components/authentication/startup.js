@@ -9,8 +9,13 @@ export function signup(email, password, confirmpassword) {
   if (email != null && password != null && confirmpassword != null) {
     if (password === confirmpassword) {
       var result = createUserWithEmailAndPassword(auth, email, password);
-      sendEmailVerification(auth.currentUser).then(() => {});
-      result.then((userCredential) => {
+      sendEmailVerification(auth.currentUser).then(() => {
+      })
+      .catch(function (error) {
+        console.log(error.Code);
+        console.log(error.message);
+      });
+      result.then(() => {
       });
       result.catch(function (error) {
         console.log(error.Code);

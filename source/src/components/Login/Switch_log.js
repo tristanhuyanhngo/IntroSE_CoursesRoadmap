@@ -6,7 +6,7 @@ import anime from 'animejs/lib/anime.min'
 function active(){
     var email = document.getElementById('floatingInputEmail')
     if (email != null) {
-        var email_parent = email.parentNode.parentNode;
+        //var email_parent = email.parentNode.parentNode;
         console.log('parent:', email)
         // email.style.visibility = 'hidden';
         // email.disabled= true;
@@ -42,7 +42,7 @@ function change_intro_card_text(status){
     var btn = card_img.querySelector('#btn1');
 
     console.log('title:', card_img_title.textContent);
-    if (status == 'Sign In') {
+    if (status === 'Sign In') {
         card_img_title.textContent = 'Hello friend';
         intro.textContent = 'Welcome back to our Web site \n have a nice day';
         question.textContent = 'Do not have account ?\nClick button bellow'
