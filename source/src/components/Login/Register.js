@@ -1,9 +1,10 @@
 // import logo from './logo.svg';
 import '../../css/login_style.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Switch_log from './Switch_log';
 import {signup} from '../authentication/startup'
+import {signup_gg} from '../authentication/startup_google'
 import {useRef, useState} from 'react';
+
 
 function Register() {
     // biến để chờ thực hiện xong sign up mới cho làm tiếp 
@@ -17,6 +18,13 @@ function Register() {
     {
       setWaiting(true);
       await signup(floatingInputEmail.current.value,floatingPassword.current.value,floatingPasswordConfirm.current.value)
+      setWaiting(false);
+    }
+
+    async function handSignUp2()
+    {
+      setWaiting(true);
+      await signup_gg();
       setWaiting(false);
     }
 
@@ -52,7 +60,7 @@ function Register() {
                   </div>
                   <hr className="my-4" />
                   <div className="text-center d-grid mb-2">
-                    <button className="btn btn-lg btn-google" type="submit" onClick={Switch_log()}>
+                    <button className="btn btn-lg btn-google" type="submit" onClick={handSignUp2}>
                       <i className="fab fa-google me-2" /> Sign up with <b>Google</b>
                     </button>
                   </div>

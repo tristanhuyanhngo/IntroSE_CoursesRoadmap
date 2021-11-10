@@ -12,7 +12,6 @@ const firebaseConfig = {
   appId: "1:852357699737:web:b4ebf665b00b8582528008",
 };
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-export default auth 
+export const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
 // lấy địa chỉ thông tin của firebase mà nhóm sử dụng (auth)
