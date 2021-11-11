@@ -1,3 +1,6 @@
+npm install boostrap
+npm install animejs
 npm install react
 npm install firebase
 npm start
+[]
