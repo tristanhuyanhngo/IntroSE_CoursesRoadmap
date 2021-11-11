@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import '../../css/login_style.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { Component }  from 'react';
 import {signup} from '../authentication/startup'
 import {signup_gg} from '../authentication/startup_google'
 import {useRef, useState} from 'react';

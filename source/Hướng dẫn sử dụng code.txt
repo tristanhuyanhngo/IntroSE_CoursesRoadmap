@@ -1,6 +1,19 @@
-npm install boostrap
-npm install animejs
-npm install react
-npm install firebase
+# di chuyển vào thư mục source
+cd source 
+
+# tự động cài đặt và update các dependency 
+npm install 
+
+# chạy chương trình 
 npm start
-[]
+
+# dependency - xem rõ trong package.json
+boostrap
+animejs
+react
+firebase
+
+# Nếu gặp lỗi
+xóa file package-lock.json
+xóa node-module
+cài lại node-module = npm install 

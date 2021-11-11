@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import '../../css/login_style.css'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import React, { Component }  from 'react';
 // import {witch_log} from './login_script'
 //import Switch_log from './Switch_log';
 //import Login from './Login';
