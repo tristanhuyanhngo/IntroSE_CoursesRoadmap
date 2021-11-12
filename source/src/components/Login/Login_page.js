@@ -5,7 +5,6 @@ import anime from 'animejs/lib/anime.min'
 import Card_img from './Card_img';
 import Login from './Login';
 import Register from './Register';
-import Create_info from './Create_info';
 
 
 class Login_page extends Component {
@@ -13,37 +12,31 @@ class Login_page extends Component {
       super(props);
       this.content = [
         { title: 'Welcome',
-          intro: 'Welcome to visit our website \nOn this website, you can discovery very much course you want to learn \nWith modern rate system, you can exactly find out which courses suitable with you',
-          question:'Already have accound ?',
-          status: 'Sign In'
+          intro: 'Welcome to visit our website\nYou can discovery very much course you want to learn \nWith modern rate system, you can exactly find out which courses suitable with you',
+          status: 'Sign In',
         },
         { title: 'Hello friend',
-          intro: 'Welcome back to our Web site \n have a nice day',
-          question:'Do not have account ?',
-          status: 'Sign Up'
+          intro: 'Welcome back to our website \nHave a nice day',
+          status: 'Sign Up',
         }
       ];
       this.state = this.content[1]
     }
-
-
 
   Move = (target, percent, director) => {
     // director = 1 -> move right else move left
     // .card-img-left = 45 percent
     var target_width =  document.querySelector(target).offsetWidth;
     var parent_width = Math.round(target_width * 100 / percent);
-
     anime({
         targets:target,
         translateX: Math.abs(parent_width - target_width) * director,
         duration: 1000,
-        easing: 'easeInOutExpo'
+        easing: 'easeInOutExpo',
     })
   }
-  BtnClick = () => {
-    // console.log('status:', this.state.status)
 
+  BtnClick = () => {
     this.Move_component()
     if (this.state.status === 'Sign In')
       this.setState(this.content[1])
@@ -63,6 +56,7 @@ class Login_page extends Component {
       }
   }
 
+  
   Switch_component = () => {
     if (this.state.status === 'Sign Up')
       return <Login />
@@ -76,18 +70,17 @@ class Login_page extends Component {
       <div className="container">
         <div className="row">
           <div className="col-lg-10 col-xl-12 mx-auto">
-            <div className="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+            <div className="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden main_area">
               
               <Card_img 
                 title =  { this.state.title }
                 intro = { this.state.intro }
-                question =  { this.state.question }
                 status = {this.state.status}
+                style = {this.state.style}
                 btnClick = {this.BtnClick}
               />
 
               <div className="card-body">
-
                 {/* show login or register form */}
                 { this.Switch_component() } 
               </div>

@@ -5,48 +5,74 @@ body {
     background: linear-gradient(to right, #0062E6, #33AEFF);
   }
   
-  .card-img-left {
-    width: 45%;
-    /* Link to your background image using in the property below! */
-    background: scroll center url('https://source.unsplash.com/WEQbe2jBg40/414x512');
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    z-index: 2;
-    
-  }
-
+.card-img-left {
+  width: 45%;
+  /* Link to your background image using in the property below! */
+  background: #007bff;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  /* border: 1px solid blue; */
+}
 p {
     white-space: pre-wrap;
+    color: white;
+    font-size: 23px;
+    font-weight: 300;
+    padding: 10px;
 }
 
 .card-body {
   z-index: 1;
 }
-.input-group{
-  /* border: 1px solid red; */
-  background-color: lightgray;
-  /* border-radius: 5px; */
+
+.input-group-text{
+  width: 10%;
 }
+
 .icon{
-  position: relative;
   padding:auto;
   margin: auto;
 }
 .form-floating{
-  /* border: 1px solid blue; */
-  width:92%;
+  width: 89%;
+
 
 }
+.config-width{
+  width:89%;
+
+}
+.full{
+  width:100%;
+}
+
 .btn-google {
   color: white !important;
   background-color: #ea4335 !important;
 }
-.hi {
-  position: relative;
-  right:0px;
+
+.main_area {
+  height:63vh;
 }
 
+.btn-lg{
+  margin:auto;
+  padding:auto;
+  width:80%;
+  height:65px;
+}
+
+#btn1{
+  width:50%;
+  height: 70px;
+  /* border: 1px solid red; */
+}
   
 
-  
+#title{
+  font-size:60px;
+  color: white;
+  /* font-weight: ; */
+}
