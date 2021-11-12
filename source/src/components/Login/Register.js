@@ -1,4 +1,3 @@
-// import logo from './logo.svg';
 import '../../css/login_style.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component }  from 'react';
@@ -30,7 +29,7 @@ function Register() {
     }
 
     return (
-        <div className="card-body">
+        <div>
                 <h5 className="card-title text-center mb-5 font-weight-bold fs-1">Register</h5>
                 <form>
 
