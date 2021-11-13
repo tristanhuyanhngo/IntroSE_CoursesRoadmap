@@ -1,4 +1,4 @@
-import React, { Component }  from 'react';
+import React from 'react';
 import '../../css/login_style.css'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 

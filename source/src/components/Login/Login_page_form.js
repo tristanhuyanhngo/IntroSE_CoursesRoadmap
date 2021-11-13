@@ -2,9 +2,9 @@ import '../../css/login_style.css'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import React, { Component }  from 'react';
 import anime from 'animejs/lib/anime.min'
-import Card_img from './Card_img';
-import Login from './Login';
-import Register from './Register';
+import Card_img from './Card_img_form.js';
+import Login from './Login_form';
+import Register from './Register_form';
 
 
 class Login_page extends Component {
@@ -45,7 +45,7 @@ class Login_page extends Component {
   }
 
   Move_component =() => {
-    var btn = document.getElementById('btn1');
+    //var btn = document.getElementById('btn1');
 
     if (this.state.status === "Sign Up") {
           this.Move('.card-img-left', 45, 1);
