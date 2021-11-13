@@ -7,8 +7,8 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   // <React.StrictMode>
-    // <Create_info />,
-    <Login_page />,
+    <Create_info />,
+    // <Login_page />,
   // </React.StrictMode>,,
   document.getElementById('root')
 );

@@ -12,7 +12,6 @@ function Login() {
       <div className="input-group mb-3 rounded-3">
         <span class="input-group-text">
             <FontAwesomeIcon className='icon' icon={faUser} />
-          
         </span>
         <div className="form-floating">
           <input type="email" className="form-control" id="floatingInputEmail" placeholder="name@example.com" />
