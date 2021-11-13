@@ -12,6 +12,7 @@ boostrap
 animejs
 react
 firebase
+...
 
 # Nếu gặp lỗi
 xóa file package-lock.json
