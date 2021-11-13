@@ -35,7 +35,12 @@ function Login() {
         <div className=" text-center d-grid mb-2">
           <button className="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit">Login</button>
         </div>
-        
+        <hr />
+        <div className="text-center d-grid mb-2">
+              <button className="btn btn-lg btn-google" type="submit" >
+                Sign in with <b>Google </b>
+              </button>
+        </div>
       </form>
     </div>
   );

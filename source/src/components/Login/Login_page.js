@@ -69,7 +69,7 @@ class Login_page extends Component {
     <div>
       <div className="container">
         <div className="row">
-          <div className="col-lg-10 col-xl-12 mx-auto">
+          <div className="col-lg-9 col-xl-9 mx-auto">
             <div className="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden main_area">
               
               <Card_img 

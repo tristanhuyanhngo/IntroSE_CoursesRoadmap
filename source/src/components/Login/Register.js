@@ -1,8 +1,8 @@
 import '../../css/login_style.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component }  from 'react';
-import {signup} from '../authentication/startup'
-import {signup_gg} from '../authentication/startup_google'
+import {signup} from '../Authentication/startup'
+import {signup_gg} from '../Authentication/startup_google'
 import {useRef, useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faUser, faKey } from '@fortawesome/free-solid-svg-icons'
