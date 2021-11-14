@@ -3,7 +3,7 @@ import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 //import { faUser } from '@fortawesome/free-solid-svg-icons'
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+//import {userid} from '../Login/Login_form'
 function Create_info() {
     return (
       <div>

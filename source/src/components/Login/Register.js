@@ -1,8 +1,8 @@
 import '../../css/login_style.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
-import {signup} from '../authentication/register'
-import {signup_gg} from '../authentication/registerGG'
+import {signup} from '../authentication/firebase'
+import {signup_login_gg} from '../authentication/firebase'
 import {useRef, useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faUser, faKey } from '@fortawesome/free-solid-svg-icons'
@@ -39,7 +39,7 @@ function Register() {
     async function handSignUp2()
     {
       setWaiting(true);
-      await signup_gg();
+      await signup_login_gg();
       setWaiting(false);
     }
 

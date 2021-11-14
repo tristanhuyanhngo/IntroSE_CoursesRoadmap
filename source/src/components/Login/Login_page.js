@@ -2,9 +2,9 @@ import '../../css/login_style.css'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import React, { Component }  from 'react';
 import anime from 'animejs/lib/anime.min'
-import Card_img from './Card_img_form.js';
-import Login from './Login_form';
-import Register from './Register_form';
+import Card_img from './Card_img.js';
+import Login from './Login';
+import Register from './Register';
 
 
 class Login_page extends Component {

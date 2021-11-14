@@ -4,26 +4,35 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faKey } from '@fortawesome/free-solid-svg-icons'
 import {useRef, useState} from 'react';
-import signin from '../authentication/login'
+import {login,useAuth,signup_login_gg} from '../authentication/firebase'
+export let userid = undefined;
 function Login() {
-  // biến để chờ thực hiện xong sign in mới cho làm tiếp 
   const[Waiting, setWaiting] = useState(false);
-  // gồm có 2 giá trị nhận vào là email, password
   const floatingInputEmail = useRef()
   const floatingPassword = useRef()
 
+  const user = useAuth();
+  if(user!==undefined)
+    userid = user.uid
   async function handSignIn()
   {
     const email = floatingInputEmail.current.value
     const pass = floatingPassword.current.value
     setWaiting(true);
-    if (email != null && pass != null) {
-      let uid  = await signin(email,pass)
-      window.alert(uid)
-    } 
-    else {
-    window.alert("Form is incomplete, pls fill out all fields");
+    try{
+      await login(email,pass);
+      console.log(userid)
     }
+    catch{
+      window.alert("error")
+    }
+    setWaiting(false);
+  }
+
+  async function handSignIn2()
+  {
+    setWaiting(true);
+    await signup_login_gg();
     setWaiting(false);
   }
 
@@ -54,14 +63,14 @@ function Login() {
         
         <hr />
         <div className=" text-center d-grid mb-2">
-          <button className="btn btn-lg btn-primary btn-login fw-bold text-uppercase" disabled={Waiting} onClick={handSignIn} type="submit">Login</button>
+          <button className="btn btn-lg btn-primary btn-login fw-bold text-uppercase" disabled={Waiting} onClick={handSignIn} type="submit" >Login</button>
         </div>
-        <div className="text-center d-grid mb-2">
-              <button className="btn btn-lg btn-google" disabled={Waiting} type="submit" >
+      </form>
+      <div className="text-center d-grid mb-2">
+              <button className="btn btn-lg btn-google" disabled={Waiting} onClick={handSignIn2}>
                 Sign in with <b>Google </b>
               </button>
         </div>
-      </form>
     </div>
   );
 }
