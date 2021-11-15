@@ -12,7 +12,7 @@ function Login() {
   const floatingPassword = useRef()
 
   const user = useAuth();
-  if(user!==undefined)
+  if(user!==null&&user!==undefined)
     userid = user.uid
   async function handSignIn()
   {
