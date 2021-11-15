@@ -1,12 +1,11 @@
 import '../../css/login_style.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React, { Component }  from 'react';
-import {signup} from '../Authentication/startup'
-import {signup_gg} from '../Authentication/startup_google'
+import React from 'react';
+import {signup} from '../authentication/register'
+import {signup_gg} from '../authentication/registerGG'
 import {useRef, useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faUser, faKey } from '@fortawesome/free-solid-svg-icons'
-
 function Register() {
     // biến để chờ thực hiện xong sign up mới cho làm tiếp 
     const[Waiting, setWaiting] = useState(false);
@@ -17,8 +16,23 @@ function Register() {
 
     async function handSignUp()
     {
+      const email = floatingInputEmail.current.value;
+      const password = floatingPassword.current.value;
+      const confirmPassword = floatingPasswordConfirm.current.value;
       setWaiting(true);
-      await signup(floatingInputEmail.current.value,floatingPassword.current.value,floatingPasswordConfirm.current.value)
+
+      if (email != null && password != null && confirmPassword != null) {
+        if (password === confirmPassword) {
+          await signup(email,password,confirmPassword)
+        } 
+        else {
+          window.alert("Password dont match with the confirm password");
+        }
+      } 
+      else {
+        window.alert("Form is incomplete, pls fill out all fields");
+      }
+
       setWaiting(false);
     }
 
@@ -71,12 +85,13 @@ function Register() {
               <button className="btn btn-lg btn-primary btn-login fw-bold text-uppercase" disabled={Waiting} type="submit" onClick={handSignUp}>Register</button>
             </div>
             <hr className="my-4" />
-            <div className="text-center d-grid mb-2">
-              <button className="btn btn-lg btn-google" type="submit" onClick={handSignUp2}>
+
+          </form>
+          <div className="text-center d-grid mb-2">
+              <button className="btn btn-lg btn-google"  disabled={Waiting} onClick={handSignUp2}>
                 Sign up with <b>Google </b>
               </button>
             </div>
-          </form>
         </div>
     );
 }
