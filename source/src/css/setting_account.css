@@ -1,6 +1,11 @@
+img{
+    width:100%;
+    border-radius: 50%;
+}
+
 .container{
-    width: 100vw !important;
-    border: 1px solid black;
+    /* width: 100vw !important; */
+    border: 2px solid white;
 }
 .card-subtitle {
     font-size: 14px;
@@ -10,6 +15,16 @@
 .row {
     border: 1px solid red;
 }
-img{
-    width:50px;
+
+.choose_field {
+    border: 2px solid yellow;
+}
+
+.picture_profile {
+    border: 2px solid black;
+}
+
+.card-input {
+    height: 100%;
+    border: 2px solid greenyellow;
 }

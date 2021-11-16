@@ -4,8 +4,7 @@ import React, { Component }  from 'react';
 
 function Personal() {
     return (
-        <div>
-            <div className="card flex-col p-4 my-5 border-0 shadow rounded-3">
+            <div className="card flex-col p-4 border-0 shadow rounded-3 card-input">
                 <h1 id ='card-title' className="card-title text-center fw-bold text-dark">My profile picture</h1>
                 <h6 id ='card-subtitle' className="card-subtitle text-center ">Show me your character</h6>
                 <div className="form-group">
@@ -28,8 +27,8 @@ function Personal() {
                   <label className="form-label">Company</label>
                   <input type="text" className="form-control" value="Company Ltd." />
                 </div>
+                <button class="btn btn-primary btn-sm buttons">Save</button> 
             </div>
-        </div>
     );
 }
 
