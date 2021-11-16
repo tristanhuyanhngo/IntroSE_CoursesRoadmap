@@ -66,29 +66,29 @@ class Login_page extends Component {
 
   render () {
     return (
-    <div>
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-9 col-xl-9 mx-auto">
-            <div className="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden main_area">
-              
-              <Card_img 
-                title =  { this.state.title }
-                intro = { this.state.intro }
-                status = {this.state.status}
-                style = {this.state.style}
-                btnClick = {this.BtnClick}
-              />
+      <div>
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-9 col-xl-9 mx-auto">
+              <div className="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden main_area">
+                
+                <Card_img 
+                  title =  { this.state.title }
+                  intro = { this.state.intro }
+                  status = {this.state.status}
+                  style = {this.state.style}
+                  btnClick = {this.BtnClick}
+                />
 
-              <div className="card-body">
-                {/* show login or register form */}
-                { this.Switch_component() } 
+                <div className="card-body">
+                  {/* show login or register form */}
+                  { this.Switch_component() } 
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     )
   }
 }
