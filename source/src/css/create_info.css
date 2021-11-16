@@ -7,7 +7,10 @@ body {
 }
 
 img {
-    width:100%;
+    /* width: 9vw;
+    height: 9vw; */
+    width: 16vmin;
+    height: 16vmin;
     border-radius: 50%;
 }
 
@@ -40,7 +43,6 @@ label {
 } */
 
 .outline {
-    border: 1px solid #e3eae6;
     border-radius: 5px;
     background: #f4fcf8;
     margin-top: 10px
