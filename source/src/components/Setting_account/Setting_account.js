@@ -4,8 +4,8 @@ import React, { Component }  from 'react';
 import Picture_profile from './Picture_profile';
 import Choose_field from './Choose_field';
 import Personal from './Personal';
-import { faUser } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Change_passwd from './Change_passwd';
+import Social from './Social';
 
 function Setting_account() {
     return (
@@ -13,6 +13,7 @@ function Setting_account() {
             <div className="row mx-auto">
                 <div className='col-3 col-lg-3 col-xl-3'>
                     <div className="row choose_field">
+
                         <Choose_field />
                     </div>
                     <div className="row picture_profile mt-2">
@@ -22,7 +23,8 @@ function Setting_account() {
                 
                 <div className="col-9 col-lg-9 col-xl-9 input-info">
                         <Personal />
-
+                        {/* <Change_passwd /> */}
+                        {/* <Social /> */}
                 </div>
                 
             </div>

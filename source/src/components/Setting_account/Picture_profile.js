@@ -5,6 +5,7 @@ import React, { Component }  from 'react';
 function Picture_profile() {
     return (
         <div className="card flex-col p-3 border-0 shadow rounded-3">
+           <h3 id ='card-title' className="card-title text-center fw-bold text-dark">My profile picture</h3>
            <div class="p-2 text-center"> 
                 <img className = 'my-2 ' src="https://i.imgur.com/G1pXs7D.jpg" />
 

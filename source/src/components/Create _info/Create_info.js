@@ -78,7 +78,7 @@ class Create_info extends Component {
                                   <option value="male">Male</option>
                                   <option value="female">Female</option>
                                 </select>
-                                <label htmlFor="floatingSelect">Sex</label>
+                                <label htmlFor="floatingSelect">Gender</label>
                               </div>
                             </div>
 
