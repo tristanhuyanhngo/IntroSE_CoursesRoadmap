@@ -1,18 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Login_page from './components/Login/Login_page';
-//import Create_info from './components/Create _info/Create_info';
+//import Login_page from './components/Login/Login_page';
+import Create_info from './components/Create _info/Create_info';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   // <React.StrictMode>
     // <Setting_account />,
     // <Admin_page />,
-    // <Create_info />,
+    <Create_info />,
     // <Login_page />,
     //<Create_info />,
-    <Login_page />,
+    //<Login_page />,
   // </React.StrictMode>,,
   document.getElementById('root')
 );

@@ -4,7 +4,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faKey } from '@fortawesome/free-solid-svg-icons'
 import {useRef, useState} from 'react';
-import {login,useAuth,signup_login_gg} from '../Authentication/firebase'
+import {login,useAuth,signup_login_gg} from '../../Handler/Authentication/Authen'
 export let userid = undefined;
 
 function Login() {
