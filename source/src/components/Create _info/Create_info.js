@@ -1,12 +1,11 @@
 import "../../css/create_info.css";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import React, { Component } from "react";
-//import { faUser } from '@fortawesome/free-solid-svg-icons'
-//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import avatar_png from '../../picture/avatar.png'
 
 class Create_info extends Component {
   state = {
-    profileImg:'http://cdn.onlinewebfonts.com/svg/img_574534.png'
+    profileImg:avatar_png
   }
 
   imageHandler = (e)=>{
@@ -27,7 +26,7 @@ class Create_info extends Component {
   }
 
   delete = ()=>{
-    this.setState({profileImg:'http://cdn.onlinewebfonts.com/svg/img_574534.png'})
+    this.setState({profileImg:avatar_png})
   }
   render()
   {
@@ -112,7 +111,7 @@ class Create_info extends Component {
                           </div>
                      </div>
                   </div>
-
+                  
                   <div className=" text-center d-grid mb-2">
                     <button id="save" className="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit">Save</button>
                   </div>

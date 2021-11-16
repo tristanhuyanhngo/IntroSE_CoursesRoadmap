@@ -7,11 +7,10 @@ body {
 }
 
 img {
-    /* width: 9vw;
-    height: 9vw; */
-    width: 16vmin;
-    height: 16vmin;
+    width: 15.5vmin;
+    height: 15.5vmin;
     border-radius: 50%;
+    border: 8px solid black;
 }
 
 label {
