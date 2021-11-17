@@ -4,7 +4,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faKey } from '@fortawesome/free-solid-svg-icons'
 import {useRef, useState} from 'react';
-import {login,useAuth,signup_login_gg} from '../authentication/firebase'
+import {login,useAuth,signup_login_gg} from '../../Handler/Authentication/Authen'
 export let userid = undefined;
 
 function Login() {
@@ -67,11 +67,15 @@ function Login() {
           <button className="btn btn-lg btn-primary btn-login fw-bold text-uppercase" disabled={Waiting} onClick={handSignIn} type="submit" >Login</button>
         </div>
       </form>
+
       <div className="text-center d-grid mb-2">
-              <button className="btn btn-lg btn-google" disabled={Waiting} onClick={handSignIn2}>
-                Sign in with <b>Google </b>
-              </button>
-        </div>
+        <button className="btn btn-lg btn-google" disabled={Waiting} onClick={handSignIn2}>
+          Sign in with <b>Google </b>
+        </button>
+      </div>
+      <div className ='text-center'>
+        <a href='#' className=' ms-2 link-primary'>I forgot my password</a>
+      </div>
     </div>
   );
 }

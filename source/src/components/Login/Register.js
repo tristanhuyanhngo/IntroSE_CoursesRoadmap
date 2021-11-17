@@ -1,15 +1,14 @@
 import '../../css/login_style.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
-import {signup} from '../authentication/firebase'
-import {signup_login_gg} from '../authentication/firebase'
+import {signup} from '../../Handler/Authentication/Authen.js'
+import {signup_login_gg} from '../../Handler/Authentication/Authen.js'
 import {useRef, useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faUser, faKey } from '@fortawesome/free-solid-svg-icons'
 function Register() {
-    // biến để chờ thực hiện xong sign up mới cho làm tiếp 
     const[Waiting, setWaiting] = useState(false);
-    // gồm có 3 giá trị nhận vào là email, password, confirm
+
     const floatingInputEmail = useRef()
     const floatingPassword = useRef()
     const floatingPasswordConfirm = useRef()

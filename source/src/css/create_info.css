@@ -7,8 +7,10 @@ body {
 }
 
 img {
-    width:100%;
+    width: 15.5vmin;
+    height: 15.5vmin;
     border-radius: 50%;
+    border: 8px solid black;
 }
 
 label {
@@ -40,7 +42,6 @@ label {
 } */
 
 .outline {
-    border: 1px solid #e3eae6;
     border-radius: 5px;
     background: #f4fcf8;
     margin-top: 10px
