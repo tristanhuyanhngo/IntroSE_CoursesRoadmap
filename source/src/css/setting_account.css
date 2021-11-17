@@ -17,31 +17,18 @@ textarea {
     width: 30px;
     height: 30px;
 }
-
-.container{
-    /* width: 100vw !important; */
-    /* border: 2px solid white; */
+.input-info {
+    height:73vh;
 }
+
 .card-subtitle {
     font-size: 14px;
     color: gray;
 }
 
-.row {
-    /* border: 1px solid red; */
-}
 .col-6 > .form-floating{
     /* border: 1px solid red; */
     width:100%;
-}
-
-
-.choose_field {
-    /* border: 2px solid yellow; */
-}
-
-.picture_profile {
-    /* border: 2px solid black; */
 }
 
 .card-input {
