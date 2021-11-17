@@ -7,14 +7,16 @@ import Setting_account from './components/Setting_account/Setting_account'
 //import Login_page from './components/Login/Login_page';
 import Create_info from './components/Create _info/Create_info';
 import reportWebVitals from './reportWebVitals';
+import Profile from './components/Profile/Profile';
 
 ReactDOM.render(  // <React.StrictMode>
-    <Setting_account />,
+    // <Setting_account />,
      // <Admin_page />,
     // <Create_info />,
     // <Login_page />,
     // <Create_info />,
     //<Login_page />,
+    <Profile />,
   // </React.StrictMode>,,
   document.getElementById('root')
 );
