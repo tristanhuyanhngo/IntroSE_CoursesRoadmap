@@ -1,0 +1,103 @@
+.component {
+    position: absolute;
+}
+
+.component-Label {
+    width: auto;
+}
+
+.component-HRule {
+    width: 100%;
+    height: 2px;
+    left: 0;
+    top: 50%;
+    box-sizing: border-box;
+}
+
+.align-label-text {
+    width: "auto";
+    height: "auto";
+    text-align: "left";
+}
+
+.info-label-class {
+    white-space: nowrap;
+    text-align: left;
+    font-size: 30px;
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+}
+
+.profile-class {
+    white-space: nowrap;
+    text-align: left;
+    font-size: 50px;
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(0, 0, 0);
+}
+
+.profile-label-class {
+    left: 794px;
+    top: 10px;
+    width: 332px;
+    height: 68px;
+    padding: 0px;
+    opacity: 1;
+    z-index: 5;
+    line-height: 67px;
+    transform: scaleX(1) scaleY(1);
+}
+
+.profile-context-class {
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    line-height: 67px;
+}
+
+.rule-class {
+    left: 605px;
+    top: 75px;
+    width: 698px;
+    height: 12px;
+    padding: 0px;
+    opacity: 1;
+    z-index: 6;
+    transform: scaleX(1) scaleY(1);
+}
+
+.rule-line-class {
+    width: 100%;
+    position: absolute;
+    border: none;
+    height: 50%;
+    background: black;
+    top: 10px;
+}
+
+.name-label-class {
+    white-space: nowrap;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    font-family: "Segoe UI";
+    color: rgb(0, 0, 0);
+}
+
+.current-course-label-class {
+    white-space: nowrap;
+    text-align: left;
+    font-size: 40px;
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: none;
+    font-family: "Segoe UI";
+    color: rgb(0, 0, 0);
+}
