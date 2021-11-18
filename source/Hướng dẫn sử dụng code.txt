@@ -19,3 +19,8 @@ xóa file package-lock.json
 xóa node-module
 cài lại node-module = npm install 
 Cài boostrap = npm install react-bootstrap
+npm install @iconify/icons-bi --save-dev
+npm install @fortawesome/free-solid-svg-icons --save-dev
+npm install @fortawesome/react-fontawesome --save-dev
+npm install @fortawesome --save-dev
+npm install @fortawesome/fontawesome-svg-core --save-dev

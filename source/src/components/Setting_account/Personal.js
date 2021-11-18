@@ -17,6 +17,7 @@ class Personal extends Component {
 
   render() {
       return (
+        <div>
               <div className="card flex-col p-4 border-0 shadow rounded-3 card-input">
                   <h1 id ='card-title' className="card-title fw-bold text-dark">Personal</h1>
                   <h6 id ='card-subtitle' className="card-subtitle mb-3">Show me your character</h6>
@@ -83,6 +84,7 @@ class Personal extends Component {
                       <button className="btn btn-primary btn-sm buttons btn-input">SAVE</button> 
                   </div>
               </div>
+            </div>
       );
   }
 }

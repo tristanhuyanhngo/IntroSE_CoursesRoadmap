@@ -32,6 +32,7 @@ function Change_passwd() {
         }
     }
     return (
+        <div>
             <div className="card flex-col p-4 border-0 shadow rounded-3 card-input">
                 <h1 id ='card-title' className="card-title fw-bold text-dark">Change password</h1>
                 <h6 id ='card-subtitle' className="card-subtitle mb-3">Want more secure?</h6>
@@ -66,10 +67,10 @@ function Change_passwd() {
                 </div>
                 <div className='d-flex mt-5 justify-content-center align-items-center'>
                     <button disabled = {wait} type="submit" className="btn btn-primary buttons btn-input w-50" onClick = {changePass}>UPDATE PASSWORD</button> 
-                    <a href='#' className='ms-2 link-primary'>I forgot my password</a>
                 </div>
                 
             </div>
+        </div>
     );
 }
 

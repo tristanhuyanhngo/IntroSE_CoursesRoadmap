@@ -1,26 +1,26 @@
 import '../../css/setting_account.css'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import React, { Component }  from 'react';
+import React, { Component, useRef }  from 'react';
 import facebook from '../../picture/social/facebook.png'
 import instagram from '../../picture/social/instagram.png'
 import google from '../../picture/social/google.png'
 import github from '../../picture/social/github.png'
-
+import { auth } from '../../Handler/filebase_config';
 
 class Social extends Component {
-
-    constructor(props){
-        super(props);
-        this.state = {
-            google: 'quannguyenthanh558@gmail.com',
-            github: 'https://github.com/QuanBlue',
-            facebook: 'https://www.facebook.com/QuanBlueee/',
-            instagram: 'https://www.instagram.com/quannbluee/'
-        }
-
+    state = {
+            googleLink: 'quannguyenthanh558@gmail.com',
+            githubLink: 'https://github.com/QuanBlue',
+            facebookLink: 'https://www.facebook.com/QuanBlueee/',
+            instagramLink: 'https://www.instagram.com/quannbluee/'
     }
 
     render() {
+        //console.log(auth.current.id);
+        const {googleLink} = this.state
+        const {githubLink} = this.state
+        const {facebookLink} = this.state
+        const {instagramLink} = this.state
         return (
                 <div className="card flex-col p-4 border-0 shadow rounded-3 card-input">
                     <h1 id ='card-title' className="card-title fw-bold text-dark">Social</h1>
@@ -40,7 +40,7 @@ class Social extends Component {
                                 </div>
                                 <div className='subtitle col-3 fs-4 fw-bold'>Google</div>
                             </div>
-                            <input type="text" className="form-control" placeholder={this.state.google} />
+                            <input type="text" className="form-control" placeholder={googleLink} id = "googleID" />
                         </div>
                     </div>
 
@@ -52,7 +52,7 @@ class Social extends Component {
                                 </div>
                                 <div className='subtitle col-3 fs-4 fw-bold'>Github</div>
                             </div>
-                            <input type="text" className="form-control" placeholder={this.state.github} />
+                            <input type="text" className="form-control" placeholder={githubLink} id = "githubID" />
                         </div>
                     </div>
 
@@ -64,7 +64,7 @@ class Social extends Component {
                                 </div>
                                 <div className='subtitle col-3 fs-4 fw-bold'>Facebook</div>
                             </div>
-                            <input type="text" className="form-control" placeholder={this.state.facebook} />
+                            <input type="text" className="form-control" placeholder={facebookLink} id = "facebookID" />
                         </div>
                     </div>
 
@@ -76,7 +76,7 @@ class Social extends Component {
                                 </div>
                                 <div className='subtitle col-3 fs-4 fw-bold'>Instagram</div>
                             </div>
-                            <input type="text" className="form-control" placeholder={this.state.instagram} />
+                            <input type="text" className="form-control" placeholder={instagramLink} id = "instagramID" />
                         </div>
                     </div>
 

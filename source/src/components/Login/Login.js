@@ -70,7 +70,7 @@ function Login() {
         </button>
       </div>
       <div className ='text-center'>
-        <a href='#' className=' ms-2 link-primary'>I forgot my password</a>
+        <a href='forgotPassword.html' className=' ms-2 link-primary'>I forgot my password</a>
       </div>
     </div>
   );
