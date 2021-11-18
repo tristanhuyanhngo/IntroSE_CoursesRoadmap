@@ -1,0 +1,63 @@
+img {
+    width: 50px;
+    height: 50px;
+    border-width: 0px;
+}
+
+strong {
+    font-weight: bold;
+}
+
+label {
+    color: black;
+}
+
+.btn-search {
+    height: 50px;
+    background-color: #566787; 
+    border-width: 0px !important;
+}
+
+.icon {
+    font-size: 40px;
+    color: white;
+    border-radius: 50%;
+    padding-right: 5px;
+}
+
+.icon-search{
+    font-size: 30px;
+}
+
+.table-title {
+    background: #299be4;
+    color: #fff;
+}
+
+.delete {
+    background-color: #F44336;
+    border-width: 0px;
+    font-size: 25px;
+}
+
+.avatar{
+    width: 3.5vw ;
+    height:3.5vw ;
+}
+
+.status-active {
+    font-size: 30px;
+    color: #10c469;
+    line-height: 10px;
+}
+
+.status-inactive {
+    font-size: 30px;
+    color: #F44336;
+    line-height: 10px;
+}
+
+.form-select{
+    font-size: 11px;
+}
+
