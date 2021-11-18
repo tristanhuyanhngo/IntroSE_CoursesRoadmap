@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faKey } from '@fortawesome/free-solid-svg-icons'
 import {useRef, useState} from 'react';
 import {login,useAuth,signup_login_gg} from '../../Handler/Authentication/Authen'
-export let userid = undefined;
 
 function Login() {
   const[Waiting, setWaiting] = useState(false);
@@ -13,8 +12,6 @@ function Login() {
   const floatingPassword = useRef()
 
   const user = useAuth();
-  if(user!==null&&user!==undefined)
-    userid = user.uid
   async function handSignIn()
   {
     const email = floatingInputEmail.current.value
@@ -22,7 +19,6 @@ function Login() {
     setWaiting(true);
     try{
       await login(email,pass);
-      console.log(userid)
     }
     catch{
       window.alert("error")

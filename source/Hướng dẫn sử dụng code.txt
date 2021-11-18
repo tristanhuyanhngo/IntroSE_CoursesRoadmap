@@ -18,3 +18,4 @@ firebase
 xóa file package-lock.json
 xóa node-module
 cài lại node-module = npm install 
+Cài boostrap = npm install react-bootstrap

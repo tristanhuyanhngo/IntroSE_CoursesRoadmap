@@ -79,8 +79,8 @@ class Personal extends Component {
                   </div>
 
                   <div className='d-flex mt-5 justify-content-end'>
-                      <button class="btn btn-outline-danger buttons btn-sm ml-3 btn-input">CANCLE</button> 
-                      <button class="btn btn-primary btn-sm buttons btn-input">SAVE</button> 
+                      <button className="btn btn-outline-danger buttons btn-sm ml-3 btn-input">CANCLE</button> 
+                      <button className="btn btn-primary btn-sm buttons btn-input">SAVE</button> 
                   </div>
               </div>
       );

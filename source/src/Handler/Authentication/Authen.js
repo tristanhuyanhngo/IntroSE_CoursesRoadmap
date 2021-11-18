@@ -1,6 +1,6 @@
 
 import { app, auth } from "../filebase_config";
-import {createUserWithEmailAndPassword,sendEmailVerification, GoogleAuthProvider,
+import {createUserWithEmailAndPassword,sendEmailVerification, GoogleAuthProvider,updatePassword,
   signInWithEmailAndPassword, onAuthStateChanged, signOut, signInWithRedirect, getRedirectResult
 } from "firebase/auth";
 import { useEffect, useState } from "react";
@@ -41,4 +41,10 @@ export function useAuth() {
     onAuthStateChanged(auth, user => setCurrentUser(user));
   },[]);
   return currentUser;
+}
+
+export function resetPass(newPass) {
+  updatePassword(auth.currentUser, newPass)
+    .then(() => {})
+    .catch((error) => {});
 }
