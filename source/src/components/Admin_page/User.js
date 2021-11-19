@@ -3,6 +3,7 @@ import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../../../node_modules/bootstrap/dist/js/bootstrap'
 import React, { Component }  from 'react';
 import { BsBackspaceFill,BsFillGearFill } from '../../../node_modules/react-icons/bs';
+//import { auth } from '../../Handler/filebase_config';
 
 
 class User extends Component { 
@@ -12,7 +13,7 @@ class User extends Component {
     }
 
     status_dot = (status) => {
-        if (status == 'active')
+        if (status === 'active')
             return <div className="col-1 status-active">&#x25cf;</div>  
         else
             return <div className="col-1 status-inactive">&#x25cf;</div> 
@@ -73,10 +74,7 @@ class User extends Component {
                         <option value="User" >User</option>
                     </select>
                 </div>
-                    
             </td>
-
-
         </tr>
         );
     }

@@ -22,6 +22,7 @@ class Social extends Component {
         const {facebookLink} = this.state
         const {instagramLink} = this.state
         return (
+            <div>
                 <div className="card flex-col p-4 border-0 shadow rounded-3 card-input">
                     <h1 id ='card-title' className="card-title fw-bold text-dark">Social</h1>
                     <h6 id ='card-subtitle' className="card-subtitle mb-3">Let us know more about you</h6>
@@ -84,6 +85,7 @@ class Social extends Component {
                         <button className="btn btn-outline-danger buttons btn-sm ml-3 btn-input">CANCLE</button> 
                         <button className="btn btn-primary btn-sm buttons btn-input">SAVE</button> 
                     </div>
+                </div>
                 </div>
         );
     }

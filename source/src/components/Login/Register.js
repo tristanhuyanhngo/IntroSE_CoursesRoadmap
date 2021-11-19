@@ -48,7 +48,7 @@ function Register() {
           <form>
 
             <div className="input-group mb-3 rounded-3">
-              <span class="input-group-text">
+              <span className="input-group-text">
                 <FontAwesomeIcon className='icon' icon={faUser} />
           
               </span>
@@ -60,7 +60,7 @@ function Register() {
             <hr />
 
             <div className="input-group rounded-top mb-3">
-              <span class="input-group-text">
+              <span className="input-group-text">
                 <FontAwesomeIcon className = 'icon' icon={faKey}/>
               </span>
 
