@@ -2,6 +2,8 @@ import "../../css/create_info.css";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import React, { Component } from "react";
 import avatar_png from '../../picture/avatar.png'
+import { auth } from '../../Handler/filebase_config';
+import { InsertData } from "../../Handler/Database/Data_setup";
 
 class Create_info extends Component {
   state = {
@@ -27,6 +29,24 @@ class Create_info extends Component {
 
   delete = ()=>{
     this.setState({profileImg:avatar_png})
+  }
+
+  saveInfor = ()=>{
+    let id = null
+    if(auth.currentUser!==null)
+      id = auth.currentUser.uid
+      else
+      {
+        id = "lcKFYNnv6XdRcYzoIqYLv3CIQ1e2"
+      }
+    const Fname = document.getElementById("floatingInputFname").value
+    const Lname = document.getElementById("floatingInputLname").value
+    const Uname = document.getElementById("floatingInputUsername").value 
+    const Phone = document.getElementById("floatingInputPhoneNum").value 
+    const Gender = document.getElementById("floatingSelect").value 
+    const Birthday = document.getElementById("floatingInputBirthday").value 
+    const Social = document.getElementById("floatingInputSocial").value 
+    InsertData(id,Fname,Lname,Uname,Phone,Gender,Birthday,Social)
   }
   render()
   {
@@ -113,7 +133,7 @@ class Create_info extends Component {
                   </div>
                   
                   <div className=" text-center d-grid mb-2">
-                    <button id="save" className="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit">Save</button>
+                    <button id="save" className="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit" onClick={this.saveInfor}>Save</button>
                   </div>
                 </div>
               </div>
