@@ -9,15 +9,18 @@ import reportWebVitals from './reportWebVitals';
 import User_manage from './components/Admin_page/User_manage'
 import Profile from './components/Profile/Profile';
 
+import Home_sidebar from './components/Homepage/Home_sidebar';
+
 
 
 ReactDOM.render(  // <React.StrictMode>
-    //<Setting_account />,
-    // <Admin_page />,
-    //<User_manage/>,
-    // <Create_info />,
-    <Login_page />,
-    //<Profile />,
+  //<Setting_account />,
+  // <Admin_page />,
+  //<User_manage/>,
+  // <Create_info />,
+  //<Login_page />,
+  //<Profile />,
+  <Home_sidebar />,
   // </React.StrictMode>,,
   document.getElementById('root')
 );
