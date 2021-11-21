@@ -67,10 +67,10 @@ class Login_page extends Component {
   render () {
     return (
       <div>
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-9 col-xl-9 mx-auto">
-              <div className="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden main_area">
+        <div className="container-md">
+          {/* <div className="row"> */}
+            {/* <div className="col-lg-9 col-xl-9 mx-auto"> */}
+              <div className="card flex-row my-5 border-0 shadow rounded-3">
                 
                 <Card_img 
                   title =  { this.state.title }
@@ -86,8 +86,8 @@ class Login_page extends Component {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          {/* </div> */}
+        {/* </div> */}
       </div>
     )
   }

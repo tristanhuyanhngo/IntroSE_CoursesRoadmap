@@ -5,6 +5,15 @@ body {
     background: linear-gradient(to right, #0062E6, #33AEFF);
   }
   
+
+p {
+    white-space: pre-wrap;
+    color: white;
+    font-size: 23px;
+    font-weight: 300;
+    padding: 10px;
+}
+
 .card-img-left {
   width: 45%;
   /* Link to your background image using in the property below! */
@@ -15,19 +24,21 @@ body {
   z-index: 2;
   /* border: 1px solid blue; */
 }
-p {
-    white-space: pre-wrap;
-    color: white;
-    font-size: 23px;
-    font-weight: 300;
-    padding: 10px;
+
+.container-md {
+  width: 50vw !important;
+}
+
+@media only screen and (max-width: 1000px) {
+  .container-md {
+      width: 90vw  !important;
+      /* padding:0px 5vw; */
+  }  
 }
 
 .card-body {
   z-index: 1;
 }
-
-
 
 .icon{
   color: black !important;
@@ -43,15 +54,11 @@ p {
   background-color: #ea4335 !important;
 }
 
-.main_area {
-  height:63vh;
-}
-
-.btn-lg{
+.btn-md{
   margin:auto;
   padding:auto;
   width:80%;
-  height:65px;
+  /* height:65px; */
 }
 
 #btn1{
@@ -60,9 +67,16 @@ p {
   /* border: 1px solid red; */
 }
   
-
 #title{
-  font-size:60px;
+  font-size:40px;
   color: white;
-  /* font-weight: ; */
+}
+
+.intro {
+  font-size: 20px;
+  font-weight: lighter !important;
+}
+
+.forgot {
+  padding-bottom: 75px;
 }

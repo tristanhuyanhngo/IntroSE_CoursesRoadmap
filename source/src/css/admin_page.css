@@ -1,6 +1,6 @@
 img {
-    width: 50px;
-    height: 50px;
+    width: 50px !important;
+    height: 50px !important;
     border-width: 0px;
 }
 
@@ -8,16 +8,41 @@ strong {
     font-weight: bold;
 }
 
+thead {
+    font-size: 17px !important;
+}
+
+td{
+    font-size: 14px;
+}
+
 label {
     color: black;
 }
 
+.table-responsive{
+    height: 58vh;
+}
+
+.container-md {
+    width: 50vw !important;
+    /* padding:0px 5vw; */
+}
+
+@media only screen and (max-width: 1000px) {
+    .container-md {
+        width: 90vw  !important;
+        /* padding:0px 5vw; */
+    } 
+}
+
 .btn-search {
-    height: 50px;
     background-color: #566787; 
     border-width: 0px !important;
 }
-
+.mx-0{
+    margin:0 -5px !important
+}
 .icon {
     font-size: 40px;
     color: white;
@@ -27,8 +52,12 @@ label {
 
 .icon-search{
     font-size: 30px;
+    
 }
 
+.form-floating {
+    width: 80%;
+}
 .table-title {
     background: #299be4;
     color: #fff;
