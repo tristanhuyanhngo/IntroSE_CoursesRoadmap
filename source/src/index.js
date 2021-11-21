@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import Login_page from './components/Login/Login_page';
@@ -13,14 +14,17 @@ import Navbar from './components/Homepage/Navbar';
 
 
 ReactDOM.render(
-  // <React.StrictMode>
-  //<Setting_account />,
-  //<User_manage/>,
-  //<Create_info />,
-  //<Login_page />,
-  //<Profile />,
-  // </React.StrictMode>,,
-  <App />,
+  <React.StrictMode>
+    {/* <Setting_account />,
+  <User_manage/>,
+  <Create_info />,
+  <Login_page />,
+  <Profile />, */}
+    <Router>
+      <App />
+    </Router>
+  </React.StrictMode>,
+
   document.getElementById('root')
 );
 
