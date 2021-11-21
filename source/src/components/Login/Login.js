@@ -10,14 +10,14 @@ function Login() {
   const floatingInputEmail = useRef()
   const floatingPassword = useRef()
 
-  const user = useAuth();
   async function handSignIn()
   {
     const email = floatingInputEmail.current.value
     const pass = floatingPassword.current.value
     setWaiting(true);
     try{
-      await login(email,pass);
+      const a = await login(email,pass);
+      console.log(a)
     }
     catch{
       window.alert("error")

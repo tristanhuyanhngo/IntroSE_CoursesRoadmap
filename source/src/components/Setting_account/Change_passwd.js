@@ -5,8 +5,9 @@ import { resetPass } from '../../Handler/Authentication/Authen';
 import { auth } from '../../Handler/filebase_config';
 
 function Change_passwd() {
+    let id = ""
     if (auth.currentUser !== null)
-        console.log(auth.currentUser.uid)
+        id = auth.currentUser.uid
     const [wait,setWaiting] = useState(false)
     let mess = ""
     const oldPassword = useRef()

@@ -41,11 +41,5 @@ export const SidebarData = [
     path: '/aboutus',
     icon: <BsIcons.BsFillInfoCircleFill />,
     cName: 'nav-text'
-  },
-  {
-    title: 'Login',
-    path: '/login',
-    icon: <IoIcons.IoMdLogIn />,
-    cName: 'nav-text'
   }
 ];

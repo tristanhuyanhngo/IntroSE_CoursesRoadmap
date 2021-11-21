@@ -49,7 +49,7 @@ class Setting_account extends Component {
 
     navigate = (status) => {
         this.setState({status:status}, () => {
-            console.log(this.state.status);
+            // console.log(this.state.status);
             this.coloring()
             this.Switch_component()
             }
