@@ -87,12 +87,19 @@ class Create_info extends Component {
                           <div className = 'col-md-9'>
                             <div className="row mb-3">
                               <div className="form-floating">
+                                <input type="text" name='email' className="form-control" id="floatingInputEmail" placeholder="nva@gmail.com" />
+                                <label htmlFor="floatingInputEmail">Email</label>
+                              </div>
+                            </div>
+
+                            <div className="row mb-3 pe-4">
+                              <div className="form-floating">
                                 <input type="tel" name='phoneNumber' className="form-control" id="floatingInputPhoneNum" placeholder="0912345678" />
                                 <label htmlFor="floatingInputPhoneNum">Phone number</label>
                               </div>
                             </div>
 
-                            <div className="row mb-3 pe-4">
+                            <div className="row mb-3 pe-5">
                               <div className="form-floating">
                                 <select className="form-select" id="floatingSelect" aria-label="Floating label select example">
                                   <option value="male">Male</option>

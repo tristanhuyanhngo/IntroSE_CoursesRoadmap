@@ -15,10 +15,10 @@ import Navbar from './components/Homepage/Navbar';
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Setting_account />, */}
+    <Setting_account />,
   {/* <User_manage/>, */}
   {/* <Create_info />, */}
-  <Login_page />,
+  {/* <Login_page />, */}
   {/* <Profile />, */}
     {/* <Router>
       <App />

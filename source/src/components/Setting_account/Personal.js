@@ -7,9 +7,10 @@ class Personal extends Component {
 
   state = {
         firstname: 'Nguyen Van',
-        Lname: 'An',
+        lastname: 'An',
         Uname: 'NVA',
-        email:'NVA@gmail.com'
+        email:'NVA@gmail.com',
+        phone: '0832123456'
   }
 
   // saveInfor = ()=>{
@@ -79,6 +80,15 @@ class Personal extends Component {
                       <input type="text" name='email' className="form-control" id="floatingInputFname"  placeholder={this.state.email}/>
                     </div>
                   </div>
+
+                  <div className="row mb-3">
+                    <div className='subtitle col-2 d-flex align-items-center justify-content-end'> Phone</div>
+                    <div className='col'>
+                      <input type="tel" name='phone' className="form-control" id="floatingInputPhone"  placeholder={this.state.phone}/>
+                    </div>
+                  </div>
+
+                  
 
                   <div className="row mb-3">
                     <div className='subtitle col-2 d-flex align-items-center justify-content-end'>Gender</div>
