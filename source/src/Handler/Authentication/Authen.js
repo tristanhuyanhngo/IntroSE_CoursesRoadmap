@@ -1,7 +1,8 @@
 
 import { app, auth } from "../filebase_config";
-import {createUserWithEmailAndPassword,sendEmailVerification, GoogleAuthProvider,
-  signInWithEmailAndPassword, onAuthStateChanged, signOut, signInWithRedirect, getRedirectResult
+import {createUserWithEmailAndPassword,sendEmailVerification, GoogleAuthProvider,updatePassword,
+  sendPasswordResetEmail,signInWithEmailAndPassword, onAuthStateChanged, signOut, 
+  signInWithPopup, getRedirectResult
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 
@@ -19,7 +20,7 @@ export function signup(email, password) {
 
 export function signup_login_gg() {
   const provider = new GoogleAuthProvider(app);
-  signInWithRedirect(auth, provider);
+  signInWithPopup(auth, provider).catch((error) => {})
   getRedirectResult(auth);
 }
 
@@ -41,4 +42,17 @@ export function useAuth() {
     onAuthStateChanged(auth, user => setCurrentUser(user));
   },[]);
   return currentUser;
+}
+
+export function resetPass(newPass) {
+  updatePassword(auth.currentUser, newPass)
+    .then(() => {})
+    .catch((error) => {});
+}
+
+export function forgotPass(email)
+{
+  sendPasswordResetEmail(auth, email)
+  .catch((error) => {
+  })
 }

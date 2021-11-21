@@ -27,23 +27,13 @@ p {
   z-index: 1;
 }
 
-.input-group-text{
-  width: 10%;
-}
+
 
 .icon{
-  padding:auto;
-  margin: auto;
+  color: black !important;
+  height: 40px;
 }
-.form-floating{
-  width: 89%;
 
-
-}
-.config-width{
-  width:89%;
-
-}
 .full{
   width:100%;
 }

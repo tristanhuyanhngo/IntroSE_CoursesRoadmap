@@ -1,22 +1,50 @@
 import '../../css/setting_account.css'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import React, { Component }  from 'react';
-
+import { auth } from '../../Handler/filebase_config';
+import { InsertData, SelecData } from '../../Handler/Database/Data_setup';
 class Personal extends Component {
 
-  constructor(props){
-    super(props);
-    this.state = {
-        firstname: 'Thanh Quan',
-        lastname: 'Nguyen',
-        username: 'quanblue',
-        email:'quannguyenthanh558@gmail.com'
-    }
-
+  state = {
+        firstname: 'Nguyen Van',
+        Lname: 'An',
+        Uname: 'NVA',
+        email:'NVA@gmail.com'
   }
 
+  // saveInfor = ()=>{
+  //   let id = null
+  //   if(auth.currentUser!==null)
+  //     id = auth.currentUser.uid
+  //   const Fname = document.getElementById("floatingInputFname").value
+  //   const Lname = document.getElementById("floatingInputLname").value
+  //   const Uname = document.getElementById("floatingInputUsername").value 
+  //   const Phone = document.getElementById("floatingInputPhoneNum").value 
+  //   const Gender = document.getElementById("floatingSelect").value 
+  //   const Birthday = document.getElementById("floatingInputBirthday").value 
+  //   const Social = document.getElementById("floatingInputSocial").value 
+  //   InsertData(id,Fname,Lname,Uname,Phone,Gender,Birthday,Social)
+  // }
+
+  // getInfor = (firstname)=>{
+  //   let id = null
+  //   if(auth.currentUser!==null)
+  //     id = auth.currentUser.uid
+  //   firstname = document.getElementById("floatingInputFname")
+  //   const Lname = document.getElementById("floatingInputLname")
+  //   const Uname = document.getElementById("floatingInputUsername")
+  //   const Phone = document.getElementById("floatingInputPhoneNum")
+  //   const Gender = document.getElementById("floatingSelect")
+  //   const Birthday = document.getElementById("floatingInputBirthday")
+  //   const Social = document.getElementById("floatingInputSocial")
+  //   SelecData(id,firstname,Lname,Uname,Phone,Gender,Birthday,Social)
+  // }
+
   render() {
+    //const {firstname} = this.state
+    //this.getInfor(firstname)
       return (
+        <div>
               <div className="card flex-col p-4 border-0 shadow rounded-3 card-input">
                   <h1 id ='card-title' className="card-title fw-bold text-dark">Personal</h1>
                   <h6 id ='card-subtitle' className="card-subtitle mb-3">Show me your character</h6>
@@ -30,7 +58,7 @@ class Personal extends Component {
                   <div className="row mb-3">
                       <div className='col-6'>
                         <div className='subtitle text-begin'> First name</div>
-                        <input type="text" name='fname' className="form-control" id="floatingInputFname" placeholder={this.state.firstname} />
+                        <input type="text" name='fname' className="form-control" id="floatingInputFname" placeholder="Nguyen Van" />
                       </div>
                       <div className='col-6'>
                         <div className='subtitle text-begin'> Last name</div>
@@ -48,7 +76,7 @@ class Personal extends Component {
                   <div className="row mb-3">
                     <div className='subtitle col-2 d-flex align-items-center justify-content-end'> Email</div>
                     <div className='col'>
-                      <input type="text" name='email' className="form-control" id="floatingInputFname" placeholder={this.state.email}/>
+                      <input type="text" name='email' className="form-control" id="floatingInputFname"  placeholder={this.state.email}/>
                     </div>
                   </div>
 
@@ -79,10 +107,10 @@ class Personal extends Component {
                   </div>
 
                   <div className='d-flex mt-5 justify-content-end'>
-                      <button class="btn btn-outline-danger buttons btn-sm ml-3 btn-input">CANCLE</button> 
-                      <button class="btn btn-primary btn-sm buttons btn-input">SAVE</button> 
+                      <button className="btn btn-primary btn-sm buttons btn-input" >SAVE</button> 
                   </div>
               </div>
+            </div>
       );
   }
 }

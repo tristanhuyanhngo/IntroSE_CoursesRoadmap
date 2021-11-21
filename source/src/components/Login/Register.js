@@ -6,6 +6,8 @@ import {signup_login_gg} from '../../Handler/Authentication/Authen.js'
 import {useRef, useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faUser, faKey } from '@fortawesome/free-solid-svg-icons'
+import { BiUser, BiKey } from 'react-icons/bi';
+
 function Register() {
     const[Waiting, setWaiting] = useState(false);
 
@@ -47,39 +49,33 @@ function Register() {
           <h5 id='title' className="card-title text-center mb-5 fw-bold text-dark">Register</h5>
           <form>
 
-            <div className="input-group mb-3 rounded-3">
-              <span class="input-group-text">
-                <FontAwesomeIcon className='icon' icon={faUser} />
-          
-              </span>
-              <div className="form-floating">
+            <div className="input-group mb-3 mx-1 round-bottom row">
+              <div className="input-group-text py-0 col-2">
+                  <BiUser className=' icon' />
+              </div>
+              <div className="form-floating p-0 col">
                 <input type="email" className="form-control" ref={floatingInputEmail} placeholder="name@example.com" />
                 <label htmlFor="floatingInputEmail">Email address</label>
               </div>
             </div>
             <hr />
 
-            <div className="input-group rounded-top mb-3">
-              <span class="input-group-text">
-                <FontAwesomeIcon className = 'icon' icon={faKey}/>
-              </span>
-
-              <span className ='config-width'>
-                <div className="form-floating full">
+            <div className="row input-group mx-1 rounded-top mb-3">
+              <div className="col-2 py-0 input-group-text">
+                <BiKey className = 'icon'/>
+              </div>
+              <div className ='col px-0'>
+                <div className="p-0 form-floating full">
                   <input type="password" className="form-control" ref={floatingPassword} placeholder="Password" />
                   <label htmlFor="floatingPassword">Password</label>
                 </div>
-                  <div className='form-floating full'>
+                  <div className='p-0 form-floating full'>
                     <input type="password" className="form-control hi" ref={floatingPasswordConfirm} placeholder="Confirm Password" />
                     <label htmlFor="floatingPasswordConfirm">Confirm Password</label>
                   </div>
-                {/* </div> */}
-                {/* <div className="form-floating"> */}
-                  
-                {/* </div> */}
-              </span>
-
+              </div>
             </div>
+
             <div className=" text-center d-grid mb-2">
               <button className="btn btn-lg btn-primary btn-login fw-bold text-uppercase" disabled={Waiting} type="submit" onClick={handSignUp}>Register</button>
             </div>

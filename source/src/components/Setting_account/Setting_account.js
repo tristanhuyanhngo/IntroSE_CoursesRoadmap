@@ -14,7 +14,6 @@ class Setting_account extends Component {
         this.state = {
             status: 'personal'
         }
-
     }
 
     BtnClick = () => {
@@ -22,10 +21,10 @@ class Setting_account extends Component {
     }
 
     Switch_component = () => {
-        if (this.state.status == 'personal')
+        if (this.state.status === 'personal')
             return <Personal />
 
-            else if (this.state.status == 'ch_passwd')
+            else if (this.state.status === 'ch_passwd')
             return <Change_passwd />
 
             return <Social />
@@ -39,7 +38,7 @@ class Setting_account extends Component {
         document.getElementById(this.state.status).style['color'] = 'white';
     
         for (let i = 0; i < 3; i ++) {
-            if (list[i] != this.state.status){
+            if (list[i] !== this.state.status){
                 document.getElementById(list[i]).style['background'] = 'white';
                 document.getElementById(list[i]).style['color'] = 'black';
                 document.getElementById(list[i]).style['border-color'] = 'lightgray';
