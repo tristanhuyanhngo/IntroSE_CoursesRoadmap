@@ -16,11 +16,11 @@ import Profile from './components/Profile/Profile';
 ReactDOM.render(  // <React.StrictMode>
     // <Setting_account />,
     // <Admin_page />,
-    <User_manage/>,
+    // <User_manage/>,
     // <Create_info />,
     // <Login_page />,
     // <Create_info />,
-    //<Login_page />,
+    <Login_page />,
     // <Profile />,
   // </React.StrictMode>,,
   document.getElementById('root')
