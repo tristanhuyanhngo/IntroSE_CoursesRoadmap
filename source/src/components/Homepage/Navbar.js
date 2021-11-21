@@ -28,7 +28,6 @@ function Navbar() {
                 <AiIcons.AiOutlineClose />
                 <span>Group 2</span>
               </Link>
-
             </li>
             {SidebarData.map((item, index) => {
               return (
