@@ -5,20 +5,23 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faKey } from '@fortawesome/free-solid-svg-icons'
 import {useRef, useState} from 'react';
 import {login,useAuth,signup_login_gg} from '../../Handler/Authentication/Authen'
+import { RiCreativeCommonsSaLine } from 'react-icons/ri';
+
+
 
 function Login() {
   const[Waiting, setWaiting] = useState(false);
   const floatingInputEmail = useRef()
   const floatingPassword = useRef()
 
-  const user = useAuth();
   async function handSignIn()
   {
     const email = floatingInputEmail.current.value
     const pass = floatingPassword.current.value
     setWaiting(true);
     try{
-      await login(email,pass);
+      const a = await login(email,pass);
+      console.log(a)
     }
     catch{
       window.alert("error")
