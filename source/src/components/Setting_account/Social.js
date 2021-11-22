@@ -21,6 +21,7 @@ class Social extends Component {
         const {githubLink} = this.state
         const {facebookLink} = this.state
         const {instagramLink} = this.state
+
         return (
             <div>
                 <div className="card flex-col p-4 border-0 shadow rounded-3 card-input">
@@ -29,7 +30,7 @@ class Social extends Component {
                     
                     <div className='row d-flex mb-1 '>
                     <hr className='col'/> 
-                    <div className = 'col-3 text-center pb-1 card-subtitle'>Connect your social</div>
+                    <div className = 'col-4 text-center pb-1 card-subtitle'>Connect your social</div>
                     <hr className='col'/> 
                     </div>
 
@@ -39,7 +40,7 @@ class Social extends Component {
                                 <div className='col-1'>
                                     <img className='social-icon mb-1' src={google} />
                                 </div>
-                                <div className='subtitle col-3 fs-4 fw-bold'>Google</div>
+                                <div className='subtitle col fs-5 fw-bold'>Google</div>
                             </div>
                             <input type="text" className="form-control" placeholder={googleLink} id = "googleID" />
                         </div>
@@ -51,7 +52,7 @@ class Social extends Component {
                                 <div className='col-1'>
                                     <img className='social-icon mb-1' src={github} />
                                 </div>
-                                <div className='subtitle col-3 fs-4 fw-bold'>Github</div>
+                                <div className='subtitle col fs-5 fw-bold'>Github</div>
                             </div>
                             <input type="text" className="form-control" placeholder={githubLink} id = "githubID" />
                         </div>
@@ -63,7 +64,7 @@ class Social extends Component {
                                 <div className='col-1'>
                                     <img className='social-icon mb-1' src={facebook} />
                                 </div>
-                                <div className='subtitle col-3 fs-4 fw-bold'>Facebook</div>
+                                <div className='subtitle col fs-5 fw-bold'>Facebook</div>
                             </div>
                             <input type="text" className="form-control" placeholder={facebookLink} id = "facebookID" />
                         </div>
@@ -75,15 +76,15 @@ class Social extends Component {
                                 <div className='col-1'>
                                     <img className='social-icon mb-1' src={instagram} />
                                 </div>
-                                <div className='subtitle col-3 fs-4 fw-bold'>Instagram</div>
+                                <div className='subtitle col fs-5 fw-bold'>Instagram</div>
                             </div>
                             <input type="text" className="form-control" placeholder={instagramLink} id = "instagramID" />
                         </div>
                     </div>
 
-                    <div className='d-flex mt-5 justify-content-end'>
-                        <button className="btn btn-outline-danger buttons btn-sm ml-3 btn-input">CANCLE</button> 
-                        <button className="btn btn-primary btn-sm buttons btn-input">SAVE</button> 
+                    <div className='d-flex mt-3 justify-content-end'>
+                        <button className="btn btn-outline-danger btn-social btn-sm">CANCLE</button> 
+                        <button className="btn btn-primary btn-sm btn-social">SAVE</button> 
                     </div>
                 </div>
                 </div>

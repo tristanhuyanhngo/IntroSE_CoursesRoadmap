@@ -123,8 +123,8 @@ class Create_info extends Component {
                             </div>
                           </div>
                           <div className='d-flex align-items-center justify-content-center col-3'>
-                            <div className="p-2 text-center">
-                                <img className='mb-2 me-3' src={profileImg} />
+                            <div className="p-2 me-5 text-center">
+                                <img className='avt mb-3' src={profileImg} />
                                 <div className="text-center">
                                     <div className="text-center"> 
                                       <input id = "default-btn" hidden type = "file"  accept=".png, .jpg, .jpeg" onChange = {this.imageHandler} />

@@ -6,11 +6,11 @@ body {
     font-weight: 300
 }
 
-img {
-    width: 20vmin !important;
-    height: 20vmin !important;
+.avt {
+    width: 27vmin !important;
+    height: 27vmin !important;
     border-radius: 50%;
-    border: 8px solid black;
+    border: 5px solid black;
 }
 
 label {
@@ -38,6 +38,10 @@ input{
 
 .mb-2{
   margin-bottom: 11px !important;  
+}
+
+.me-5{
+    margin-right: 100px !important;
 }
 
 .notify-text {

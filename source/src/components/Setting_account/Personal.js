@@ -31,11 +31,11 @@ class Personal extends Component {
           <h1 id="card-title" className="card-title fw-bold text-dark">
             Personal
           </h1>
-          <h6 id="card-subtitle" className="card-subtitle mb-3">
+          <h6 id="card-subtitle" className="card-subtitle mb-2">
             Show me your character
           </h6>
   
-          <div className="row d-flex mb-3 ">
+          <div className="row d-flex mb-2 ">
             <hr className="col" />
             <div className="col-3 text-center pb-2 card-subtitle">
               Personal details
@@ -43,7 +43,7 @@ class Personal extends Component {
             <hr className="col" />
           </div>
   
-          <div className="row mb-3">
+          <div className="row mb-2">
             <div className="col-6">
               <div className="subtitle text-begin"> First name</div>
               <input
@@ -62,7 +62,7 @@ class Personal extends Component {
             </div>
           </div>
   
-          <div className="row mb-3">
+          <div className="row mb-2">
             <div className="subtitle col-2 d-flex align-items-center justify-content-end">
               {" "}
               UserName
@@ -76,7 +76,7 @@ class Personal extends Component {
             </div>
           </div>
   
-          <div className="row mb-3">
+          <div className="row mb-2">
             <div className="subtitle col-2 d-flex align-items-center justify-content-end">
               {" "}
               Email
@@ -90,7 +90,7 @@ class Personal extends Component {
             </div>
           </div>
 
-          <div className="row mb-3">
+          <div className="row mb-2">
             <div className="subtitle col-2 d-flex align-items-center justify-content-end">
               {" "}
               Phone
@@ -104,7 +104,7 @@ class Personal extends Component {
             </div>
           </div>
   
-          <div className="row mb-3">
+          <div className="row mb-2">
             <div className="subtitle col-2 d-flex align-items-center justify-content-end">
               Gender
             </div>
@@ -121,7 +121,7 @@ class Personal extends Component {
             </div>
           </div>
   
-          <div className="row mb-3">
+          <div className="row mb-2">
             <div className="subtitle col-2 d-flex align-items-center justify-content-end">
               Birthday
             </div>
@@ -134,15 +134,15 @@ class Personal extends Component {
             </div>
           </div>
   
-          <div className="row mb-3">
+          <div className="row mb-2">
             <div className="subtitle col-2 d-flex justify-content-end"> Bio</div>
             <div className="col">
               <textarea type="text" name="bio" />
             </div>
           </div>
   
-          <div className="d-flex mt-5 justify-content-end">
-            <button className="btn btn-primary btn-sm buttons btn-input">
+          <div className="d-flex mt-2 justify-content-end">
+            <button className="btn btn-primary btn-md buttons btn-input">
               SAVE
             </button>
           </div>

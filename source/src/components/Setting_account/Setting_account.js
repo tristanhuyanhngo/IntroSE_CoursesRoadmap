@@ -25,9 +25,9 @@ class Setting_account extends Component {
             return <Personal />
 
             else if (this.state.status === 'ch_passwd')
-            return <Change_passwd />
+                return <Change_passwd />
 
-            return <Social />
+        return <Social />
     }
 
     coloring = () => {
@@ -58,14 +58,14 @@ class Setting_account extends Component {
 
     render() {
         return (
-            <div className="container mt-5">
+            <div className="container-lg mt-5 mx-5">
                 <div className="row mx-auto">
                     <div className='col-3 col-lg-3 col-xl-3'>
                         <div className="row choose_field">
-                            <div className="card flex-col p-3 border-0 shadow rounded-3">
-                                <h3 id ='card-title' className="card-title fw-bold text-dark">Settings</h3>
-                                <h6 id ='card-subtitle' className="card-subtitle mb-3">Customize your information</h6>
-                                <ListGroup >
+                            <div className="card flex-col p-0 border-0 shadow rounded-3">
+                                <h4 id ='card-title' className="card-title ms-3 mt-2 fw-bold text-dark">Settings</h4>
+                                <h6 id ='card-subtitle' className="card-subtitle ms-3 mb-3">Customize your information</h6>
+                                <ListGroup className='list'>
                                     <ListGroup.Item action id='personal' active onClick={()=>{this.navigate('personal')}}>Personal</ListGroup.Item>
                                     <ListGroup.Item action id='ch_passwd' onClick={ ()=>{this.navigate('ch_passwd')}}>Change password</ListGroup.Item>
                                     <ListGroup.Item action id='social' onClick={()=>{this.navigate('social')}}  >Social</ListGroup.Item>

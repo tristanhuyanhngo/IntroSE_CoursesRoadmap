@@ -33,9 +33,9 @@ class Picture_profile extends Component {
         const {profileImg} = this.state
         return (
             <div className="card flex-col p-3 border-0 shadow rounded-3">
-               <h3 id ='card-title' className="card-title text-center fw-bold text-dark">My profile picture</h3>
+               <h4 id ='card-title' className="card-title text-center fw-bold text-dark">My profile picture</h4>
                <div className="p-2 text-center"> 
-                    <img className = 'my-2 ' src={profileImg} />
+                    <img className = 'avt-setting my-2 ' src={profileImg} />
                     <input id = "picture-profile" hidden type = "file"  accept=".png, .jpg, .jpeg" onChange = {this.imageHandler} />
                         <button className="btn btn-primary btn-sm buttons" onClick={this.uploadImg}>Upload new photo</button> 
                         <button className="btn btn-outline-danger buttons btn-sm ml-3" onClick = {this.delete}>Remove</button> 
