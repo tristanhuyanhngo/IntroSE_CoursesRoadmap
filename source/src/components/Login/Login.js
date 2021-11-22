@@ -58,16 +58,16 @@ function Login() {
         
         <hr />
         <div className=" text-center d-grid mb-2">
-          <button className="btn btn-lg btn-primary btn-login fw-bold text-uppercase" disabled={Waiting} onClick={handSignIn} type="submit" >Login</button>
+          <button className="btn btn-md btn-primary btn-login fw-bold text-uppercase" disabled={Waiting} onClick={handSignIn} type="submit" >Login</button>
         </div>
       </form>
 
       <div className="text-center d-grid mb-2">
-        <button className="btn btn-lg btn-google" disabled={Waiting} onClick={handSignIn2}>
+        <button className="btn btn-md btn-google" disabled={Waiting} onClick={handSignIn2}>
           Sign in with <b>Google </b>
         </button>
       </div>
-      <div className ='text-center'>
+      <div className ='text-center forgot' >
         <a href='forgotPassword.html' className=' ms-2 link-primary'>I forgot my password</a>
       </div>
     </div>

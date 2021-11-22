@@ -18,11 +18,11 @@ ReactDOM.render(
     {/* <Setting_account />, */}
     {/* <User_manage/>, */}
     {/* <Create_info />, */}
-    {/* <Login_page />, */}
+    <Login_page />,
     {/* <Profile />, */}
-    <Router>
+    {/* <Router>
       <App />
-    </Router>
+    </Router> */}
   </React.StrictMode>,
 
   document.getElementById('root')

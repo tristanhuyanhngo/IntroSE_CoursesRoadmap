@@ -1,10 +1,3 @@
-img{
-    width:15vw;
-    height: 15vw; 
-    border-radius: 50%;
-    /* border-width: 0px !important; */
-}
-
 textarea {
     width: 100%;
     height: 100px;
@@ -12,16 +5,44 @@ textarea {
     border-radius: 5px;
 }
 
+.form-control {
+    padding-top: 8px !important;
+    font-size: 13px !important;
+}
+
+.avt-setting{
+    width:15vw !important;
+    height: 15vw !important; 
+    border-radius: 50%;
+    /* border-width: 0px !important; */
+}
+
+.list {
+    /* border:1px solid red; */
+    width:100%;
+    font-size: 13px;
+    margin: 0px !important;
+    padding: 0px !important; 
+}
+
+.container-lg {
+    width: 90vw !important;
+    
+    /* padding:0px 5vw; */
+}
+
 .social-icon {
     border-width: 0px !important;
-    width: 30px;
-    height: 30px;
-}
-.input-info {
-    height:73vh;
+    width: 25px !important;
+    height: 25px !important;
 }
 
 .card-subtitle {
+    font-size: 10px;
+    color: gray;
+}
+
+.subtitle{
     font-size: 14px;
     color: gray;
 }
@@ -35,12 +56,20 @@ textarea {
     height: 100%;
     /* border: 2px solid greenyellow; */
 }
+
 .btn-input{
     font-size: 16px !important;
     font-weight: bold;
     height: 50px !important;
-    width: 9vw;
 }
-.subtitle{
-    color: gray;
+
+.btn-social {
+    width:100px !important;
+    height: 40px;
+    margin: 1px;
 }
+
+.btn-sm{
+    font-size: 10px !important;
+}
+

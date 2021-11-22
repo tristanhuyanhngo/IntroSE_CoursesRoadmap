@@ -58,7 +58,6 @@ function Register() {
                 <label htmlFor="floatingInputEmail">Email address</label>
               </div>
             </div>
-            <hr />
 
             <div className="row input-group mx-1 rounded-top mb-3">
               <div className="col-2 py-0 input-group-text">
@@ -76,14 +75,17 @@ function Register() {
               </div>
             </div>
 
-            <div className=" text-center d-grid mb-2">
-              <button className="btn btn-lg btn-primary btn-login fw-bold text-uppercase" disabled={Waiting} type="submit" onClick={handSignUp}>Register</button>
+            <div className=" text-center d-grid">
+              <button className="btn btn-md btn-primary btn-login fw-bold text-uppercase" disabled={Waiting} type="submit" onClick={handSignUp}>Register</button>
             </div>
-            <hr className="my-4" />
+
+            <div className='d-flex justify-content-center'>
+              <hr className='my-2 w-75'/>
+            </div>
 
           </form>
-          <div className="text-center d-grid mb-2">
-              <button className="btn btn-lg btn-google"  disabled={Waiting} onClick={handSignUp2}>
+          <div className="text-center d-grid mb-5">
+              <button className="btn btn-md btn-google"  disabled={Waiting} onClick={handSignUp2}>
                 Sign up with <b>Google </b>
               </button>
             </div>
