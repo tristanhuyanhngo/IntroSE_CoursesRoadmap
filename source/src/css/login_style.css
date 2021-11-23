@@ -19,8 +19,12 @@ p {
   display: flex;
   flex-direction: column;
   z-index: 2;
-  /* border: 1px solid blue; */
 }
+
+.card-body {
+  z-index: 1;
+}
+
 
 .container-md {
   width: 50vw !important;
@@ -33,17 +37,13 @@ p {
   }  
 }
 
-.card-body {
-  z-index: 1;
-}
-
 .icon{
   color: black !important;
   height: 40px;
 }
 
 .full {
-  width: 100%;
+  width: 100% !important;
 }
 
 .btn-google {
@@ -74,6 +74,7 @@ p {
   font-weight: lighter !important;
 }
 
-.forgot {
-  padding-bottom: 75px;
+.mb-5-login{
+  margin-bottom: 100px;
 }
+

@@ -64,7 +64,7 @@ function Register() {
                 <BiKey className = 'icon'/>
               </div>
               <div className ='col px-0'>
-                <div className="p-0 form-floating full">
+                <div className=" form-floating full">
                   <input type="password" className="form-control" ref={floatingPassword} placeholder="Password" />
                   <label htmlFor="floatingPassword">Password</label>
                 </div>
