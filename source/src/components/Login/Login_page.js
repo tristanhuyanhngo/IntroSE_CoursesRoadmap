@@ -1,12 +1,13 @@
 import '../../css/login_style.css'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../../../node_modules/bootstrap/dist/js/bootstrap.bundle';
+import { BiUser } from 'react-icons/bi';
 import React, { Component }  from 'react';
 import anime from 'animejs/lib/anime.min'
 import Card_img from './Card_img.js';
 import Login from './Login';
 import Register from './Register';
-
-
+import Forgot_btn from './Forgot_btn';
 class Login_page extends Component {
   constructor(props){
       super(props);
@@ -56,7 +57,9 @@ class Login_page extends Component {
       }
   }
 
-  
+  alert_announce = () => {
+    alert('Check your email for a link to reset your password. If it doesn’t appear within a few minutes, check your spam folder.')
+  }
   Switch_component = () => {
     if (this.state.status === 'Sign Up')
       return <Login />
@@ -66,28 +69,25 @@ class Login_page extends Component {
 
   render () {
     return (
-      <div>
-        <div className="container-md">
-          {/* <div className="row"> */}
-            {/* <div className="col-lg-9 col-xl-9 mx-auto"> */}
-              <div className="card flex-row my-5 border-0 shadow rounded-3">
-                
-                <Card_img 
-                  title =  { this.state.title }
-                  intro = { this.state.intro }
-                  status = {this.state.status}
-                  style = {this.state.style}
-                  btnClick = {this.BtnClick}
-                />
+      <div className='d-flex flex-column justify-content-center'>
+        <div className="container-md mt-5 ">
+          <div className="card flex-row border-0 shadow rounded-3">
+            <Card_img 
+              title =  { this.state.title }
+              intro = { this.state.intro }
+              status = {this.state.status}
+              style = {this.state.style}
+              btnClick = {this.BtnClick}
+            />
 
-                <div className="card-body">
-                  {/* show login or register form */}
-                  { this.Switch_component() } 
-                </div>
-              </div>
+            <div className="card-body">
+              {/* show login or register form */}
+              { this.Switch_component() } 
             </div>
-          {/* </div> */}
-        {/* </div> */}
+          </div>
+        </div>
+
+        <Forgot_btn />
       </div>
     )
   }
