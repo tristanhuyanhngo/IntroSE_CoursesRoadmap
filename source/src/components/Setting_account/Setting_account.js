@@ -1,6 +1,5 @@
 import '../../css/setting_account.css'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import ListGroup from '../../../node_modules/react-bootstrap/ListGroup'
 import React, { Component }  from 'react';
 import Picture_profile from './Picture_profile';
 import Personal from './Personal';
@@ -16,72 +15,49 @@ class Setting_account extends Component {
         }
     }
 
-    BtnClick = () => {
-
-    }
-
-    Switch_component = () => {
-        if (this.state.status === 'personal')
-            return <Personal />
-
-            else if (this.state.status === 'ch_passwd')
-                return <Change_passwd />
-
-        return <Social />
-    }
-
-    coloring = () => {
-
-        let list=['personal', 'ch_passwd', 'social']
-
-        document.getElementById(this.state.status).style['background'] = '#0d6efd';
-        document.getElementById(this.state.status).style['color'] = 'white';
-    
-        for (let i = 0; i < 3; i ++) {
-            if (list[i] !== this.state.status){
-                document.getElementById(list[i]).style['background'] = 'white';
-                document.getElementById(list[i]).style['color'] = 'black';
-                document.getElementById(list[i]).style['border-color'] = 'lightgray';
-            }
-        }
-
-    }
-
-    navigate = (status) => {
-        this.setState({status:status}, () => {
-            // console.log(this.state.status);
-            this.coloring()
-            this.Switch_component()
-            }
-        ); 
-    }
-
     render() {
         return (
-            <div className="container-lg mt-5 mx-5">
-                <div className="row mx-auto">
-                    <div className='col-3 col-lg-3 col-xl-3'>
-                        <div className="row choose_field">
-                            <div className="card flex-col p-0 border-0 shadow rounded-3">
-                                <h4 id ='card-title' className="card-title ms-3 mt-2 fw-bold text-dark">Settings</h4>
-                                <h6 id ='card-subtitle' className="card-subtitle ms-3 mb-3">Customize your information</h6>
-                                <ListGroup className='list'>
-                                    <ListGroup.Item action id='personal' active onClick={()=>{this.navigate('personal')}}>Personal</ListGroup.Item>
-                                    <ListGroup.Item action id='ch_passwd' onClick={ ()=>{this.navigate('ch_passwd')}}>Change password</ListGroup.Item>
-                                    <ListGroup.Item action id='social' onClick={()=>{this.navigate('social')}}  >Social</ListGroup.Item>
-                                </ListGroup>
+            <div className='d-flex justify-content-center'>
+                <div className="container-lg mt-5 ">
+                    <div className="card flex-col p-0 border-0 shadow rounded-3">
+                        <h1 id ='card-title' className="card-title ms-3 mt-2 fw-bold text-dark">Settings</h1>
+                        <h6 id ='card-subtitle' className="card-subtitle ms-3 mb-3">Customize your information</h6>
+
+                        <div className='row'>
+                            {/* Picture */}
+                            <div className="picture_profile mb-3 ms-3 mt-3 pt-4 col-11 col-sm-4 col-lg-3">
+                                <Picture_profile />
+                            </div>
+
+                            <div className='col mb-3 me-3'>
+                                {/* Navigate */}
+                                <ul className="nav nav-tabs" id='myTab' role="tablist">
+                                    <li className="nav-item" role="presentation">
+                                        <button class="nav-link active" id="personal-tab" data-bs-toggle="tab" data-bs-target="#personal" type="button" role="tab" aria-controls="personal" aria-selected="true">Personal</button>
+                                    </li>
+                                    <li className="nav-item" role="presentation">
+                                        <button class="nav-link" id="ch_passwd-tab" data-bs-toggle="tab" data-bs-target="#ch_passwd" type="button" role="tab" aria-controls="ch_passwd" aria-selected="false">Security</button>
+                                    </li>
+                                    <li className="nav-item" role="presentation">
+                                    <button class="nav-link" id="social-tab" data-bs-toggle="tab" data-bs-target="#social" type="button" role="tab" aria-controls="social" aria-selected="false">Social</button>
+                                    </li>
+                                </ul>   
+
+                                {/* Navigate control */}
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="personal" role="tabpanel" aria-labelledby="personal-tab">
+                                        <Personal />
+                                    </div>
+                                    <div class="tab-pane fade" id="ch_passwd" role="tabpanel" aria-labelledby="ch_passwd-tab">
+                                        <Change_passwd />
+                                    </div>
+                                    <div class="tab-pane fade" id="social" role="tabpanel" aria-labelledby="social-tab">
+                                        <Social />
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                        <div className="row picture_profile mt-2">
-                            <Picture_profile />
-                        </div>
                     </div>
-                    
-                    <div className="col-9 col-lg-9 col-xl-9 input-info">
-                            {this.Switch_component()}
-                    </div>
-                    
                 </div>
             </div>
         );

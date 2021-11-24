@@ -28,9 +28,9 @@ class Personal extends Component {
     return (
       <div>
         <div className="card flex-col p-4 border-0 shadow rounded-3 card-input">
-          <h1 id="card-title" className="card-title fw-bold text-dark">
+          <h2 id="card-title" className="card-title fw-bold text-dark">
             Personal
-          </h1>
+          </h2>
           <h6 id="card-subtitle" className="card-subtitle mb-2">
             Show me your character
           </h6>
@@ -43,101 +43,103 @@ class Personal extends Component {
             <hr className="col" />
           </div>
   
-          <div className="row mb-2">
-            <div className="col-6">
-              <div className="subtitle text-begin"> First name</div>
-              <input
-                type="text"
-                name="fname"
-                className="form-control"
-              />
+          <div className='ps-3'>
+            <div className="row mb-2">
+              <div className="col-6">
+                <div className="subtitle text-begin"> First name</div>
+                <input
+                  type="text"
+                  name="fname"
+                  className="form-control"
+                />
+              </div>
+              <div className="col-6">
+                <div className="subtitle text-begin"> Last name</div>
+                <input
+                  type="text"
+                  name="lname"
+                  className="form-control"
+                />
+              </div>
             </div>
-            <div className="col-6">
-              <div className="subtitle text-begin"> Last name</div>
-              <input
-                type="text"
-                name="lname"
-                className="form-control"
-              />
+    
+            <div className="row mb-2">
+              <div className="subtitle col-2 d-flex align-items-center justify-content-end">
+                {" "}
+                UserName
+              </div>
+              <div className="col">
+                <input
+                  type="text"
+                  name="username"
+                  className="form-control"
+                />
+              </div>
             </div>
-          </div>
-  
-          <div className="row mb-2">
-            <div className="subtitle col-2 d-flex align-items-center justify-content-end">
-              {" "}
-              UserName
+    
+            <div className="row mb-2">
+              <div className="subtitle col-2 d-flex align-items-center justify-content-end">
+                {" "}
+                Email
+              </div>
+              <div className="col">
+                <input
+                  type="text"
+                  name="email"
+                  className="form-control"
+                />
+              </div>
             </div>
-            <div className="col">
-              <input
-                type="text"
-                name="username"
-                className="form-control"
-              />
-            </div>
-          </div>
-  
-          <div className="row mb-2">
-            <div className="subtitle col-2 d-flex align-items-center justify-content-end">
-              {" "}
-              Email
-            </div>
-            <div className="col">
-              <input
-                type="text"
-                name="email"
-                className="form-control"
-              />
-            </div>
-          </div>
 
-          <div className="row mb-2">
-            <div className="subtitle col-2 d-flex align-items-center justify-content-end">
-              {" "}
-              Phone
+            <div className="row mb-2">
+              <div className="subtitle col-2 d-flex align-items-center justify-content-end">
+                {" "}
+                Phone
+              </div>
+              <div className="col">
+                <input
+                  type="tel"
+                  name="phone"
+                  className="form-control"
+                />
+              </div>
             </div>
-            <div className="col">
-              <input
-                type="tel"
-                name="phone"
-                className="form-control"
-              />
+    
+            <div className="row mb-2">
+              <div className="subtitle col-2 d-flex align-items-center justify-content-end">
+                Gender
+              </div>
+              <div className="col form-floating">
+                <select
+                  className="form-select"
+                  aria-label="Floating label select example"
+                >
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="none">None</option>
+                </select>
+                <label>Your gender</label>
+              </div>
             </div>
-          </div>
-  
-          <div className="row mb-2">
-            <div className="subtitle col-2 d-flex align-items-center justify-content-end">
-              Gender
+    
+            <div className="row mb-2">
+              <div className="subtitle col-2 d-flex align-items-center justify-content-end">
+                Birthday
+              </div>
+              <div className="col">
+                <input
+                  type="date"
+                  name="birthday"
+                  className="form-control"
+                />
+              </div>
             </div>
-            <div className="col form-floating">
-              <select
-                className="form-select"
-                aria-label="Floating label select example"
-              >
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="none">None</option>
-              </select>
-              <label>Your gender</label>
-            </div>
-          </div>
-  
-          <div className="row mb-2">
-            <div className="subtitle col-2 d-flex align-items-center justify-content-end">
-              Birthday
-            </div>
-            <div className="col">
-              <input
-                type="date"
-                name="birthday"
-                className="form-control"
-              />
-            </div>
-          </div>
-  
-          <div className="row mb-2">
-            <div className="subtitle col-2 d-flex justify-content-end"> Bio</div>
-            <div className="col">
-              <textarea type="text" name="bio" />
+    
+            <div className="row mb-2">
+              <div className="subtitle col-2 d-flex justify-content-end"> Bio</div>
+              <div className="col">
+                <textarea type="text" name="bio" />
+              </div>
             </div>
           </div>
   

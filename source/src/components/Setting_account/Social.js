@@ -25,7 +25,7 @@ class Social extends Component {
         return (
             <div>
                 <div className="card flex-col p-4 border-0 shadow rounded-3 card-input">
-                    <h1 id ='card-title' className="card-title fw-bold text-dark">Social</h1>
+                    <h2 id ='card-title' className="card-title fw-bold text-dark">Social</h2>
                     <h6 id ='card-subtitle' className="card-subtitle mb-3">Let us know more about you</h6>
                     
                     <div className='row d-flex mb-1 '>

@@ -5,20 +5,28 @@ textarea {
     border-radius: 5px;
 }
 
+h1{
+    font-size: 40px ;
+}
+
+h2{
+    font-size: 30px;
+}
+
+
 .form-control {
     padding-top: 8px !important;
     font-size: 13px !important;
 }
 
 .avt-setting{
-    width:15vw !important;
-    height: 15vw !important; 
+    width:14vw !important;
+    height: 14vw !important; 
     border-radius: 50%;
     /* border-width: 0px !important; */
 }
 
 .list {
-    /* border:1px solid red; */
     width:100%;
     font-size: 13px;
     margin: 0px !important;
@@ -27,8 +35,6 @@ textarea {
 
 .container-lg {
     width: 90vw !important;
-    
-    /* padding:0px 5vw; */
 }
 
 .social-icon {
@@ -38,7 +44,7 @@ textarea {
 }
 
 .card-subtitle {
-    font-size: 10px;
+    font-size: 15px;
     color: gray;
 }
 
