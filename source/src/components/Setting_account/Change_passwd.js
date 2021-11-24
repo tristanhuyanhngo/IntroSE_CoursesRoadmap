@@ -37,7 +37,7 @@ function Change_passwd() {
     return (
         <div>
             <div className="card flex-col p-4 border-0 shadow rounded-3 card-input">
-                <h1 id ='card-title' className="card-title fw-bold text-dark">Change password</h1>
+                <h2 id ='card-title' className="card-title fw-bold text-dark">Change password</h2>
                 <h6 id ='card-subtitle' className="card-subtitle mb-3">Want more secure?</h6>
                 
                 <div className='row d-flex mb-3 '>

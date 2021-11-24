@@ -23,6 +23,10 @@ class Forgot_btn extends Component {
             this.setState({btn_status:'forgot'})
     }
     
+    close =() =>{
+        this.setState({btn_status:'forgot'})
+    }
+
     render_button = () =>{
         // console.log(this.state.btn_status)
         if (this.state.btn_status == 'forgot')
@@ -70,7 +74,7 @@ class Forgot_btn extends Component {
                     <div className="modal-content m-3">
                     <div className="modal-header">
                         <h5 className="modal-title" id="staticBackdropLabel">Reset your password</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={this.close}></button>
                     </div>
                     <div className="modal-body text-center">
                         { this.render_body() }

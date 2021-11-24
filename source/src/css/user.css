@@ -70,8 +70,8 @@ label {
 }
 
 .avatar{
-    width: 3.5vw ;
-    height:3.5vw ;
+    width: 3.5vw !important;
+    height:3.5vw !important;
 }
 
 .status-active {
