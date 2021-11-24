@@ -1,4 +1,4 @@
-import '../../css/admin_page.css'
+import '../../css/user.css'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import React, { Component }  from 'react';
 import default_avatar from '../../picture/avatar.png';
@@ -103,15 +103,13 @@ class User_manage extends Component {
 
         this.state = {
             filter:'',
-            users: this.users
+            users: this.users,
         }
     }
 
     handleChange = event => {
         this.setState({ filter: event.target.value });
-      };
-
-
+    };
 
     render() {
         const lowercasedFilter = this.state.filter.toLowerCase();
@@ -120,8 +118,6 @@ class User_manage extends Component {
                 item[key].toLowerCase().includes(lowercasedFilter)
             );
         });
-
-       
 
         return (
             <div className="container-md card mt-5">
