@@ -1,0 +1,55 @@
+@media only screen and (max-width: 580px){
+    .avatar{
+        width:25vw !important; 
+        height:25vw !important;
+    }
+}
+
+@media only screen and (min-width: 580px) and (max-width: 700px) {
+.avatar{
+    width:20vw !important; 
+    height:20vw !important;
+}
+}
+
+@media only screen and (min-width: 700px) and (max-width: 920px) {
+    .avatar{
+        width:16vw !important; 
+        height:16vw !important;
+    }
+  }
+
+@media only screen and (min-width: 920px)  and (max-width: 1050px) {
+    .avatar{
+        width:12vw !important; 
+        height:12vw !important;
+    }
+  }
+
+@media only screen and (min-width: 1050px) and (max-width: 1300px) {
+    .avatar{
+        width:10vw !important; 
+        height:10vw !important;
+    }
+}
+@media only screen and (min-width: 1300px) {
+    .avatar{
+        width:6vw !important; 
+        height:6vw !important;
+    }
+}
+
+.story{
+    text-align: justify;
+    font-size: 15px;
+}
+
+.share-story{
+    height:120px;
+    /* width: 100%; */
+}
+
+.time {
+    color: gray;
+    font-size: 13px;
+}

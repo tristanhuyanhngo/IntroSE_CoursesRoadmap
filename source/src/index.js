@@ -9,18 +9,23 @@ import Create_info from './components/Create _info/Create_info';
 import reportWebVitals from './reportWebVitals';
 import User_manage from './components/Admin_page/User_manage'
 import Course_manage from './components/Admin_page/Course_manage'
-import Course from './components/Course/Course'
+import Course_admin from './components/Course/Course_admin'
+import Admin_page from './components/Admin_page/Admin_page';
 import Profile from './components/Profile/Profile';
 import Navbar from './components/Homepage/Navbar';
-
-
+import Story_page from './components/Story/Story_page'
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Setting_account />, */}
+    <Setting_account />,
     {/* <User_manage/>, */}
     {/* <Course_manage />, */}
+<<<<<<< HEAD
 
+=======
+    {/* {<Admin_page /> */}
+    {/* <Story_page /> */}
+>>>>>>> ff1cd4f4415452f5b7379fca733b62e0b8bc4390
     {/* <Create_info />, */}
     {/* <Login_page />, */}
     {/* <Profile />, */}
