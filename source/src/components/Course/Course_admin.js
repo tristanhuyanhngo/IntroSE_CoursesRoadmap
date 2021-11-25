@@ -1,9 +1,9 @@
-import '../../css/course.css'
+import './course_admin.css'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import React, { Component }  from 'react';
 
 
-class Course extends Component {
+class Course_admin extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -52,16 +52,16 @@ class Course extends Component {
     render_edit_container = () =>{
         if (this.state.open == true)
             return (
-                <div className="mt-2" id={this.state.id} >
-                    <div className="card flex-col p-3 border-0 shadow rounded-3">
+                <div className="mt-2 edit-site col-md-8" id={this.state.id} >
+                    <div className="card flex-col px-2 shadow rounded-3">
                         <h1 id="card-title" className="card-title fw-bold text-dark">
                             Edit course
                         </h1>
-
+                    
                         <div className="row mb-2">
                             <div className="subtitle col-2 d-flex align-items-center justify-content-end">
                                 {" "}
-                                Course name
+                                Name
                             </div>
                             <div className="col">
                                 <input
@@ -109,10 +109,10 @@ class Course extends Component {
                             </div>
                         </div>
                 
-                        <div className="row mb-2">
+                        <div className="row mb-2 ms-3">
                             <div className="subtitle col-2 d-flex justify-content-end">Description</div>
                             <div className="col">
-                                <textarea id = {this.state.id + 'descript'} type="text" className='p-2' name="descript" placeholder= {this.state.descript}/>
+                                <textarea id = {this.state.id + 'descript'} type="text" className='p-2 descript-area' name="descript" placeholder= {this.state.descript}/>
                             </div>
                         </div>
                 
@@ -132,7 +132,7 @@ class Course extends Component {
                             </div>
                         </div>
 
-                        <div className="d-flex mt-2 justify-content-end">
+                        <div className="d-flex mt-2 mb-4 justify-content-end">
                             <button type='submit' className="btn btn-primary btn-md " onClick={()=>this.save()}>
                                 SAVE
                             </button>
@@ -144,33 +144,36 @@ class Course extends Component {
 
     render() {
         return (
-            <div className="card pb-5 course-card-container row">
-                <div className = 'course-card border mx-5'>
-                    <div className='card-header'>
-                        <div className='row'>
-                            <div className='col'>
-                                <h4 className="card-title fw-bold text-dark">
-                                    { this.state.name }
-                                </h4>
-                                <h6 className="card-subtitle">
-                                    {this.state.level} ({this.state.num_lesson} lessons)
-                                </h6>
+            <div className="card pb-0 border-0 d-flex align-items-center">
+                <div className='row full mb-4'>
+                    <div className = 'col-md card mt-2 course-card border-0 shadow'>
+                        <div className='card-header'>
+                            <div className='row'>
+                                <div className='col mb-2'>
+                                    <h4 className="card-title fw-bold text-dark">
+                                        { this.state.name }
+                                    </h4>
+                                    <h6 className="card-subtitle">
+                                        {this.state.level} ({this.state.num_lesson} lessons)
+                                    </h6>
+                                </div>
+                                <button className="col mx-3 btn btn-secondary btn-md btn-edit"
+                                onClick={()=>this.btn_edit()}>
+                                    Edit
+                                </button>
                             </div>
-                            <button className="col me-3 btn btn-secondary btn-md btn-input btn-edit"
-                            onClick={()=>this.btn_edit()}>
-                                Edit
-                            </button>
+                        </div>
+
+                        <div className='card-body descript overflow-auto mb-3'>
+                            {this.state.descript}
                         </div>
                     </div>
 
-                    <div className='card-body descript overflow-auto mb-3'>
-                        {this.state.descript}
-                    </div>
+                    {this.render_edit_container()}
                 </div>
 
-                {this.render_edit_container()}
             </div>
         );
     }
 }
-export default Course;
+export default Course_admin;

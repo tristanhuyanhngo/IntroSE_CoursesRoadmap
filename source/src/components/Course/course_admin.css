@@ -1,0 +1,32 @@
+.course-card {
+    padding:0px;
+}
+
+.edit-site{
+    margin-right: -13px !important;
+}
+
+.card-subtitle{
+    font-size: 12px;
+}
+
+.descript {
+    font-size: 13px;
+    height:100px;
+    text-align: justify;
+    text-indent: 2rem;
+}
+
+.descript-area{
+    font-size: 13px;
+}
+
+.btn-edit{
+    font-weight: bold;
+    height: 45px;
+    margin:auto;
+}
+
+.full{
+    width:100%;
+}

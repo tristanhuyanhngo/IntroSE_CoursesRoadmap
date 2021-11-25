@@ -1,4 +1,4 @@
-import '../../css/user.css'
+import './user.css'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../../../node_modules/bootstrap/dist/js/bootstrap'
 import React, { Component }  from 'react';
