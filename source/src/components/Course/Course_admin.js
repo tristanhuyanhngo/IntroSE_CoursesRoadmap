@@ -13,6 +13,7 @@ class Course_admin extends Component {
             level: props.level,
             num_lesson: props.num_lesson,
             descript: props.descript,
+            source: props.source,
             open: false
         }
     }
