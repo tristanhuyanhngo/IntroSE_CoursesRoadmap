@@ -52,7 +52,7 @@ export function resetPass(newPass) {
 
 export function forgotPass(email)
 {
-  sendPasswordResetEmail(auth, email)
+  return sendPasswordResetEmail(auth, email)
   .catch((error) => {
   })
 }
