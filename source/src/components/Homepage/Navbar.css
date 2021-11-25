@@ -1,16 +1,25 @@
 .dropsidebar {
   background-color: #060b26;
   height: 100%;
-  width: 85px;
   position: fixed;
-  /* z-index: 100; */
   align-items: center;
+  --width: 96px;
+  left: 0;
+  width: var(--width);
+  flex-direction: column;
+  padding: 0 8px;
 }
 
 .menu-bars {
-  margin-left: 1.5rem;
+  margin: 1.4rem;
   font-size: 2rem;
   background: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .nav-menu {

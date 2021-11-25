@@ -17,15 +17,11 @@ import Story_page from './components/Story/Story_page'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Setting_account />,
+    {/* <Setting_account />, */}
     {/* <User_manage/>, */}
     {/* <Course_manage />, */}
-<<<<<<< HEAD
-
-=======
-    {/* {<Admin_page /> */}
+    {/* <Admin_page /> */}
     {/* <Story_page /> */}
->>>>>>> ff1cd4f4415452f5b7379fca733b62e0b8bc4390
     {/* <Create_info />, */}
     {/* <Login_page />, */}
     {/* <Profile />, */}

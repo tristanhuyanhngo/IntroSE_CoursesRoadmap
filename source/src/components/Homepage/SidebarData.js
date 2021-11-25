@@ -32,7 +32,7 @@ export const SidebarData = [
   },
   {
     title: 'Admin page',
-    path: '/adminpage',
+    path: '/admin',
     icon: <AiIcons.AiFillLock />,
     cName: 'nav-text'
   },
