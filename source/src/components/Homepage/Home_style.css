@@ -1,3 +1,5 @@
-h1 {
+.title {
   text-align: center;
+  font-size: 45px;
+  margin-bottom: 20px;
 }
