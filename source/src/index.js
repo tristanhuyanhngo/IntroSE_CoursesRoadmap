@@ -19,11 +19,11 @@ ReactDOM.render(
   <React.StrictMode>
     {/* <Setting_account />, */}
     {/* <User_manage/>, */}
-    <Course_manage />,
+    {/* <Course_manage />, */}
 
     {/* <Create_info />, */}
     {/* <Login_page />, */}
-    {/* <Profile />, */}
+    <Profile />,
     {/* <Router>
       <App />
     </Router> */}
