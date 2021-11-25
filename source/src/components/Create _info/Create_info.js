@@ -46,7 +46,8 @@ class Create_info extends Component {
     const Gender = document.getElementById("floatingSelect").value 
     const Birthday = document.getElementById("floatingInputBirthday").value 
     const Social = document.getElementById("floatingInputSocial").value 
-    InsertData(id,Fname,Lname,Uname,Phone,Gender,Birthday,Social)
+    const Email = document.getElementById("floatingInputEmail").value 
+    InsertData(id,Fname,Lname,Uname,Phone,Gender,Birthday,Social,Email)
   }
   render()
   {

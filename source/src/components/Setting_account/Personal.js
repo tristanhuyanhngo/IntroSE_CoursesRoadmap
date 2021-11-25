@@ -1,30 +1,10 @@
 import "../../css/setting_account.css";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import React, { Component, useRef } from "react";
+import React, { Component } from "react";
 import { SelectData } from "../../Handler/Database/Data_setup";
-import { auth } from "../../Handler/filebase_config";
 class Personal extends Component {
-
-  state = {
-        firstname: 'Nguyen Van',
-        lastname: 'An',
-        Uname: 'NVA',
-        email:'NVA@gmail.com',
-        phone: '0832123456'
-  }
-
-  saveInfor = ()=>{
-    let id = null
-    if(auth.currentUser!==null)
-      id = auth.currentUser.uid
-      else
-      {
-        id = "lcKFYNnv6XdRcYzoIqYLv3CIQ1e2"
-      }
-    console.log(id)
-  }
   render(){
-    this.saveInfor()
+    SelectData()
     return (
       <div>
         <div className="card flex-col p-4 border-0 shadow rounded-3 card-input">
@@ -50,6 +30,7 @@ class Personal extends Component {
                 <input
                   type="text"
                   name="fname"
+                  id = "fname"
                   className="form-control"
                 />
               </div>
@@ -58,6 +39,7 @@ class Personal extends Component {
                 <input
                   type="text"
                   name="lname"
+                  id = "lname"
                   className="form-control"
                 />
               </div>
@@ -72,6 +54,7 @@ class Personal extends Component {
                 <input
                   type="text"
                   name="username"
+                  id = "username"
                   className="form-control"
                 />
               </div>
@@ -86,6 +69,7 @@ class Personal extends Component {
                 <input
                   type="text"
                   name="email"
+                  id = "email"
                   className="form-control"
                 />
               </div>
@@ -100,6 +84,7 @@ class Personal extends Component {
                 <input
                   type="tel"
                   name="phone"
+                  id = "phone"
                   className="form-control"
                 />
               </div>
@@ -113,6 +98,7 @@ class Personal extends Component {
                 <select
                   className="form-select"
                   aria-label="Floating label select example"
+                  id = "select"
                 >
                   <option value="male">Male</option>
                   <option value="female">Female</option>
@@ -130,6 +116,7 @@ class Personal extends Component {
                 <input
                   type="date"
                   name="birthday"
+                  id = "birthday"
                   className="form-control"
                 />
               </div>
@@ -138,7 +125,7 @@ class Personal extends Component {
             <div className="row mb-2">
               <div className="subtitle col-2 d-flex justify-content-end"> Bio</div>
               <div className="col">
-                <textarea type="text" name="bio" />
+                <textarea type="text" name="bio" id = "bioS" />
               </div>
             </div>
           </div>

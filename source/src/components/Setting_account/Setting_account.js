@@ -33,25 +33,25 @@ class Setting_account extends Component {
                                 {/* Navigate */}
                                 <ul className="nav nav-tabs" id='myTab' role="tablist">
                                     <li className="nav-item" role="presentation">
-                                        <button class="nav-link active" id="personal-tab" data-bs-toggle="tab" data-bs-target="#personal" type="button" role="tab" aria-controls="personal" aria-selected="true">Personal</button>
+                                        <button className="nav-link active" id="personal-tab" data-bs-toggle="tab" data-bs-target="#personal" type="button" role="tab" aria-controls="personal" aria-selected="true">Personal</button>
                                     </li>
                                     <li className="nav-item" role="presentation">
-                                        <button class="nav-link" id="ch_passwd-tab" data-bs-toggle="tab" data-bs-target="#ch_passwd" type="button" role="tab" aria-controls="ch_passwd" aria-selected="false">Security</button>
+                                        <button className="nav-link" id="ch_passwd-tab" data-bs-toggle="tab" data-bs-target="#ch_passwd" type="button" role="tab" aria-controls="ch_passwd" aria-selected="false">Security</button>
                                     </li>
                                     <li className="nav-item" role="presentation">
-                                    <button class="nav-link" id="social-tab" data-bs-toggle="tab" data-bs-target="#social" type="button" role="tab" aria-controls="social" aria-selected="false">Social</button>
+                                    <button className="nav-link" id="social-tab" data-bs-toggle="tab" data-bs-target="#social" type="button" role="tab" aria-controls="social" aria-selected="false">Social</button>
                                     </li>
                                 </ul>   
 
                                 {/* Navigate control */}
-                                <div class="tab-content" id="myTabContent">
-                                    <div class="tab-pane fade show active" id="personal" role="tabpanel" aria-labelledby="personal-tab">
+                                <div className="tab-content" id="myTabContent">
+                                    <div className="tab-pane fade show active" id="personal" role="tabpanel" aria-labelledby="personal-tab">
                                         <Personal />
                                     </div>
-                                    <div class="tab-pane fade" id="ch_passwd" role="tabpanel" aria-labelledby="ch_passwd-tab">
+                                    <div className="tab-pane fade" id="ch_passwd" role="tabpanel" aria-labelledby="ch_passwd-tab">
                                         <Change_passwd />
                                     </div>
-                                    <div class="tab-pane fade" id="social" role="tabpanel" aria-labelledby="social-tab">
+                                    <div className="tab-pane fade" id="social" role="tabpanel" aria-labelledby="social-tab">
                                         <Social />
                                     </div>
                                 </div>

@@ -14,15 +14,14 @@ import Admin_page from './components/Admin_page/Admin_page';
 import Profile from './components/Profile/Profile';
 import Navbar from './components/Homepage/Navbar';
 import Story_page from './components/Story/Story_page'
-import Story from './components/Story/Story'
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Setting_account />, */}
+    <Setting_account />,
     {/* <User_manage/>, */}
     {/* <Course_manage />, */}
-    {/* <Admin_page />, */}
-    <Story_page />,
+    {/* {<Admin_page /> */}
+    {/* <Story_page /> */}
     {/* <Create_info />, */}
     {/* <Login_page />, */}
     {/* <Profile />, */}
