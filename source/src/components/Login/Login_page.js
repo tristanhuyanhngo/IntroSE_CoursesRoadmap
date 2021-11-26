@@ -1,7 +1,6 @@
 import '../../css/login_style.css'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../../../node_modules/bootstrap/dist/js/bootstrap.bundle';
-import { BiUser } from 'react-icons/bi';
 import React, { Component }  from 'react';
 import anime from 'animejs/lib/anime.min'
 import Card_img from './Card_img.js';

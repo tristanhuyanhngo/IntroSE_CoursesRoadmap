@@ -1,13 +1,18 @@
 import React from 'react';
 import Navbar from './Navbar';
+import './Home_style.css'
+import Course from './Course';
+
 
 
 
 function Home() {
+
     return (
         <div>
             <Navbar />
-            <h1>Home page</h1>
+            <div className='title'>Course Roadmap</div>
+            <Course />
         </div>
     )
 }

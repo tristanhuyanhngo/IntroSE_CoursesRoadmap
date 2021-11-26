@@ -13,8 +13,7 @@ import Course_admin from './components/Course/Course_admin'
 import Admin_page from './components/Admin_page/Admin_page';
 import Profile from './components/Profile/Profile';
 import Navbar from './components/Homepage/Navbar';
-
-
+import Story_page from './components/Story/Story_page'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -22,6 +21,7 @@ ReactDOM.render(
     {/* <User_manage/>, */}
     {/* <Course_manage />, */}
     {/* <Admin_page /> */}
+    {/* <Story_page /> */}
     {/* <Create_info />, */}
     {/* <Login_page />, */}
     <Profile />,

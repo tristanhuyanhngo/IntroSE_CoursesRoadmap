@@ -9,39 +9,41 @@ import Avatar from './Avatar'
 
 function Profile(params) {
     return (
-        <div id="profile-wrapper">
-            <div className="container-lg">
-                <div className="row d-flex justify-content-center">
-                    <div className="col-sm-1 col-lg-3"><UserProfileLabel /></div>
-                </div>
-                <div className="ms-5">
-                    <div className="row ms-5">
-                        <div className="ms-5 col"><InfoLabel /></div>
-                        <div className="col">
-                            <div className="d-flex justify-content-start">
-                                <CourseStateLabel currState={'Current'}/>
-                                
+        <div id="d-flex justify-content-center">
+            <div className="container-lg mt-5">
+                <div className="card flex-col p-0 border-0 shadow rounded-3">
+                    <div className="row d-flex justify-content-center">
+                        <div className="col-sm-1 col-lg-3 card-title ms-3 mt-2 fw-bold text-dark"><UserProfileLabel /></div>
+                    </div>
+                    <div className="ms-5">
+                        <div className="row ms-5">
+                            <div className="ms-5 col card-subtitle ms-3 mb-3"><InfoLabel /></div>
+                            <div className="col">
+                                <div className="d-flex justify-content-start card-subtitle ms-3 mb-3">
+                                    <CourseStateLabel currState={'Current'}/>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div className="row my-4 ms-5">
+                            <span className="ms-5">
+                                <div className="ms-4"><EditButton /></div>
+                            </span>
+                        </div>
+                        <div className="row my-4 ms-5">
+                            <div className="ms-5">
+                                <SocialMediaButtons />
                             </div>
                         </div>
                     </div>
-                    <div className="row my-4 ms-5">
-                        <span className="ms-5">
-                            <div className="ms-4"><EditButton /></div>
-                        </span>
-                    </div>
-                    <div className="row my-4 ms-5">
-                        <div className="ms-5">
-                            <SocialMediaButtons />
-                        </div>
-                    </div>
+
+
+
+
+
+                    {/* <CourseStateLabel currState={'Completed'}/> */}
+                    {/* <CompletedProgressBar completePercent={"100%"}/> */}
                 </div>
-                
-                
-                
-                
-                
-                {/* <CourseStateLabel currState={'Completed'}/> */}
-                {/* <CompletedProgressBar completePercent={"100%"}/> */}
             </div>
         </div>
     );

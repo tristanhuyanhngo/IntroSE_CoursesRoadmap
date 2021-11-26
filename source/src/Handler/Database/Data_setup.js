@@ -1,8 +1,10 @@
 import { getDatabase, ref, get, set, child, onValue } from "firebase/database";
 import { useEffect, useState } from "react";
-import { app } from "../filebase_config";
+import { app,auth } from "../filebase_config";
+
+//-----------------------------------------------------------------------------------------//
 const db = getDatabase(app);
-export var data;
+//-----------------------------------------------------------------------------------------//
 export function InsertData(
   id,
   Fname,
@@ -11,46 +13,129 @@ export function InsertData(
   Phone,
   Gender,
   Birthday,
-  Social
+  Social,
+  Email
 ) {
+  let ngayGio = new Date(Birthday);
   set(ref(db, "User/" + id), {
     FirstName: Fname,
     LastName: Lname,
     UserName: Uname,
     PhoneNumber: Phone,
+    email: Email,
     Gen: Gender,
-    Birth_day: Birthday,
+    Birth_day: ngayGio.getTime(),
     Social_data: Social,
     Role: "user",
   }).catch(() => {});
 }
 
 //-----------------------------------------------------------------------------------------//
-export function SelectData(userId) {
-  const[name,setName] = useState()
-  useEffect(() => {
-    onValue(
-      ref(db, "User/" + userId),
-      (snapshot) => {
+function checktime(time) {
+  const date = new Date(time);
+  const dd = date.getDate();
+  const mm = date.getMonth() + 1;
+  const yyyy = date.getFullYear();
 
-        setName(snapshot.val() && snapshot.val().FirstName)
-      },
-      []
-    );
-    return name
-  });
+  if (mm < 10 && dd < 10 && yyyy < 10) return "000" + yyyy + "-0" + mm + "-0" + dd;
+  if (mm < 10 && yyyy < 10) return "00" + yyyy + "-0" + mm + "-" + dd;
+  if (dd < 10 && yyyy < 10) return "000" + yyyy + "-" + mm + "-0" + dd;
+  if (mm < 10 && dd < 10 && yyyy < 100) return "00" + yyyy + "-0" + mm + "-0" + dd;
+  if (dd < 10 && yyyy < 100) return "00" + yyyy + "-" + mm + "-0" + dd;
+  if (mm < 10 && yyyy < 100) return "00" + yyyy + "-0" + mm + "-" + dd;
+  if (mm < 10 && dd < 10 && yyyy < 1000) return "0" + yyyy + "-0" + mm + "-0" + dd;
+  if (mm < 10 && dd < 10) return yyyy + "-0" + mm + "-0" + dd;
+  if (mm < 10) return yyyy + "-0" + mm + "-" + dd;
+  if (dd < 10) return yyyy + "-" + mm + "-0" + dd;
+  else return yyyy + "-" + mm + "-" + dd;
+}
+
+export function SelectData(userId) {
+  const dbref = ref(db);
+  return get(child(dbref, "User/" + "AmxMkLMs06T5FBrgeAElKRi9KOq1"))
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        const fname = document.getElementById("fname");
+        const lname = document.getElementById("lname");
+        const username = document.getElementById("username");
+        const Email = document.getElementById("emailInput");
+        const phone = document.getElementById("phone");
+        const gen = document.getElementById("select");
+        const birthday = document.getElementById("birthday");
+        const bio = document.getElementById("bioS");
+
+        fname.value = snapshot.val().FirstName;
+        lname.value = snapshot.val().LastName;
+        username.value = snapshot.val().UserName;
+        Email.value = snapshot.val().email;
+        phone.value = snapshot.val().PhoneNumber;
+        birthday.value = checktime(snapshot.val().Birth_day);
+        gen.value = snapshot.val().Gen;
+        bio.value = snapshot.val().Social_data;
+      }
+    })
+    .catch((error) => {});
 }
 
 // //-----------------------------------------------------------------------------------------//
-// function UpdateData() {
-//   set(ref(db, "TheStudents/" + MSSVbox.value), {
-//     NameOfStd: namebox.value,
-//     Class: Classbox.value,
-//     Gender: genbox.value,
-//   }).catch(() => {});
-// }
+export function UpdateData(userId) {
+  const fname = document.getElementById("fname").value;
+  const lname = document.getElementById("lname").value;
+  const username = document.getElementById("username").value;
+  const Email = document.getElementById("emailInput").value;
+  const phone = document.getElementById("phone").value;
+  const gen = document.getElementById("select").value;
+  const birthday = document.getElementById("birthday").value;
+  const bio = document.getElementById("bioS").value;
+  let ngayGio = new Date(birthday);
+  set(ref(db, "User/" + "AmxMkLMs06T5FBrgeAElKRi9KOq1"), {
+    FirstName: fname,
+    LastName: lname,
+    UserName: username,
+    PhoneNumber: phone,
+    email: Email,
+    Gen: gen,
+    Birth_day: ngayGio.getTime(),
+    Social_data: bio
+  }).catch(() => {});
+}
 
 // //-----------------------------------------------------------------------------------------//
 // function DeleteData() {
 //   remove(ref(db, "TheStudents/" + MSSVbox.value)).catch(() => {});
 // }
+
+export function InsertSocial(userId) {
+  const google = document.getElementById("googleID");
+  const github = document.getElementById("githubID");
+  const facebook = document.getElementById("facebookID");
+  const instagram = document.getElementById("instagramID");
+  set(ref(db, "Social/" + "AmxMkLMs06T5FBrgeAElKRi9KOq1"), {
+    Google: google.value,
+    Github: github.value,
+    Facebook: facebook.value,
+    Instagram: instagram.value,
+  }).catch(() => {});
+}
+
+export function SelectSocial(userId) {
+  const dbref = ref(db);
+  return get(child(dbref, "Social/" + "AmxMkLMs06T5FBrgeAElKRi9KOq1"))
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        const google = document.getElementById("googleID");
+        const github = document.getElementById("githubID");
+        const facebook = document.getElementById("facebookID");
+        const instagram = document.getElementById("instagramID");
+        if(snapshot.val().Google!= null)
+          google.value = snapshot.val().Google;
+        if(snapshot.val().Github!= null)
+          github.value = snapshot.val().Github;
+        if(snapshot.val().Facebook!= null)
+          facebook.value = snapshot.val().Facebook;
+        if(snapshot.val().Instagram!= null)
+          instagram.value = snapshot.val().Instagram;
+      }
+    })
+    .catch((error) => {});
+}
