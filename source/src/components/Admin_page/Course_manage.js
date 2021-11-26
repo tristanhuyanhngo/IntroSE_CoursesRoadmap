@@ -1,8 +1,8 @@
-import '../../css/course.css'
+import '../Course/course_admin.css'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import React, { Component }  from 'react';
 import { BiSearchAlt } from 'react-icons/bi';
-import Course from '../Course/Course'
+import Course_admin from '../Course/Course_admin'
 
 class Course_manage extends Component {
 
@@ -59,32 +59,35 @@ class Course_manage extends Component {
         });
 
         return (
-            <div className="container-lg card mt-5">
+            <div className="card border-0 m-3">
+                <div className='table-title p-4'>
+                    <h2 className='card-title fw-b mb-2'>Course Management </h2>
 
-                <div className="input-group d-flex align-items-center">
-                    <div className="form-floating">
-                        <input type='search' value={this.filter} onChange={this.handleChange} className="form-control" id="floatingInput" placeholder=" " />
-                        <label htmlFor="floatingInput">Search</label>
+                    <div className="input-group d-flex align-items-center">
+                        <div className="form-floating">
+                            <input type='search' value={this.filter} onChange={this.handleChange} className="form-control" id="floatingInput" placeholder=" " />
+                            <label htmlFor="floatingInput">Search</label>
+                        </div>
+                        <div className="input-group-text btn-search py-0">
+                            <BiSearchAlt className='icon icon-search'/>
+                        </div>
                     </div>
-
-                    <div className="input-group-text btn-search py-0">
-                        <BiSearchAlt className='icon icon-search'/>
-                    </div>
-                </div>
-
-                {filteredData.map((course, index) => (
-                    <Course 
-                        key = {course.id}
-                        index = {index}
-                        id = {course.id}
-                        name={course.name}
-                        level= {course.level}
-                        num_lesson = {course.num_lesson}
-                        descript = {course.descript}
-                    />
                         
-                ))}
-    
+                </div >
+                <div className='d-flex flex-column justify-content-center'>
+                    {filteredData.map((course, index) => (
+                        <Course_admin 
+                            key = {course.id}
+                            index = {index}
+                            id = {course.id}
+                            name={course.name}
+                            level= {course.level}
+                            num_lesson = {course.num_lesson}
+                            descript = {course.descript}
+                        />
+                            
+                    ))}
+                </div>
             </div>
         );
     }

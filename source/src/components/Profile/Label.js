@@ -12,7 +12,7 @@ export function UserProfileLabel() {
 export function InfoLabel() {
     return (
         <div className="infor-wrapper">
-            <div><label className="info-label-class my-1">@QuanBlueeeee</label></div>
+            <div><label className="info-label-class">@QuanBlueeeee</label></div>
             <div><label className="name-label-class">Nguyễn Thanh Quân</label></div>
         </div>
     );

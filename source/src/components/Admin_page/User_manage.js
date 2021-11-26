@@ -1,4 +1,4 @@
-import '../../css/user.css'
+import './user.css'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import React, { Component }  from 'react';
 import default_avatar from '../../picture/avatar.png';
@@ -120,52 +120,50 @@ class User_manage extends Component {
         });
 
         return (
-            <div className="container-md card mt-5">
-                <div className="mt-3">
-                    <div className='table-title p-4'>
-                        <h1 className='card-title fw-b mb-5'>User Management </h1>
+            <div className="card border-0 m-3">
+                <div className='table-title p-4'>
+                    <h2 className='card-title fw-b mb-2'>User Management </h2>
 
-                        <div className="input-group d-flex align-items-center">
-                            <div className="form-floating">
-                                <input type='search' value={this.filter} onChange={this.handleChange} className="form-control" id="floatingInput" placeholder=" " />
-                                <label htmlFor="floatingInput">Search</label>
-                            </div>
-                            <div className="input-group-text btn-search py-0">
-                                <BiSearchAlt className='icon icon-search'/>
-                            </div>
+                    <div className="input-group d-flex align-items-center">
+                        <div className="form-floating">
+                            <input type='search' value={this.filter} onChange={this.handleChange} className="form-control" id="floatingInput" placeholder=" " />
+                            <label htmlFor="floatingInput">Search</label>
                         </div>
-                           
-                    </div >
-                    <div className='table-responsive'>
-                        <table className="table table-striped table-hover mb-5 mx-0">
-                            <thead>
-                                <tr >
-                                    <th>#</th>
-                                    <th>Name</th>						
-                                    <th>Date Created</th>
-                                    <th>Role</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                            
-                                {filteredData.map((user, index) => (
-                                        <User key={user.id} className='user'
-                                            index = {index +1}
-                                            id = {user.id}
-                                            avatar = {user.avatar}
-                                            name = {user.name}
-                                            create = {user.create}
-                                            role = {user.role}
-                                            status = {user.status}
-                                        />
-                                ))}
-                            
-                            </tbody>
-                        </table>
+                        <div className="input-group-text btn-search py-0">
+                            <BiSearchAlt className='icon icon-search'/>
+                        </div>
                     </div>
+                        
+                </div >
+                <div className='table-responsive'>
+                    <table className="table table-striped table-hover mb-5 mx-0">
+                        <thead>
+                            <tr >
+                                <th>#</th>
+                                <th>Name</th>						
+                                <th>Date Created</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                        
+                            {filteredData.map((user, index) => (
+                                    <User key={user.id} className='user'
+                                        index = {index +1}
+                                        id = {user.id}
+                                        avatar = {user.avatar}
+                                        name = {user.name}
+                                        create = {user.create}
+                                        role = {user.role}
+                                        status = {user.status}
+                                    />
+                            ))}
+                        
+                        </tbody>
+                    </table>
                 </div>
             </div>
         );
