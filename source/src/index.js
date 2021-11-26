@@ -17,7 +17,7 @@ import Story_page from './components/Story/Story_page'
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Setting_account />, */}
+    <Setting_account />,
     {/* <User_manage/>, */}
     {/* <Course_manage />, */}
     {/* <Admin_page /> */}
@@ -25,9 +25,9 @@ ReactDOM.render(
     {/* <Create_info />, */}
     {/* <Login_page />, */}
     {/* <Profile />, */}
-    <Router>
+    {/* <Router>
       <App />
-    </Router>
+    </Router> */}
   </React.StrictMode>,
 
   document.getElementById('root')
