@@ -15,6 +15,7 @@ import Profile from './components/Profile/Profile';
 import Navbar from './components/Homepage/Navbar';
 import Story_page from './components/Story/Story_page'
 
+
 ReactDOM.render(
   <React.StrictMode>
     {/* <Setting_account />, */}
@@ -25,6 +26,7 @@ ReactDOM.render(
     {/* <Create_info />, */}
     {/* <Login_page />, */}
     {/* <Profile />, */}
+    {/* <Course_admin />, */}
     <Router>
       <App />
     </Router>
