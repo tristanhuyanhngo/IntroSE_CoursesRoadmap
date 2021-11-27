@@ -39,7 +39,9 @@ export function SelectDataUser(userId) {
         return snapshot;
       }
     })
-    .catch((error) => {});
+    .catch((error) => {
+      console.error(error.message);
+    });
 }
 
 // //-----------------------------------------------------------------------------------------//
