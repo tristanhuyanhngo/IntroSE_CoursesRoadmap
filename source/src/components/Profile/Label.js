@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { SelectData } from "../../Handler/Database/Data_setup";
+import { SelectDataUser } from "../../Handler/Database/Data_setup";
 import './CSS/Label.css'
 
 export function UserProfileLabel() {
@@ -16,7 +16,7 @@ export function InfoLabel() {
     const [username, setUsername] = useState("");
 
     useEffect(() => {
-        SelectData().then(result => {
+        SelectDataUser().then(result => {
             const { FirstName, LastName, UserName } = result;
             setFirstName(FirstName);
             setLastName(LastName);
