@@ -10,12 +10,19 @@ import { useEffect, useState } from "react";
 // lấy địa chỉ thông tin của firebase mà nhóm sử dụng (auth)
 
 export function signup(email, password) {
-  var result = createUserWithEmailAndPassword(auth, email, password);
-  result.catch(function (error) {
+  return createUserWithEmailAndPassword(auth, email, password)
+  .catch(function (error) {
     console.log(error.code);
     console.log(error.message);
   });
-  sendEmailVerification(auth.currentUser);
+}
+
+export function sendEmail() {
+  sendEmailVerification(auth.currentUser)
+  .catch(function (error) {
+    console.log(error.code);
+    console.log(error.message);
+  });
 }
 
 export function signup_login_gg() {

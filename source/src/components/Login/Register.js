@@ -1,10 +1,11 @@
 import './login_style.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
-import {signup} from '../../Handler/Authentication/Authen.js'
+import {sendEmail, signup} from '../../Handler/Authentication/Authen.js'
 import {signup_login_gg} from '../../Handler/Authentication/Authen.js'
 import {useRef, useState} from 'react';
 import { BiUser, BiKey } from 'react-icons/bi';
+
 
 function Register() {
     const[Waiting, setWaiting] = useState(false);
@@ -18,20 +19,24 @@ function Register() {
       const email = floatingInputEmail.current.value;
       const password = floatingPassword.current.value;
       const confirmPassword = floatingPasswordConfirm.current.value;
+      let mess = ""
       setWaiting(true);
-
-      if (email != null && password != null && confirmPassword != null) {
-        if (password === confirmPassword) {
-          await signup(email,password,confirmPassword)
+      if(email.length>=11)
+      {
+        if (email != null && password != null && confirmPassword != null) {
+          if (password === confirmPassword) {
+            const user = await signup(email,password,confirmPassword)
+            console.log(user.user.uid)
+            sendEmail()
+          } 
+          else {
+            mess ="Password dont match with the confirm password"
+          }
         } 
         else {
-          window.alert("Password dont match with the confirm password");
+          mess ="Form is incomplete, pls fill out all fields"
         }
-      } 
-      else {
-        window.alert("Form is incomplete, pls fill out all fields");
       }
-
       setWaiting(false);
     }
 

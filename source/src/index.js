@@ -25,8 +25,8 @@ ReactDOM.render(
     {/* <Admin_page /> */}
     {/* <Story_page /> */}
     {/* <Create_info />, */}
-    {/* <Login_page />, */}
-    <Profile />
+    <Login_page />,
+    {/* <Profile /> */}
     {/* <Router>
       <App />
     </Router> */}
