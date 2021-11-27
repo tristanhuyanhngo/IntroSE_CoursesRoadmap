@@ -1,10 +1,15 @@
 import "./setting_account.css";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import React, { Component } from "react";
+
 import { SelectDataUser, UpdateData } from "../../Handler/Database/Data_setup";
+import { uploadAvatar } from "../../Handler/Storage/StorageHandler";
+
+import React, { Component } from "react";
+
 class Personal extends Component {
-  changeinfor = () => {
+  changeInfo = () => {
     UpdateData();
+    uploadAvatar();
   };
 
   checktime = (time) => {
@@ -183,7 +188,7 @@ class Personal extends Component {
           <div className="d-flex mt-2 justify-content-end">
             <button
               className="btn btn-primary btn-md buttons btn-input"
-              onClick={this.changeinfor}
+              onClick={this.changeInfo}
             >
               SAVE
             </button>
