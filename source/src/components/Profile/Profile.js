@@ -25,13 +25,9 @@ function Profile(params) {
                                 <div className="d-flex justify-content-start card-subtitle mb-3">
                                     <CourseStateLabel currState={'Current'}/>
                                 </div>
+                                    <span><CourseCard courseName={'Javascript'} category={'Web Programming'}/></span>
+                                    <span><CourseCard courseName={'Javascript'} category={'Web Programming'}/></span>
                             </div>
-                            <div className="col">
-                                <div className="col">
-                                    <CourseCard courseName={'Javascript'} category={'Web Programming'}/>
-                                </div>
-                            </div>
-                            
                         </div>
 
                         
