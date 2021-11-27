@@ -18,8 +18,8 @@ import Roadmap from './components/Roadmap/Roadmap'
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Setting_account />, */}
-    <Roadmap />,
+    <Setting_account />,
+    {/* <Roadmap />, */}
     {/* <User_manage/>, */}
     {/* <Course_manage />, */}
     {/* <Admin_page /> */}
