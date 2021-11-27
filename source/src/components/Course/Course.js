@@ -19,12 +19,12 @@ class Course extends Component {
 
     render() {
         return (
-            <div className="card pb-0 border-0 d-flex align-items-center">
-                <div className='row full mb-4'>
+            <button className="card pb-0 border-0 course">
+                <div className='row full mb-0'>
                     <div className = 'col-md card mt-2 course-card border-0 shadow'>
                         <div className='card-header'>
                             <div className='row'>
-                                <div className='col mb-2'>
+                                <div className='col mb-2 text-start'>
                                     <h4 className="card-title fw-bold text-dark">
                                         { this.state.name }
                                     </h4>
@@ -42,7 +42,7 @@ class Course extends Component {
 
                 </div>
 
-            </div>
+            </button>
         );
     }
 }

@@ -2,6 +2,11 @@
     padding:0px;
 }
 
+.course:hover {
+    transform: scale(1.05, 1.07);
+    transition: 0.5s;
+}
+
 .edit-site{
     margin-right: -13px !important;
 }

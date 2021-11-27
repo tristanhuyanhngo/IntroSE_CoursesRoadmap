@@ -1,0 +1,31 @@
+.btn-viewmore:hover {
+    color: blue;
+    transform: scale(1.07, 1.07);
+    transition: 0.7s;
+}
+
+.row-course {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.button-scroll {
+    width:5px !important;
+    font-size: 60px;
+    font-weight: lighter;
+    color: lightgray;
+    background: white;
+    border-width: 0px;
+}
+
+.button-scroll:hover {
+    color: gray;
+}
+
+.e--1 {
+    margin-left: 0px;
+}
+
+.s--1 {
+    margin-right: 10px;
+}
