@@ -19,7 +19,7 @@ import Roadmap from './components/Roadmap/Roadmap'
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Setting_account />, */}
+    <Setting_account />,
     {/* <Roadmap />, */}
     {/* <User_manage/>, */}
     {/* <Course_manage />, */}
@@ -28,9 +28,9 @@ ReactDOM.render(
     {/* <Create_info />, */}
     {/* <Login_page />, */}
     {/* <Profile /> */}
-    <Router>
+    {/* <Router>
       <App />
-    </Router>
+    </Router> */}
   </React.StrictMode>,
 
   document.getElementById('root')
