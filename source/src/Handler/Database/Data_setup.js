@@ -50,11 +50,25 @@ function checktime(time) {
   else return yyyy + "-" + mm + "-" + dd;
 }
 
+export function SelectDataForReactComponent(userId) {
+  const dbref = ref(db);
+  return get(child(dbref, "User/" + "AmxMkLMs06T5FBrgeAElKRi9KOq1"))
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        return snapshot.val();
+      }
+    })
+    .catch((error) => {
+      console.error(error.message);
+    });
+}
+
 export function SelectData(userId) {
   const dbref = ref(db);
   return get(child(dbref, "User/" + "AmxMkLMs06T5FBrgeAElKRi9KOq1"))
     .then((snapshot) => {
       if (snapshot.exists()) {
+
         const fname = document.getElementById("fname");
         const lname = document.getElementById("lname");
         const username = document.getElementById("username");
@@ -76,7 +90,9 @@ export function SelectData(userId) {
         return snapshot.val();
       }
     })
-    .catch((error) => {});
+    .catch((error) => {
+      console.error(error.message);
+    });
 }
 
 // //-----------------------------------------------------------------------------------------//
