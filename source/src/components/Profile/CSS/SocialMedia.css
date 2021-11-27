@@ -1,26 +1,5 @@
 .social-media-label-class {
     color: white;
-    left: 100px;
-    top: 50px;
-    position: absolute;
     font-weight: 700;
-    font-size: 40px;
-}
-
-.social-media-buttons-class {
-    position: absolute;
-    top: 100px;
-}
-
-.social-media-button-class :first-child{
-    margin-left: 50%;
-}
-
-.social-media-button-class :last-child{
-    margin-right: 50%;
-}
-
-.social-media-button-class {
-    margin-left: 20px;
-    margin-right: 20px;
+    font-size: 25px;
 }

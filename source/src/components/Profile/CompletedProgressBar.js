@@ -10,7 +10,7 @@ export default function CompletedProcessBar({completePercent}) {
                         <span>Progress</span>
                     </div>
                     <div className="progress-line process-bar">
-                        <span className="test-class" percent-attr={completePercent} style={{width: completePercent,}}></span>
+                        <span percent-attr={completePercent} style={{width: completePercent,}}></span>
                     </div>
                 </div>
             </div>

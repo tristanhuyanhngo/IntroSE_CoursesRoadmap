@@ -4,7 +4,6 @@ import { app,auth } from "../filebase_config";
 
 //-----------------------------------------------------------------------------------------//
 const db = getDatabase(app);
-export var data;
 //-----------------------------------------------------------------------------------------//
 export function InsertData(
   id,
@@ -59,7 +58,7 @@ export function SelectData(userId) {
         const fname = document.getElementById("fname");
         const lname = document.getElementById("lname");
         const username = document.getElementById("username");
-        const Email = document.getElementById("email");
+        const Email = document.getElementById("emailInput");
         const phone = document.getElementById("phone");
         const gen = document.getElementById("select");
         const birthday = document.getElementById("birthday");
@@ -79,15 +78,64 @@ export function SelectData(userId) {
 }
 
 // //-----------------------------------------------------------------------------------------//
-// function UpdateData() {
-//   set(ref(db, "TheStudents/" + MSSVbox.value), {
-//     NameOfStd: namebox.value,
-//     Class: Classbox.value,
-//     Gender: genbox.value,
-//   }).catch(() => {});
-// }
+export function UpdateData(userId) {
+  const fname = document.getElementById("fname").value;
+  const lname = document.getElementById("lname").value;
+  const username = document.getElementById("username").value;
+  const Email = document.getElementById("emailInput").value;
+  const phone = document.getElementById("phone").value;
+  const gen = document.getElementById("select").value;
+  const birthday = document.getElementById("birthday").value;
+  const bio = document.getElementById("bioS").value;
+  let ngayGio = new Date(birthday);
+  set(ref(db, "User/" + "AmxMkLMs06T5FBrgeAElKRi9KOq1"), {
+    FirstName: fname,
+    LastName: lname,
+    UserName: username,
+    PhoneNumber: phone,
+    email: Email,
+    Gen: gen,
+    Birth_day: ngayGio.getTime(),
+    Social_data: bio
+  }).catch(() => {});
+}
 
 // //-----------------------------------------------------------------------------------------//
 // function DeleteData() {
 //   remove(ref(db, "TheStudents/" + MSSVbox.value)).catch(() => {});
 // }
+
+export function InsertSocial(userId) {
+  const google = document.getElementById("googleID");
+  const github = document.getElementById("githubID");
+  const facebook = document.getElementById("facebookID");
+  const instagram = document.getElementById("instagramID");
+  set(ref(db, "Social/" + "AmxMkLMs06T5FBrgeAElKRi9KOq1"), {
+    Google: google.value,
+    Github: github.value,
+    Facebook: facebook.value,
+    Instagram: instagram.value,
+  }).catch(() => {});
+}
+
+export function SelectSocial(userId) {
+  const dbref = ref(db);
+  return get(child(dbref, "Social/" + "AmxMkLMs06T5FBrgeAElKRi9KOq1"))
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        const google = document.getElementById("googleID");
+        const github = document.getElementById("githubID");
+        const facebook = document.getElementById("facebookID");
+        const instagram = document.getElementById("instagramID");
+        if(snapshot.val().Google!= null)
+          google.value = snapshot.val().Google;
+        if(snapshot.val().Github!= null)
+          github.value = snapshot.val().Github;
+        if(snapshot.val().Facebook!= null)
+          facebook.value = snapshot.val().Facebook;
+        if(snapshot.val().Instagram!= null)
+          instagram.value = snapshot.val().Instagram;
+      }
+    })
+    .catch((error) => {});
+}
