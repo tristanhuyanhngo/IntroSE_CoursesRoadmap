@@ -36,7 +36,7 @@ export function SelectDataUser(userId) {
   return get(child(dbref, "User/" + "AmxMkLMs06T5FBrgeAElKRi9KOq1"))
     .then((snapshot) => {
       if (snapshot.exists()) {
-        return snapshot;
+        return snapshot.val();
       }
     })
     .catch((error) => {

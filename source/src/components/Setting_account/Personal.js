@@ -40,14 +40,14 @@ class Personal extends Component {
       const birthday = document.getElementById("birthday");
       const bio = document.getElementById("bioS");
 
-      fname.value = snapshot.val().FirstName;
-      lname.value = snapshot.val().LastName;
-      username.value = snapshot.val().UserName;
-      Email.value = snapshot.val().email;
-      phone.value = snapshot.val().PhoneNumber;
-      birthday.value = this.checktime(snapshot.val().Birth_day);
-      gen.value = snapshot.val().Gen;
-      bio.value = snapshot.val().Social_data;
+      fname.value = snapshot.FirstName;
+      lname.value = snapshot.LastName;
+      username.value = snapshot.UserName;
+      Email.value = snapshot.email;
+      phone.value = snapshot.PhoneNumber;
+      birthday.value = this.checktime(snapshot.Birth_day);
+      gen.value = snapshot.Gen;
+      bio.value = snapshot.Social_data;
     });
   };
   render() {

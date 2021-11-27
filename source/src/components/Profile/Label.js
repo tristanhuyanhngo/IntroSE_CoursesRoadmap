@@ -27,16 +27,16 @@ export function InfoLabel() {
         })
     }, [])
 
-  useEffect(() => {
-    SelectDataForReactComponent().then((result) => {
-      if (result) {
-        const { FirstName, LastName, UserName } = result;
-        setFirstName(FirstName);
-        setLastName(LastName);
-        setUsername(UserName);
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   SelectDataForReactComponent().then((result) => {
+  //     if (result) {
+  //       const { FirstName, LastName, UserName } = result;
+  //       setFirstName(FirstName);
+  //       setLastName(LastName);
+  //       setUsername(UserName);
+  //     }
+  //   });
+  // }, []);
 
   return (
     <div>
