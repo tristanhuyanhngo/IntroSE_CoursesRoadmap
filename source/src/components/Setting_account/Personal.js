@@ -1,8 +1,11 @@
-import "../../css/setting_account.css";
+import "./setting_account.css";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import React, { Component } from "react";
-import { SelectData } from "../../Handler/Database/Data_setup";
+import { SelectData,UpdateData } from "../../Handler/Database/Data_setup";
 class Personal extends Component {
+  changeinfor = ()=>{
+    UpdateData();
+  }
   render(){
     SelectData()
     return (
@@ -69,7 +72,7 @@ class Personal extends Component {
                 <input
                   type="text"
                   name="email"
-                  id = "email"
+                  id = "emailInput"
                   className="form-control"
                 />
               </div>
@@ -131,7 +134,7 @@ class Personal extends Component {
           </div>
   
           <div className="d-flex mt-2 justify-content-end">
-            <button className="btn btn-primary btn-md buttons btn-input">
+            <button className="btn btn-primary btn-md buttons btn-input" onClick={this.changeinfor}>
               SAVE
             </button>
           </div>

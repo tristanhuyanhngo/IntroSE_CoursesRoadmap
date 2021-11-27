@@ -1,11 +1,9 @@
-import '../../css/login_style.css'
+import './login_style.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import {signup} from '../../Handler/Authentication/Authen.js'
 import {signup_login_gg} from '../../Handler/Authentication/Authen.js'
 import {useRef, useState} from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faUser, faKey } from '@fortawesome/free-solid-svg-icons'
 import { BiUser, BiKey } from 'react-icons/bi';
 
 function Register() {
