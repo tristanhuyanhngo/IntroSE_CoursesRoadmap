@@ -24,9 +24,9 @@ ReactDOM.render(
     {/* <Course_manage />, */}
     {/* <Admin_page /> */}
     {/* <Story_page /> */}
-    {/* <Create_info />, */}
+    <Create_info />,
     {/* <Login_page />, */}
-    <Profile />
+    {/* <Profile /> */}
     {/* <Router>
       <App />
     </Router> */}

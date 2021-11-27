@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import avatar_png from '../../picture/avatar.png'
 import { auth } from '../../Handler/filebase_config';
 import { InsertData } from "../../Handler/Database/Data_setup";
+import { uploadAvatar } from "../../Handler/Storage/StorageHandler";
 
 class Create_info extends Component {
   state = {
@@ -23,7 +24,7 @@ class Create_info extends Component {
   
   uploadImg =()=>
   {
-    const defaultBtn = document.querySelector("#default-btn")
+    const defaultBtn = document.querySelector("#picture-profile")
     defaultBtn.click()
   }
 
@@ -48,6 +49,8 @@ class Create_info extends Component {
     const Social = document.getElementById("floatingInputSocial").value 
     const Email = document.getElementById("floatingInputEmail").value 
     InsertData(id,Fname,Lname,Uname,Phone,Gender,Birthday,Social,Email)
+
+    uploadAvatar('004');
   }
   render()
   {
@@ -126,7 +129,7 @@ class Create_info extends Component {
                             <img className='avt mb-3' src={profileImg} />
                             <div className="text-center">
                                 <div className="text-center"> 
-                                  <input id = "default-btn" hidden type = "file"  accept=".png, .jpg, .jpeg" onChange = {this.imageHandler} />
+                                  <input id = "picture-profile" hidden type = "file"  accept=".png, .jpg, .jpeg" onChange = {this.imageHandler} />
                                   <button id = "custom-btn" className="btn btn-primary btn-sm buttons" onClick={this.uploadImg}>Upload new photo</button> 
                                   <button type = "submit" className="btn btn-outline-danger buttons btn-sm ml-3" onClick = {this.delete} >Remove</button>
                                 </div> 
