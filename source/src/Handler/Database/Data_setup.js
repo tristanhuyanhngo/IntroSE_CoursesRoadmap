@@ -72,6 +72,8 @@ export function SelectData(userId) {
         birthday.value = checktime(snapshot.val().Birth_day);
         gen.value = snapshot.val().Gen;
         bio.value = snapshot.val().Social_data;
+
+        return snapshot.val();
       }
     })
     .catch((error) => {});

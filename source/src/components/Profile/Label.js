@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { SelectData } from "../../Handler/Database/Data_setup";
 import './CSS/Label.css'
 
 export function UserProfileLabel() {
@@ -10,11 +11,29 @@ export function UserProfileLabel() {
 }
 
 export function InfoLabel() {
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [username, setUsername] = useState("");
+
+    useEffect(() => {
+        SelectData().then(result => {
+            const { FirstName, LastName, UserName } = result;
+            setFirstName(FirstName);
+            setLastName(LastName);
+            setUsername(UserName);
+        })
+    }, [])
+
+
     return (
-        <div className="infor-wrapper">
-            <div><label className="info-label-class">@QuanBlueeeee</label></div>
-            <div><label className="name-label-class">Nguyễn Thanh Quân</label></div>
+      <div>
+        <div>
+          <label className="info-label-class">{username}</label>
         </div>
+        <div>
+          <label className="name-label-class">{`${firstName} ${lastName}`}</label>
+        </div>
+      </div>
     );
 }
 
