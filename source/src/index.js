@@ -27,10 +27,10 @@ ReactDOM.render(
     {/* <Story_page /> */}
     {/* <Create_info />, */}
     {/* <Login_page />, */}
-    <Profile />
-    {/* <Router>
+    {/* <Profile /> */}
+    <Router>
       <App />
-    </Router> */}
+    </Router>
   </React.StrictMode>,
 
   document.getElementById('root')

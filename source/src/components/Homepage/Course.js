@@ -12,15 +12,10 @@ function Course() {
                 <div className='course-items'>
                     {CourseData.map((item, index) => {
                         return (
-                            <div key={index} className={item.cName} style={{
-                                backgroundImage: "url(" + "https://images.pexels.com/photos/34153/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350" + ")",
-                                backgroundPosition: 'center',
-                                backgroundSize: 'cover',
-                                backgroundRepeat: 'no-repeat'
-                            }}>
+                            <div key={index} className={item.cName}>
                                 <Link to={item.path}>
-                                    {/* <img src={process.env.PUBLIC_URL + item.image} alt="" /> */}
-                                    {/* <span>{item.title}</span> */}
+                                    <img src={process.env.PUBLIC_URL + item.image} />
+                                    <span>{item.title}</span>
                                 </Link>
                             </div>
                         );

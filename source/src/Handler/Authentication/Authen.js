@@ -1,7 +1,8 @@
 
 import { app, auth } from "../filebase_config";
-import {createUserWithEmailAndPassword,sendEmailVerification, GoogleAuthProvider,updatePassword,
-  sendPasswordResetEmail,signInWithEmailAndPassword, onAuthStateChanged, signOut, 
+import {
+  createUserWithEmailAndPassword, sendEmailVerification, GoogleAuthProvider, updatePassword,
+  sendPasswordResetEmail, signInWithEmailAndPassword, onAuthStateChanged, signOut,
   signInWithPopup, getRedirectResult
 } from "firebase/auth";
 import { useEffect, useState } from "react";
@@ -20,16 +21,16 @@ export function signup(email, password) {
 
 export function signup_login_gg() {
   const provider = new GoogleAuthProvider(app);
-  signInWithPopup(auth, provider).catch((error) => {})
+  signInWithPopup(auth, provider).catch((error) => { })
   getRedirectResult(auth);
 }
 
 export function login(email, password) {
   return signInWithEmailAndPassword(auth, email, password)
-  .catch((error) => {
-    console.log(error.code);
-    console.log(error.message);
-  });
+    .catch((error) => {
+      console.log(error.code);
+      console.log(error.message);
+    });
 }
 
 export function logout() {
@@ -38,21 +39,20 @@ export function logout() {
 
 export function useAuth() {
   const [currentUser, setCurrentUser] = useState();
-  useEffect(()=>{
+  useEffect(() => {
     onAuthStateChanged(auth, user => setCurrentUser(user));
-  },[]);
+  }, []);
   return currentUser;
 }
 
 export function resetPass(newPass) {
   updatePassword(auth.currentUser, newPass)
-    .then(() => {})
-    .catch((error) => {});
+    .then(() => { })
+    .catch((error) => { });
 }
 
-export function forgotPass(email)
-{
+export function forgotPass(email) {
   return sendPasswordResetEmail(auth, email)
-  .catch((error) => {
-  })
+    .catch((error) => {
+    })
 }
