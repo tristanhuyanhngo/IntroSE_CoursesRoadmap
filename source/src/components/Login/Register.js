@@ -1,4 +1,4 @@
-import '../../css/login_style.css'
+import './login_style.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import {signup} from '../../Handler/Authentication/Authen.js'
