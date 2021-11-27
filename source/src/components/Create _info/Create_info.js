@@ -1,4 +1,4 @@
-import "../../css/create_info.css";
+import "./create_info.css";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import React, { Component } from "react";
 import avatar_png from '../../picture/avatar.png'

@@ -4,7 +4,7 @@ import './CSS/Label.css'
 export function UserProfileLabel() {
     return (
         <div id="user-profile-wrapper component component-Label">
-            <label className="profile-class text-decoration-underline">USER PROFILE</label>
+            <label style={{border: "1px solid red"}} className="profile-class "></label>
         </div>
     );
 }

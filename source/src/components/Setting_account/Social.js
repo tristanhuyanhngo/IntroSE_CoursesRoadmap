@@ -1,4 +1,4 @@
-import "../../css/setting_account.css";
+import "./setting_account.css";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import React, { Component, useRef } from "react";
 import facebook from "../../picture/social/facebook.png";
