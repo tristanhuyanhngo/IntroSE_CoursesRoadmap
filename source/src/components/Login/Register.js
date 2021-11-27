@@ -23,7 +23,7 @@ function Register() {
       setWaiting(true);
       if(email.length>=11)
       {
-        if (email != null && password != null && confirmPassword != null) {
+        if (password !== "" && confirmPassword !== "") {
           if (password === confirmPassword) {
             const user = await signup(email,password,confirmPassword)
             console.log(user.user.uid)

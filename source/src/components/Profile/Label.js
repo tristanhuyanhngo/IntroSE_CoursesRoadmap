@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
-import {
-  SelectDataForReactComponent,
-  SelectData,
-} from "../../Handler/Database/Data_setup";
-import "./CSS/Label.css";
+import { SelectDataUser } from "../../Handler/Database/Data_setup";
+import './CSS/Label.css'
 
 export function UserProfileLabel() {
   return (
@@ -17,20 +14,29 @@ export function UserProfileLabel() {
 }
 
 export function InfoLabel() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [username, setUsername] = useState("");
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [username, setUsername] = useState("");
 
-  useEffect(() => {
-    SelectDataForReactComponent().then((result) => {
-      if (result) {
-        const { FirstName, LastName, UserName } = result;
-        setFirstName(FirstName);
-        setLastName(LastName);
-        setUsername(UserName);
-      }
-    });
-  }, []);
+    useEffect(() => {
+        SelectDataUser().then(result => {
+            const { FirstName, LastName, UserName } = result;
+            setFirstName(FirstName);
+            setLastName(LastName);
+            setUsername(UserName);
+        })
+    }, [])
+
+  // useEffect(() => {
+  //   SelectDataForReactComponent().then((result) => {
+  //     if (result) {
+  //       const { FirstName, LastName, UserName } = result;
+  //       setFirstName(FirstName);
+  //       setLastName(LastName);
+  //       setUsername(UserName);
+  //     }
+  //   });
+  // }, []);
 
   return (
     <div>
