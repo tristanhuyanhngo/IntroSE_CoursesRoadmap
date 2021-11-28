@@ -35,9 +35,9 @@ function Login() {
 
   return (
       <div>
-        <h5 id ='title' className="card-title text-center mb-5 fw-bold text-dark">Login</h5>
+        <h2 id ='title' className="card-title text-center mb-5 fw-bold text-dark">Login</h2>
         <form>
-          <div className="input-group mb-3 mx-1 round-bottom row">
+          <div className="input-group mb-3 mx-1 row">
             <div className="input-group-text py-0 col-2">
                 <BiUser className=' icon' />
             </div>
@@ -47,7 +47,7 @@ function Login() {
             </div>
           </div>
 
-          <div className="input-group mx-1 rounded-top row">
+          <div className="input-group mx-1 row">
             <div className="input-group-text py-0 col-2">
               <BiKey className='icon' />
             </div>

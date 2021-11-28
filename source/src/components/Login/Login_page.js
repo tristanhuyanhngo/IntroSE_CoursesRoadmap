@@ -48,10 +48,10 @@ class Login_page extends Component {
     //var btn = document.getElementById('btn1');
 
     if (this.state.status === "Sign Up") {
-          this.Move('.card-img-left', 45, 1);
+          this.Move('.card-img-left', 44, 1);
           this.Move('.card-body', 55, -1);
       } else  {
-          this.Move('.card-img-left', 45, 0);
+          this.Move('.card-img-left', 44, 0);
           this.Move('.card-body', 55, 0);
       }
   }
