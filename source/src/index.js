@@ -22,7 +22,7 @@ ReactDOM.render(
     {/* <Roadmap />, */}
     {/* <User_manage/>, */}
     {/* <Course_manage />, */}
-    {/* <Admin_page /> */}
+    {/* <Admin_page />, */}
     {/* <Story_page /> */}
     {/* <Create_info />, */}
     <Login_page />,

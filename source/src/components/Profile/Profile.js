@@ -1,64 +1,66 @@
 import React from "react";
-import { ProgressBar } from "react-bootstrap";
 import EditButton from "./EditButton";
-import { UserProfileLabel, InfoLabel, CourseStateLabel } from "./Label";
+import { InfoLabel } from "./Label";
 import SocialMediaButtons from "./SocialMedia";
 import CompletedProgressBar from "./CompletedProgressBar";
-import Avatar from './Avatar'
-import CourseCard from "./CourseCard";
-
+import { FinishedCourse, CurrentCourse } from "./CourseState";
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Avatar from "./Avatar";
+import Picture_profile from "../Setting_account/Picture_profile";
 
 function Profile(params) {
-    return (
-        <div id="d-flex justify-content-center">
-            <div className="container-lg mt-5">
-                <div className="card flex-col p-0 border-0 shadow rounded-3">
-                    
-                    <div className="row d-flex justify-content-center">
-                        <div className="col-sm-1 col-lg-3 card-title ms-3 mt-2 fw-bold text-dark"><UserProfileLabel /></div>
-                    </div>
-                    
-                    <div className="ms-5">
-                        <div className="row ms-5">
-                            <div className="ms-5 col-5 card-subtitle mb-3"><InfoLabel /></div>
-                            <div className="col">
-                                <div className="d-flex justify-content-start card-subtitle mb-3">
-                                    <CourseStateLabel currState={'Current'}/>
-                                </div>
-                            </div>
-                            <div className="col">
-                                <div className="col">
-                                    <CourseCard courseName={'Javascript'} category={'Web Programming'}/>
-                                </div>
-                            </div>
-                            
-                        </div>
+  return (
+    <div id="d-flex justify-content-center">
+      <div className="container-lg mt-5">
+        <div className="card flex-col p-0 border-0 shadow rounded-3">
+          {/* Label User Profile */}
+          <h1 className="row d-flex justify-content-center card-title ms-3 mt-5 fw-bold text-dark text-decoration-underline fs-1">
+            USER PROFILE
+          </h1>
 
-                        
-                        
-                        <div className="row my-4 ms-5">
-                            <span className="ms-5">
-                                <div className="ms-4"><EditButton /></div>
-                            </span>
-                        </div>
-
-                        <div className="row my-4 ms-5">
-                            <div className="ms-5">
-                                <SocialMediaButtons />
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-
-                    {/* <CourseStateLabel currState={'Completed'}/> */}
-                    {/* <CompletedProgressBar completePercent={"100%"}/> */}
+          {/* Main content of Profile page begin from here */}
+          <div className="row mx-1">
+            {/* Information col */}
+            <div className="ms-2 col-5 card-subtitle mb-3">
+              {/* Name of user */}
+              <div className="row ms-5">
+                <div className="mt-5 mb-5">
+                  <Avatar />
                 </div>
+                <InfoLabel />
+              </div>
+
+              {/* Edit button */}
+              <div className="row my-4 ms-5">
+                <div className="ms-4">
+                  <EditButton />
+                </div>
+              </div>
+
+              {/* Social media link */}
+              <div className="row my-4 ms-5">
+                <SocialMediaButtons />
+              </div>
             </div>
+
+            {/* Current and finished course col */}
+            <div className="ms-2 col mt-5 mb-5">
+              {/* Current course row */}
+              <CurrentCourse />
+
+              {/* Finished course row */}
+              <FinishedCourse />
+
+              {/* Progress bar */}
+              <div className="row mt-5 mb-3">
+                <CompletedProgressBar />
+              </div>
+            </div>
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 }
 
 export default Profile;

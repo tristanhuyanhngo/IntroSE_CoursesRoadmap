@@ -1,13 +1,62 @@
 import "./setting_account.css";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+import { SelectDataUser, UpdateData } from "../../Handler/Database/Data_setup";
+import { uploadAvatar } from "../../Handler/Storage/StorageHandler";
+
 import React, { Component } from "react";
-import { SelectData,UpdateData } from "../../Handler/Database/Data_setup";
+
 class Personal extends Component {
-  changeinfor = ()=>{
+  changeInfo = () => {
     UpdateData();
-  }
-  render(){
-    SelectData()
+    uploadAvatar();
+  };
+
+  checktime = (time) => {
+    const date = new Date(time);
+    const dd = date.getDate();
+    const mm = date.getMonth() + 1;
+    const yyyy = date.getFullYear();
+
+    if (mm < 10 && dd < 10 && yyyy < 10)
+      return "000" + yyyy + "-0" + mm + "-0" + dd;
+    if (mm < 10 && yyyy < 10) return "00" + yyyy + "-0" + mm + "-" + dd;
+    if (dd < 10 && yyyy < 10) return "000" + yyyy + "-" + mm + "-0" + dd;
+    if (mm < 10 && dd < 10 && yyyy < 100)
+      return "00" + yyyy + "-0" + mm + "-0" + dd;
+    if (dd < 10 && yyyy < 100) return "00" + yyyy + "-" + mm + "-0" + dd;
+    if (mm < 10 && yyyy < 100) return "00" + yyyy + "-0" + mm + "-" + dd;
+    if (mm < 10 && dd < 10 && yyyy < 1000)
+      return "0" + yyyy + "-0" + mm + "-0" + dd;
+    if (mm < 10 && dd < 10) return yyyy + "-0" + mm + "-0" + dd;
+    if (mm < 10) return yyyy + "-0" + mm + "-" + dd;
+    if (dd < 10) return yyyy + "-" + mm + "-0" + dd;
+    else return yyyy + "-" + mm + "-" + dd;
+  };
+
+  GetData = () => {
+    SelectDataUser().then((snapshot) => {
+      const fname = document.getElementById("fname");
+      const lname = document.getElementById("lname");
+      const username = document.getElementById("username");
+      const Email = document.getElementById("emailInput");
+      const phone = document.getElementById("phone");
+      const gen = document.getElementById("select");
+      const birthday = document.getElementById("birthday");
+      const bio = document.getElementById("bioS");
+
+      fname.value = snapshot.FirstName;
+      lname.value = snapshot.LastName;
+      username.value = snapshot.UserName;
+      Email.value = snapshot.email;
+      phone.value = snapshot.PhoneNumber;
+      birthday.value = this.checktime(snapshot.Birth_day);
+      gen.value = snapshot.Gen;
+      bio.value = snapshot.Social_data;
+    });
+  };
+  render() {
+    this.GetData();
     return (
       <div>
         <div className="card flex-col p-4 border-0 shadow rounded-3 card-input">
@@ -17,7 +66,7 @@ class Personal extends Component {
           <h6 id="card-subtitle" className="card-subtitle mb-2">
             Show me your character
           </h6>
-  
+
           <div className="row d-flex mb-2 ">
             <hr className="col" />
             <div className="col-3 text-center pb-2 card-subtitle">
@@ -25,15 +74,15 @@ class Personal extends Component {
             </div>
             <hr className="col" />
           </div>
-  
-          <div className='ps-3'>
+
+          <div className="ps-3">
             <div className="row mb-2">
               <div className="col-6">
                 <div className="subtitle text-begin"> First name</div>
                 <input
                   type="text"
                   name="fname"
-                  id = "fname"
+                  id="fname"
                   className="form-control"
                 />
               </div>
@@ -42,12 +91,12 @@ class Personal extends Component {
                 <input
                   type="text"
                   name="lname"
-                  id = "lname"
+                  id="lname"
                   className="form-control"
                 />
               </div>
             </div>
-    
+
             <div className="row mb-2">
               <div className="subtitle col-2 d-flex align-items-center justify-content-end">
                 {" "}
@@ -57,12 +106,12 @@ class Personal extends Component {
                 <input
                   type="text"
                   name="username"
-                  id = "username"
+                  id="username"
                   className="form-control"
                 />
               </div>
             </div>
-    
+
             <div className="row mb-2">
               <div className="subtitle col-2 d-flex align-items-center justify-content-end">
                 {" "}
@@ -72,7 +121,7 @@ class Personal extends Component {
                 <input
                   type="text"
                   name="email"
-                  id = "emailInput"
+                  id="emailInput"
                   className="form-control"
                 />
               </div>
@@ -87,12 +136,12 @@ class Personal extends Component {
                 <input
                   type="tel"
                   name="phone"
-                  id = "phone"
+                  id="phone"
                   className="form-control"
                 />
               </div>
             </div>
-    
+
             <div className="row mb-2">
               <div className="subtitle col-2 d-flex align-items-center justify-content-end">
                 Gender
@@ -101,7 +150,7 @@ class Personal extends Component {
                 <select
                   className="form-select"
                   aria-label="Floating label select example"
-                  id = "select"
+                  id="select"
                 >
                   <option value="male">Male</option>
                   <option value="female">Female</option>
@@ -110,7 +159,7 @@ class Personal extends Component {
                 <label>Your gender</label>
               </div>
             </div>
-    
+
             <div className="row mb-2">
               <div className="subtitle col-2 d-flex align-items-center justify-content-end">
                 Birthday
@@ -119,30 +168,35 @@ class Personal extends Component {
                 <input
                   type="date"
                   name="birthday"
-                  id = "birthday"
+                  id="birthday"
                   className="form-control"
                 />
               </div>
             </div>
-    
+
             <div className="row mb-2">
-              <div className="subtitle col-2 d-flex justify-content-end"> Bio</div>
+              <div className="subtitle col-2 d-flex justify-content-end">
+                {" "}
+                Bio
+              </div>
               <div className="col">
-                <textarea type="text" name="bio" id = "bioS" />
+                <textarea type="text" name="bio" id="bioS" />
               </div>
             </div>
           </div>
-  
+
           <div className="d-flex mt-2 justify-content-end">
-            <button className="btn btn-primary btn-md buttons btn-input" onClick={this.changeinfor}>
+            <button
+              className="btn btn-primary btn-md buttons btn-input"
+              onClick={this.changeInfo}
+            >
               SAVE
             </button>
           </div>
         </div>
       </div>
-    )
+    );
   }
-  
 }
 
 export default Personal;

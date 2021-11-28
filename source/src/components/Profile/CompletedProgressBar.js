@@ -1,19 +1,23 @@
 import React from "react";
-import './CSS/CompletedProgressBar.css'
+import "./CSS/CompletedProgressBar.css";
 
-export default function CompletedProcessBar({completePercent}) {
-    return (
-        <div id="process-bar-wrapper">
-            <div className="skill-bars">
-                <div className="bar">
-                    <div className="info">
-                        <span>Progress</span>
-                    </div>
-                    <div className="progress-line process-bar">
-                        <span percent-attr={completePercent} style={{width: completePercent,}}></span>
-                    </div>
-                </div>
-            </div>
+export default function CompletedProcessBar() {
+  const completePercent = "100%";
+  return (
+    <div>
+      <div class="skill-bars">
+        <div class="bar">
+          <div class="info fs-3 mb-3">
+            <span>Progress</span>
+          </div>
+          <div class="progress-line d-flex justify-content-end">
+            <span
+              percent-attr={completePercent}
+              style={{ width: completePercent }}
+            ></span>
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 }

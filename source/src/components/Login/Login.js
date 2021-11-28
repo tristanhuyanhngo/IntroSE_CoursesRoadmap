@@ -18,7 +18,7 @@ function Login() {
     setWaiting(true);
     try{
       const a = await login(email,pass);
-      console.log(a)
+      console.log(a.user.uid)
     }
     catch{
       window.alert("error")
