@@ -12,7 +12,9 @@ export default function Avatar() {
             <img
               className="avt-setting shadow-lg"
               data-holder-rendered="true"
-              id="Avatar_Image"
+              src={
+                localStorage.getItem("imgUrl") ?? "https://i.imgur.com/G1pXs7D.jpg"
+              }
             />
           </div>
         </div>
