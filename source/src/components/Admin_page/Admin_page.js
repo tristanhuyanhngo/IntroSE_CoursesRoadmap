@@ -5,13 +5,7 @@ import User_manage from './User_manage'
 import Course_manage from './Course_manage'
 import React, { Component }  from 'react';
 
-class Admin_page extends Component {
-    constructor(props){
-      super(props);
-    }
-    
-
-    render(){
+function  Admin_page(){
         return (
             <div className='d-flex justify-content-center'>
                 <div className="container-lg mt-5 ">
@@ -22,19 +16,19 @@ class Admin_page extends Component {
                         {/* Navigate */}
                         <ul className="nav nav-tabs" id='myTab' role="tablist">
                             <li className="nav-item" role="presentation">
-                                <button class="nav-link active" id="user-tab" data-bs-toggle="tab" data-bs-target="#user" type="button" role="tab" aria-controls="user" aria-selected="true">User</button>
+                                <button className="nav-link active" id="user-tab" data-bs-toggle="tab" data-bs-target="#user" type="button" role="tab" aria-controls="user" aria-selected="true">User</button>
                             </li>
                             <li className="nav-item" role="presentation">
-                                <button class="nav-link" id="course-tab" data-bs-toggle="tab" data-bs-target="#course" type="button" role="tab" aria-controls="course" aria-selected="false">Course</button>
+                                <button className="nav-link" id="course-tab" data-bs-toggle="tab" data-bs-target="#course" type="button" role="tab" aria-controls="course" aria-selected="false">Course</button>
                             </li>
                         </ul>   
 
                         {/* Navigate control */}
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="user" role="tabpanel" aria-labelledby="user-tab">
+                        <div className="tab-content" id="myTabContent">
+                            <div className="tab-pane fade show active" id="user" role="tabpanel" aria-labelledby="user-tab">
                                 <User_manage />
                             </div>
-                            <div class="tab-pane fade" id="course" role="tabpanel" aria-labelledby="course-tab">
+                            <div className="tab-pane fade" id="course" role="tabpanel" aria-labelledby="course-tab">
                                 <Course_manage />
                             </div>
                         </div>
@@ -43,7 +37,6 @@ class Admin_page extends Component {
             </div>
                                     
         )
-    }
-
 }
+
 export default Admin_page;
