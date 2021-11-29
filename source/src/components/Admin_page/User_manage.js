@@ -80,8 +80,8 @@ export default function User_manage() {
           <tbody>
             {filteredData.map((user, index) => (
               <User
-                key={user.id}
                 className="user"
+                key={user.id}
                 index={index + 1}
                 id={user.id}
                 avatar={user.avatar}
