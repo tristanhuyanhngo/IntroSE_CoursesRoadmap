@@ -1,7 +1,7 @@
 import "./setting_account.css";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
-import { SelectDataUser, UpdateData } from "../../Handler/Database/Data_setup";
+import { SelectDataUser, UpdateData,checktime } from "../../Handler/Database/Data_setup";
 import { uploadAvatar } from "../../Handler/Storage/StorageHandler";
 
 import React, { Component } from "react";
@@ -12,27 +12,7 @@ class Personal extends Component {
     uploadAvatar();
   };
 
-  checktime = (time) => {
-    const date = new Date(time);
-    const dd = date.getDate();
-    const mm = date.getMonth() + 1;
-    const yyyy = date.getFullYear();
-
-    if (mm < 10 && dd < 10 && yyyy < 10)
-      return "000" + yyyy + "-0" + mm + "-0" + dd;
-    if (mm < 10 && yyyy < 10) return "00" + yyyy + "-0" + mm + "-" + dd;
-    if (dd < 10 && yyyy < 10) return "000" + yyyy + "-" + mm + "-0" + dd;
-    if (mm < 10 && dd < 10 && yyyy < 100)
-      return "00" + yyyy + "-0" + mm + "-0" + dd;
-    if (dd < 10 && yyyy < 100) return "00" + yyyy + "-" + mm + "-0" + dd;
-    if (mm < 10 && yyyy < 100) return "00" + yyyy + "-0" + mm + "-" + dd;
-    if (mm < 10 && dd < 10 && yyyy < 1000)
-      return "0" + yyyy + "-0" + mm + "-0" + dd;
-    if (mm < 10 && dd < 10) return yyyy + "-0" + mm + "-0" + dd;
-    if (mm < 10) return yyyy + "-0" + mm + "-" + dd;
-    if (dd < 10) return yyyy + "-" + mm + "-0" + dd;
-    else return yyyy + "-" + mm + "-" + dd;
-  };
+  
 
   GetData = () => {
     SelectDataUser().then((snapshot) => {
@@ -50,7 +30,7 @@ class Personal extends Component {
       username.value = snapshot.UserName;
       Email.value = snapshot.email;
       phone.value = snapshot.PhoneNumber;
-      birthday.value = this.checktime(snapshot.Birth_day);
+      birthday.value = checktime(snapshot.Birth_day);
       gen.value = snapshot.Gen;
       bio.value = snapshot.Social_data;
     });
