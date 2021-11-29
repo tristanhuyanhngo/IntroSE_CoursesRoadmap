@@ -1,6 +1,5 @@
 import { getDatabase, ref, get, set, child } from "firebase/database";
 import { app } from "../filebase_config";
-import default_avatar from "../../picture/avatar.png";
 //-----------------------------------------------------------------------------------------//
 const db = getDatabase(app);
 //-----------------------------------------------------------------------------------------//
@@ -27,6 +26,7 @@ export function InsertData(
       Birth_day: ngayGio.getTime(),
       Social_data: Social,
       Role: "user",
+      Id: id,
       Date_create: new Date().getTime(),
     }).catch(() => {});
   } else {
@@ -40,6 +40,7 @@ export function InsertData(
       Birth_day: 0,
       Social_data: Social,
       Role: "user",
+      Id: id,
       Date_create: new Date().getTime(),
     }).catch(() => {});
   }

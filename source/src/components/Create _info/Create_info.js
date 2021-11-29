@@ -50,7 +50,7 @@ class Create_info extends Component {
     const Email = document.getElementById("floatingInputEmail").value 
     InsertData(id,Fname,Lname,Uname,Phone,Gender,Birthday,Social,Email)
 
-    uploadAvatar('004');
+    uploadAvatar(id);
   }
   render()
   {

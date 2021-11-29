@@ -1,8 +1,13 @@
-import React from "react";
+import React, { Component, useState,useEffect } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { downloadAvatar } from '../../Handler/Storage/StorageHandler'
-
+import {auth} from "../../Handler/filebase_config"
 export default function Avatar() {
+  const [userID,setUserID] = useState()
+  useEffect(() => {
+    console.log(auth.currentUser)
+  }, []);
+
   downloadAvatar('001');
   return (
     <div className="container">

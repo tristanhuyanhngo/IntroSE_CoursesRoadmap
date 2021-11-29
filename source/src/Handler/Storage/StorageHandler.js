@@ -5,7 +5,6 @@ import {
   uploadBytesResumable,
   deleteObject,
 } from "firebase/storage";
-
 export function downloadAvatar(avatarName) {
   const storage = getStorage();
   getDownloadURL(ref(storage, `avatars/${avatarName}.jpg`))
@@ -29,7 +28,8 @@ export function downloadAvatar(avatarName) {
     });
 }
 
-export function uploadAvatar(id = '001') {
+export function uploadAvatar(id) {
+  console.log(id)
   const file = document.querySelector("#picture-profile").files[0];
 
   const storage = getStorage();

@@ -5,11 +5,11 @@ import { SelectDataUser, UpdateData,checktime } from "../../Handler/Database/Dat
 import { uploadAvatar } from "../../Handler/Storage/StorageHandler";
 
 import React, { Component } from "react";
-
+import {auth} from "../../Handler/filebase_config"
 class Personal extends Component {
   changeInfo = () => {
     UpdateData();
-    uploadAvatar();
+    uploadAvatar(auth.currentUser.uid);
   };
 
   

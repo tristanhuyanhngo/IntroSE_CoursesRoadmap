@@ -3,12 +3,11 @@ import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 import { downloadAvatar } from "../../Handler/Storage/StorageHandler";
 
-import React, { Component, useEffect, useState } from "react";
-
+import React, { Component} from "react";
+import {auth} from "../../Handler/filebase_config"
 class Picture_profile extends Component {
   constructor(props) {
     super(props);
-    downloadAvatar("001");
   }
   state = {
     profileImg:
@@ -26,6 +25,7 @@ class Picture_profile extends Component {
   };
 
   uploadImg = () => {
+    downloadAvatar(auth.currentUser.uid);
     const defaultBtn = document.querySelector("#picture-profile");
     defaultBtn.click();
   };
@@ -36,7 +36,6 @@ class Picture_profile extends Component {
 
   render() {
     const { profileImg } = this.state;
-
     return (
       <div className="card flex-col p-2 px-3 border shadow rounded-3">
         <h4
