@@ -49,7 +49,7 @@ function Register() {
 
     return (
         <div>
-          <h5 id='title' className="card-title text-center mb-5 fw-bold text-dark">Register</h5>
+          <h2 id='title' className="card-title text-center mb-5 fw-bold text-dark">Register</h2>
           <form>
 
             <div className="input-group mb-3 mx-1 round-bottom row">
