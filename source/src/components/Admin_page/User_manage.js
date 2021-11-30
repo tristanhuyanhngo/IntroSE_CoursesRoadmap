@@ -12,18 +12,19 @@ export default function User_manage() {
   useEffect(() => {
     GetAllDataOnce().then((result) => {
       if (result) {
-        var ID = 0;
         var Data = [];
         result.forEach((element) => {
+          var stt = "inactive"
+          if(element.val().Id ===localStorage.getItem("ID"))
+            stt = "active"
           Data.push({
-            id: ID.toString(),
+            id: element.val().Id,
             name: element.val().FirstName + " " + element.val().LastName,
             role: element.val().Role,
-            status: "inactive",
+            status: stt,
             create: checktime(element.val().Date_create),
             avatar: default_avatar,
           });
-          ID++;
         });
         setUsers(Data)
       }
@@ -82,7 +83,7 @@ export default function User_manage() {
               <User
                 className="user"
                 key={user.id}
-                index={index + 1}
+                index={index}
                 id={user.id}
                 avatar={user.avatar}
                 name={user.name}

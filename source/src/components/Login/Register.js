@@ -27,7 +27,6 @@ function Register() {
           if (password === confirmPassword) {
             const user = await signup(email,password,confirmPassword)
             localStorage.setItem('ID',user.user.uid)
-            console.log(localStorage.getItem('ID'))
             sendEmail()
           } 
           else {

@@ -41,7 +41,7 @@ class Create_info extends Component {
     const Birthday = document.getElementById("floatingInputBirthday").value 
     const Social = document.getElementById("floatingInputSocial").value 
     const Email = document.getElementById("floatingInputEmail").value 
-    InsertData(id,Fname,Lname,Uname,Phone,Gender,Birthday,Social,Email)
+    InsertData(id,Fname,Lname,Uname,Phone,Gender,Birthday,Social,Email,"User")
 
     uploadAvatar(id);
   }

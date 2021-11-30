@@ -13,8 +13,12 @@ class Social extends Component {
   {
     InsertSocial(localStorage.getItem("ID"))
   }
-  render() {
+  select = ()=>
+  {
     SelectSocial(localStorage.getItem("ID"))
+  }
+  render() {
+    this.select()
     return (
       <div>
         <div className="card flex-col p-4 border-0 shadow rounded-3 card-input">
@@ -102,7 +106,7 @@ class Social extends Component {
           </div>
 
           <div className="d-flex mt-3 justify-content-end">
-            <button className="btn btn-outline-danger btn-social btn-sm"onClick={SelectSocial}>
+            <button className="btn btn-outline-danger btn-social btn-sm"onClick={this.select}>
               CANCLE
             </button>
             <button className="btn btn-primary btn-sm btn-social" onClick={this.Update}>SAVE</button>

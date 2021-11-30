@@ -20,7 +20,6 @@ ReactDOM.render(
   <React.StrictMode>
     {/* <Setting_account />, */}
     {/* <Roadmap />, */}
-    {/* <Course_manage />, */}
     <Admin_page />,
     {/* <Story_page /> */}
     {/* <Create_info />, */}
