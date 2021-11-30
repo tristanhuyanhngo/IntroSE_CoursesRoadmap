@@ -3,7 +3,7 @@ import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../../../node_modules/bootstrap/dist/js/bootstrap'
 import React from 'react';
 import {useRef, useState} from 'react';
-import {login,useAuth,signup_login_gg} from '../../Handler/Authentication/Authen'
+import {login,signup_login_gg} from '../../Handler/Authentication/Authen'
 import { BiUser, BiKey } from 'react-icons/bi';
 
 function Login() {
@@ -18,7 +18,8 @@ function Login() {
     setWaiting(true);
     try{
       const a = await login(email,pass);
-      console.log(a.user.uid)
+      localStorage.setItem('EMAIl',a.user.email)
+      localStorage.setItem('ID',a.user.uid)
     }
     catch{
       window.alert("error")
@@ -29,7 +30,9 @@ function Login() {
   async function handSignIn2()
   {
     setWaiting(true);
-    await signup_login_gg();
+    const a = await signup_login_gg();
+    localStorage.setItem('EMAIl',a.email)
+    localStorage.setItem('ID',a.uid)
     setWaiting(false);
   }
 

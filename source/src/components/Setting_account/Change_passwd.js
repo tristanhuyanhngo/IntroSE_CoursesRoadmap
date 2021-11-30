@@ -2,11 +2,10 @@ import "./setting_account.css";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import React, { Component } from "react";
 import { resetPass, login } from "../../Handler/Authentication/Authen";
-import { auth } from "../../Handler/filebase_config";
 
 class Change_passwd extends Component {
   ResetP = () => {
-    const user = auth.currentUser;
+    const user =  localStorage.getItem("EMAIl");
     let mess = "";
     const oldP = document.getElementById("oldPassword").value;
     const newP = document.getElementById("inputNewPassword").value;
@@ -17,7 +16,7 @@ class Change_passwd extends Component {
     } 
     else {
       try {
-        login(user.email, oldP);
+        login(user, oldP);
         resetPass(newP)
         mess = "Done"
       } 

@@ -1,15 +1,20 @@
 import "./setting_account.css";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import React, { Component, useRef } from "react";
+import React, { Component} from "react";
 import facebook from "../../picture/social/facebook.png";
 import instagram from "../../picture/social/instagram.png";
 import google from "../../picture/social/google.png";
 import github from "../../picture/social/github.png";
 import { InsertSocial,SelectSocial } from "../../Handler/Database/Data_setup";
 
+
 class Social extends Component {
+  Update = ()=>
+  {
+    InsertSocial(localStorage.getItem("ID"))
+  }
   render() {
-    SelectSocial()
+    SelectSocial(localStorage.getItem("ID"))
     return (
       <div>
         <div className="card flex-col p-4 border-0 shadow rounded-3 card-input">
@@ -100,7 +105,7 @@ class Social extends Component {
             <button className="btn btn-outline-danger btn-social btn-sm"onClick={SelectSocial}>
               CANCLE
             </button>
-            <button className="btn btn-primary btn-sm btn-social" onClick={InsertSocial}>SAVE</button>
+            <button className="btn btn-primary btn-sm btn-social" onClick={this.Update}>SAVE</button>
           </div>
         </div>
       </div>

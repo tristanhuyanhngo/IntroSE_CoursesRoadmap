@@ -2,7 +2,6 @@ import "./create_info.css";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import React, { Component } from "react";
 import avatar_png from '../../picture/avatar.png'
-import { auth } from '../../Handler/filebase_config';
 import { InsertData } from "../../Handler/Database/Data_setup";
 import { uploadAvatar } from "../../Handler/Storage/StorageHandler";
 
@@ -33,13 +32,7 @@ class Create_info extends Component {
   }
 
   saveInfor = ()=>{
-    let id = null
-    if(auth.currentUser!==null)
-      id = auth.currentUser.uid
-      else
-      {
-        id = "lcKFYNnv6XdRcYzoIqYLv3CIQ1e2"
-      }
+    let id = localStorage.getItem("ID")
     const Fname = document.getElementById("floatingInputFname").value
     const Lname = document.getElementById("floatingInputLname").value
     const Uname = document.getElementById("floatingInputUsername").value 

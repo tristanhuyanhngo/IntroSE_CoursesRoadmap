@@ -29,7 +29,6 @@ export function downloadAvatar(avatarName) {
 }
 
 export function uploadAvatar(id) {
-  console.log(id)
   const file = document.querySelector("#picture-profile").files[0];
 
   const storage = getStorage();

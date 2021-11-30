@@ -50,7 +50,7 @@ export function InsertData(
 //-----------------------------------------------------------------------------------------//
 export function SelectDataUser(userId) {
   const dbref = ref(db);
-  return get(child(dbref, "User/" + "AmxMkLMs06T5FBrgeAElKRi9KOq1"))
+  return get(child(dbref, "User/" + userId))
     .then((snapshot) => {
       if (snapshot.exists()) {
         return snapshot.val();
@@ -72,7 +72,7 @@ export function UpdateData(userId) {
   const birthday = document.getElementById("birthday").value;
   const bio = document.getElementById("bioS").value;
   let ngayGio = new Date(birthday);
-  set(ref(db, "User/" + "AmxMkLMs06T5FBrgeAElKRi9KOq1"), {
+  set(ref(db, "User/" + userId), {
     FirstName: fname,
     LastName: lname,
     UserName: username,
@@ -90,7 +90,7 @@ export function InsertSocial(userId) {
   const github = document.getElementById("githubID");
   const facebook = document.getElementById("facebookID");
   const instagram = document.getElementById("instagramID");
-  set(ref(db, "Social/" + "AmxMkLMs06T5FBrgeAElKRi9KOq1"), {
+  set(ref(db, "Social/" + userId), {
     Google: google.value,
     Github: github.value,
     Facebook: facebook.value,
@@ -100,7 +100,7 @@ export function InsertSocial(userId) {
 
 export function SelectSocial(userId) {
   const dbref = ref(db);
-  return get(child(dbref, "Social/" + "AmxMkLMs06T5FBrgeAElKRi9KOq1"))
+  return get(child(dbref, "Social/" + userId))
     .then((snapshot) => {
       if (snapshot.exists()) {
         const google = document.getElementById("googleID");
