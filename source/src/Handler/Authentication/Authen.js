@@ -25,10 +25,12 @@ export function sendEmail() {
   });
 }
 
-export function signup_login_gg() {
+export async function signup_login_gg() {
   const provider = new GoogleAuthProvider(app);
-  signInWithPopup(auth, provider).catch((error) => {})
-  getRedirectResult(auth);
+   await signInWithPopup(auth, provider)
+  .catch((error) => {})
+  await getRedirectResult(auth)
+  return auth.currentUser
 }
 
 export function login(email, password) {

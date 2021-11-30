@@ -3,19 +3,17 @@ import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 import { SelectDataUser, UpdateData,checktime } from "../../Handler/Database/Data_setup";
 import { uploadAvatar } from "../../Handler/Storage/StorageHandler";
-
 import React, { Component } from "react";
 
 class Personal extends Component {
   changeInfo = () => {
-    UpdateData();
-    uploadAvatar();
+    UpdateData(localStorage.getItem("ID"));
+    uploadAvatar(localStorage.getItem("ID"));
   };
 
-  
 
   GetData = () => {
-    SelectDataUser().then((snapshot) => {
+    SelectDataUser(localStorage.getItem("ID")).then((snapshot) => {
       const fname = document.getElementById("fname");
       const lname = document.getElementById("lname");
       const username = document.getElementById("username");

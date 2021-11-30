@@ -3,7 +3,7 @@ import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../../../node_modules/bootstrap/dist/js/bootstrap.bundle';
 import User_manage from './User_manage'
 import Course_manage from './Course_manage'
-import React, { Component }  from 'react';
+import React  from 'react';
 
 function  Admin_page(){
         return (

@@ -1,10 +1,10 @@
-import './user.css'
-import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import '../../../node_modules/bootstrap/dist/js/bootstrap'
-import React, { useState, Component }  from 'react';
-import { BsBackspaceFill,BsFillGearFill } from '../../../node_modules/react-icons/bs';
+import "./user.css";
+import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "../../../node_modules/bootstrap/dist/js/bootstrap";
+import React, { useState } from "react";
+import { BsBackspaceFill, BsFillGearFill } from "../../../node_modules/react-icons/bs";
+import { UpdateRole,DeleteData } from "../../Handler/Database/Data_setup";
 //import { auth } from '../../Handler/filebase_config';
-
 
 export default function User(props){
     const [key, setKey] = useState(props.id);
@@ -30,31 +30,34 @@ export default function User(props){
             setOpen(true)
         else
             setOpen(false)
-        
     }
 
-    function set_role(id_select){
-        let sl = document.getElementById(id_select)
-        let role = sl.options[sl.selectedIndex].value
-        setRole(role)
-        console.log('set role:', role)
+    function set_role(id_select) {
+        let sl = document.getElementById(id_select);
+        let role = sl.options[sl.selectedIndex].value;
+        setRole(role);
+        UpdateRole(id, role);
     }
 
-    function render_set_role (){
-        var id_select = 'select' + id;
-        console.log('click:', id_select,'- open:',open)
-    
+    function render_set_role() {
+        // console.log('state:',state)
+        var id_select = "select " + id;
         if (open == true)
-            return (
-                <div className="row mt-2 pe-3" id={id}>
-                    <select className="form-select" id={id_select} onChange={()=>set_role(id_select)}>
-                        <option value="Admin"> Admin</option>
-                        <option value="Sensor"> Sensor</option>
-                        <option value="Poster"> Poster</option>
-                        <option value="User"> User</option>
-                    </select>
-                </div>
-            );
+        return (
+            <div className="row mt-2 pe-3" id={id}>
+                <select
+                    className="form-select"
+                    id={id_select}
+                    value={role}
+                    onChange={() => set_role(id_select)}
+                >
+                    <option value="Admin"> Admin</option>
+                    <option value="Sensor"> Sensor</option>
+                    <option value="Poster"> Poster</option>
+                    <option value="User"> User</option>
+                </select>
+            </div>
+        );
     }
     
 
@@ -79,43 +82,47 @@ export default function User(props){
         );
     }
 
+
+    function deleteUSer() {
+    }
+
     return (
-    <tr>
-        <td  scope='row'>{index}</td>
-        <td className = 'col'>
-            <div className='row'>
-                <div className='col-2 d-flex align-items-center justify-content-center'>
-                    <img src={avatar} className="avatar" alt="Avatar" />
-                </div>
-                <strong className='col'> {name}</strong>
-            </div>
-        </td>
-        <td>{create}</td>                        
-        <td>{role}</td>
-        <td className='col'>
-            <div className='row d-flex align-items-center justify-content-center'>
-                { status_dot()}
-                <div className='col'>{status}</div>
-            </div>
-        </td>
-        {/* <td className='col'>
-            <div className='col'>
+        <tr>
+            <td  scope='row'>{index}</td>
+            <td className = 'col'>
                 <div className='row'>
-                    <button type="button" className="col-5 btn btn-secondary me-1 d-flex align-items-center justify-content-center" 
-                    onClick={()=>click_setting()}>
-                        <BsFillGearFill/>
-                    </button>
-                    
-                    <button type="button" className="col-5 btn btn-secondary delete d-flex align-items-center justify-content-center" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
-                        <BsBackspaceFill/>
-                    </button>
+                    <div className='col-2 d-flex align-items-center justify-content-center'>
+                        <img src={avatar} className="avatar" alt="Avatar" />
+                    </div>
+                    <strong className='col'> {name}</strong>
                 </div>
-            
-                {render_set_role()}
-            </div>
-            
-        </td> */}
-        { render_setting() }
-    </tr>
+            </td>
+            <td>{create}</td>                        
+            <td>{role}</td>
+            <td className='col'>
+                <div className='row d-flex align-items-center justify-content-center'>
+                    { status_dot()}
+                    <div className='col'>{status}</div>
+                </div>
+            </td>
+            {/* <td className='col'>
+                <div className='col'>
+                    <div className='row'>
+                        <button type="button" className="col-5 btn btn-secondary me-1 d-flex align-items-center justify-content-center" 
+                        onClick={()=>click_setting()}>
+                            <BsFillGearFill/>
+                        </button>
+                        
+                        <button type="button" className="col-5 btn btn-secondary delete d-flex align-items-center justify-content-center" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
+                            <BsBackspaceFill/>
+                        </button>
+                    </div>
+                
+                    {render_set_role()}
+                </div>
+                
+            </td> */}
+            { render_setting() }
+        </tr>
     );
 }

@@ -1,6 +1,5 @@
-import { getDatabase, ref, get, set, child } from "firebase/database";
+import { getDatabase, ref, get, set, child,remove } from "firebase/database";
 import { app } from "../filebase_config";
-import default_avatar from "../../picture/avatar.png";
 //-----------------------------------------------------------------------------------------//
 const db = getDatabase(app);
 //-----------------------------------------------------------------------------------------//
@@ -13,7 +12,8 @@ export function InsertData(
   Gender,
   Birthday,
   Social,
-  Email
+  Email,
+  role
 ) {
   if (Birthday !== "") {
     let ngayGio = new Date(Birthday);
@@ -26,7 +26,8 @@ export function InsertData(
       Gen: Gender,
       Birth_day: ngayGio.getTime(),
       Social_data: Social,
-      Role: "user",
+      Role: role,
+      Id: id,
       Date_create: new Date().getTime(),
     }).catch(() => {});
   } else {
@@ -39,7 +40,8 @@ export function InsertData(
       Gen: Gender,
       Birth_day: 0,
       Social_data: Social,
-      Role: "user",
+      Role: role,
+      Id: id,
       Date_create: new Date().getTime(),
     }).catch(() => {});
   }
@@ -49,7 +51,7 @@ export function InsertData(
 //-----------------------------------------------------------------------------------------//
 export function SelectDataUser(userId) {
   const dbref = ref(db);
-  return get(child(dbref, "User/" + "AmxMkLMs06T5FBrgeAElKRi9KOq1"))
+  return get(child(dbref, "User/" + userId))
     .then((snapshot) => {
       if (snapshot.exists()) {
         return snapshot.val();
@@ -71,7 +73,7 @@ export function UpdateData(userId) {
   const birthday = document.getElementById("birthday").value;
   const bio = document.getElementById("bioS").value;
   let ngayGio = new Date(birthday);
-  set(ref(db, "User/" + "AmxMkLMs06T5FBrgeAElKRi9KOq1"), {
+  set(ref(db, "User/" + userId), {
     FirstName: fname,
     LastName: lname,
     UserName: username,
@@ -89,7 +91,7 @@ export function InsertSocial(userId) {
   const github = document.getElementById("githubID");
   const facebook = document.getElementById("facebookID");
   const instagram = document.getElementById("instagramID");
-  set(ref(db, "Social/" + "AmxMkLMs06T5FBrgeAElKRi9KOq1"), {
+  set(ref(db, "Social/" + userId), {
     Google: google.value,
     Github: github.value,
     Facebook: facebook.value,
@@ -99,7 +101,7 @@ export function InsertSocial(userId) {
 
 export function SelectSocial(userId) {
   const dbref = ref(db);
-  return get(child(dbref, "Social/" + "AmxMkLMs06T5FBrgeAElKRi9KOq1"))
+  return get(child(dbref, "Social/" + userId))
     .then((snapshot) => {
       if (snapshot.exists()) {
         const google = document.getElementById("googleID");
@@ -108,10 +110,8 @@ export function SelectSocial(userId) {
         const instagram = document.getElementById("instagramID");
         if (snapshot.val().Google != null) google.value = snapshot.val().Google;
         if (snapshot.val().Github != null) github.value = snapshot.val().Github;
-        if (snapshot.val().Facebook != null)
-          facebook.value = snapshot.val().Facebook;
-        if (snapshot.val().Instagram != null)
-          instagram.value = snapshot.val().Instagram;
+        if (snapshot.val().Facebook != null) facebook.value = snapshot.val().Facebook;
+        if (snapshot.val().Instagram != null) instagram.value = snapshot.val().Instagram;
       }
     })
     .catch((error) => {});
@@ -152,6 +152,12 @@ export function GetAllDataOnce() {
     });
 }
 
-// function DeleteData() {
-//   remove(ref(db, "TheStudents/" + MSSVbox.value)).catch(() => {});
-// }
+
+export function UpdateRole(id,role)
+{
+  set(ref(db, "User/" + id+"/Role"),role).catch(() => {});
+}
+
+export function DeleteData(id) {
+  remove(ref(db, "User/" + id)).catch(() => {});
+}
