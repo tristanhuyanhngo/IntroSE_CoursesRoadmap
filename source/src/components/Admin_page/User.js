@@ -32,9 +32,15 @@ export default function User(props){
             setOpen(false)
         
     }
-    
+
+    function set_role(id_select){
+        let sl = document.getElementById(id_select)
+        let role = sl.options[sl.selectedIndex].value
+        setRole(role)
+        console.log('set role:', role)
+    }
+
     function render_set_role (){
-        // console.log('state:',state)
         var id_select = 'select' + id;
         console.log('click:', id_select,'- open:',open)
     
@@ -51,14 +57,27 @@ export default function User(props){
             );
     }
     
-    function set_role(id_select){
-        let sl = document.getElementById(id_select)
-        let role = sl.options[sl.selectedIndex].value
-        setRole(role)
-        console.log('set role:', role)
-    }
 
-    
+    function render_setting() {
+        return (
+            <td className='col'>
+                <div className='col'>
+                    <div className='row'>
+                        <button type="button" className="col-5 btn btn-secondary me-1 d-flex align-items-center justify-content-center" 
+                        onClick={()=>click_setting()}>
+                            <BsFillGearFill/>
+                        </button>
+                        
+                        <button type="button" className="col-5 btn btn-secondary delete d-flex align-items-center justify-content-center" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
+                            <BsBackspaceFill/>
+                        </button>
+                    </div>
+                
+                    {render_set_role()}
+                </div>
+            </td> 
+        );
+    }
 
     return (
     <tr>
@@ -79,7 +98,7 @@ export default function User(props){
                 <div className='col'>{status}</div>
             </div>
         </td>
-        <td className='col'>
+        {/* <td className='col'>
             <div className='col'>
                 <div className='row'>
                     <button type="button" className="col-5 btn btn-secondary me-1 d-flex align-items-center justify-content-center" 
@@ -95,7 +114,8 @@ export default function User(props){
                 {render_set_role()}
             </div>
             
-        </td>
+        </td> */}
+        { render_setting() }
     </tr>
     );
 }
