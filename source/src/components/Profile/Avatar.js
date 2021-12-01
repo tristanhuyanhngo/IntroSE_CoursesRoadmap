@@ -3,6 +3,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import { downloadAvatar } from '../../Handler/Storage/StorageHandler'
 
 export default function Avatar() {
+  console.log(localStorage.getItem("User"))
   downloadAvatar('001');
   return (
     <div className="container">

@@ -1,14 +1,11 @@
 import "./setting_account.css";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-
 import { downloadAvatar } from "../../Handler/Storage/StorageHandler";
-
-import React, { Component, useEffect, useState } from "react";
+import React, { Component} from "react";
 
 class Picture_profile extends Component {
   constructor(props) {
     super(props);
-    downloadAvatar("001");
   }
   state = {
     profileImg:
@@ -35,8 +32,8 @@ class Picture_profile extends Component {
   };
 
   render() {
+    downloadAvatar(localStorage.getItem("ID"));
     const { profileImg } = this.state;
-
     return (
       <div className="card flex-col p-2 px-3 border shadow rounded-3">
         <h4
