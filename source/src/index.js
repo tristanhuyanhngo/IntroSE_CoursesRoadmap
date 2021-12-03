@@ -10,6 +10,7 @@ import reportWebVitals from './reportWebVitals';
 import User_manage from './components/Admin_page/User_manage'
 import Course_manage from './components/Admin_page/Course_manage'
 import Course_admin from './components/Course/Course_admin'
+import Course from './components/Course/Course'
 import Admin_page from './components/Admin_page/Admin_page';
 import Profile from './components/Profile/Profile';
 import Navbar from './components/Homepage/Navbar';
