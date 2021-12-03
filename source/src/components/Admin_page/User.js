@@ -25,7 +25,6 @@ export default function User(props) {
   }
 
   function click_setting() {
-    console.log("click_setting:", open);
     if (open == false) setOpen(true);
     else setOpen(false);
   }
@@ -34,11 +33,11 @@ export default function User(props) {
     let sl = document.getElementById(id_select);
     let role = sl.options[sl.selectedIndex].value;
     setRole(role);
+    setOpen(false)
     UpdateRole(id, role);
   }
 
   function render_set_role() {
-    // console.log('state:',state)
     var id_select = "select " + id;
     if (open == true)
       return (
@@ -56,6 +55,10 @@ export default function User(props) {
           </select>
         </div>
       );
+  }
+
+  function deleteUSer() {
+    DeleteData(id)
   }
 
   function render_setting() {
@@ -120,10 +123,6 @@ export default function User(props) {
         </td>
       );
     }
-  }
-
-  function deleteUSer() {
-    DeleteData(id)
   }
 
   return (

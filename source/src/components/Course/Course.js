@@ -1,6 +1,6 @@
 import './course_admin.css'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import React, { useState, Component }  from 'react';
+import React, { useState }  from 'react';
 
 
 export default function Course(props){
@@ -12,6 +12,7 @@ export default function Course(props){
         level: props.level,
         num_lesson: props.num_lesson,
         descript: props.descript,
+        catalog: props.catalog,
         open: false
     })
 

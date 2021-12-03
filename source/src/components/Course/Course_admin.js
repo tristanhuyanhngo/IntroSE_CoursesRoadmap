@@ -1,63 +1,55 @@
 import "./course_admin.css";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import React, { useState, Component } from "react";
-
-// class Course_admin extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       index: props.index,
-//       id: props.id,
-//       name: props.name,
-//       level: props.level,
-//       num_lesson: props.num_lesson,
-//       descript: props.descript,
-//       source: props.source,
-//       open: false,
-//     };
-//   }
-
-export default function Course_admin(props){
-
-  const [index, setIndex]= useState(props.index);
-  const [id, setID]= useState(props.id);
-  const [name, setName]= useState(props.name);
-  const [level, setLevel]= useState(props.level);
-  const [num_lesson, setNumLesson]= useState(props.num_lesson);
-  const [descript, setDescript]= useState(props.descript);
-  const [source, setSource]= useState(props.source);
-  const [catalog, setCatalog]= useState(props.catalog);
-  const [url, setUrl]= useState(props.url);
-  const [open, setOpen]= useState(false);
+import React, { useState } from "react";
+import {UpdateCourse} from "../../Handler/Database/Data_setup";
+export default function Course_admin(props) {
+  const [id, setID] = useState(props.id);
+  const [name, setName] = useState(props.name);
+  const [level, setLevel] = useState(props.level);
+  const [num_lesson, setNumLesson] = useState(props.num_lesson);
+  const [descript, setDescript] = useState(props.descript);
+  const [catalog, setCatalog] = useState(props.catalog);
+  const [url, setUrl] = useState(props.source);
+  const [open, setOpen] = useState(false);
 
   function save() {
-    var attribute = ["name", "level", "catalog", "descript", "url"];
-
-    for (let i = 0; i < attribute.length; i++) {
-      let value = document.getElementById(id + attribute[i]).value;
-      console.log(i, id + attribute[i], value);
-      if (value != "") {
-        if (i == 0) setName(value);
-        else if (i == 1) setLevel(value);
-        else if (i == 2) setCatalog(value);
-        else if (i == 3) setDescript(value);
-        else if (i == 4) setUrl(value);
-      }
-    }
-    // console.log(this.state);
-  };
+    let Name = document.getElementById(id + "name").value;
+    let Level = document.getElementById(id + "level").value;
+    let Catalog = document.getElementById(id + "catalog").value;
+    let Descript = document.getElementById(id + "descript").value;
+    let Url = document.getElementById(id + "url").value;
+    if(Name ==="")
+      Name = name
+    if(Descript ==="")
+      Descript = descript
+    if(Url ==="")
+      Url = url
+    UpdateCourse(id,Name,Level,num_lesson,Catalog,Descript,Url)
+    setName(Name)
+    setLevel(Level)
+    setDescript(Descript)
+    setCatalog(Catalog)
+    setUrl(Url)
+  }
 
   function btn_edit() {
     if (open == false) setOpen(true);
-    else 
-      setOpen(false);
+    else setOpen(false);
+  }
 
-    console.log("btn_edit", open);
+  function set_level(id_select) {
+    let sl = document.getElementById(id_select);
+    let s = sl.options[sl.selectedIndex].value;
+    setLevel(s)
+  }
 
-  };
+  function set_catalog(id_select) {
+    let sl = document.getElementById(id_select);
+    let s = sl.options[sl.selectedIndex].value;
+    setCatalog(s)
+  }
 
   function render_edit_container() {
-    console.log('render_edit_container')
     if (open == true)
       return (
         <div className="mt-2 edit-site col-md-8" id={id}>
@@ -91,6 +83,8 @@ export default function Course_admin(props){
                   id={id + "level"}
                   className="form-select"
                   aria-label="Floating label select example"
+                  value={level}
+                  onChange={() => set_level(id+"level")}
                 >
                   <option value="beginner">Beginner</option>
                   <option value="intermediate">Intermediate</option>
@@ -109,6 +103,8 @@ export default function Course_admin(props){
                   id={id + "catalog"}
                   className="form-select"
                   aria-label="Floating label select example"
+                  value={catalog}
+                  onChange={() => set_catalog(id+"catalog")}
                 >
                   <option value="web">Website</option>
                   <option value="app">Application</option>
@@ -144,7 +140,7 @@ export default function Course_admin(props){
                   type="url"
                   name="source"
                   className="form-control"
-                  placeholder={source}
+                  placeholder={url}
                 />
               </div>
             </div>
@@ -161,7 +157,7 @@ export default function Course_admin(props){
           </div>
         </div>
       );
-  };
+  }
 
   return (
     <div className="card pb-0 border-0 d-flex align-items-center">
@@ -170,9 +166,7 @@ export default function Course_admin(props){
           <div className="card-header">
             <div className="row">
               <div className="col mb-2">
-                <h4 className="card-title fw-bold text-dark">
-                  {name}
-                </h4>
+                <h4 className="card-title fw-bold text-dark">{name}</h4>
                 <h6 className="card-subtitle">
                   {level} ({num_lesson} lessons)
                 </h6>

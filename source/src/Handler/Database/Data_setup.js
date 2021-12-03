@@ -48,7 +48,7 @@ export function InsertData(
   console.log(new Date());
 }
 
-//-----------------------------------------------------------------------------------------//
+
 export function SelectDataUser(userId) {
   const dbref = ref(db);
   return get(child(dbref, "User/" + userId))
@@ -62,7 +62,7 @@ export function SelectDataUser(userId) {
     });
 }
 
-// //-----------------------------------------------------------------------------------------//
+
 export function UpdateData(userId) {
   const fname = document.getElementById("fname").value;
   const lname = document.getElementById("lname").value;
@@ -85,7 +85,7 @@ export function UpdateData(userId) {
   }).catch(() => {});
 }
 
-// //-----------------------------------------------------------------------------------------//
+
 export function InsertSocial(userId) {
   const google = document.getElementById("googleID");
   const github = document.getElementById("githubID");
@@ -119,7 +119,7 @@ export function SelectSocial(userId) {
     .catch((error) => {});
 }
 
-//-----------------------------------------------------------------------------------------//
+
 export function checktime(time) {
   const date = new Date(time);
   const dd = date.getDate();
@@ -142,7 +142,7 @@ export function checktime(time) {
   else return yyyy + "-" + mm + "-" + dd;
 }
 
-//-----------------------------------------------------------------------------------------//
+
 export function GetAllDataOnce() {
   const dbref = ref(db);
   return get(child(dbref, "User"))
@@ -154,27 +154,18 @@ export function GetAllDataOnce() {
     });
 }
 
+
 export function UpdateRole(id, role) {
   set(ref(db, "User/" + id + "/Role"), role).catch(() => {});
 }
+
 
 export function DeleteData(id) {
   remove(ref(db, "User/" + id)).catch(() => {});
 }
 
-function generateRandom(numberOfCharacters) {
-  var randomValues = "";
-  var stringValues = "ABCDEFGHIJKLMNOabcdefghijklmnopqrstuvwxyzPQRSTUVWXYZ0123456789";
-  var sizeOfCharacter = stringValues.length;
-  for (var i = 0; i < numberOfCharacters; i++) {
-    randomValues =
-      randomValues +
-      stringValues.charAt(Math.floor(Math.random() * sizeOfCharacter));
-  }
-  return randomValues;
-}
-
 export function InsertCourse(
+  id,
   name,
   level,
   num_lesson,
@@ -182,7 +173,6 @@ export function InsertCourse(
   descript,
   source
 ) {
-  let id = generateRandom(9)
   set(ref(db, "Course/" + id), {
     Name: name,
     Level: level,
@@ -193,6 +183,21 @@ export function InsertCourse(
     Id: id
   }).catch(() => {});
 }
+
+
+export function UpdateCourse(id,name,level,num_lesson,catalog,descript,source) 
+{
+  set(ref(db, "Course/" + id), {
+    Name: name,
+    Level: level,
+    Num_lesson: num_lesson,
+    Catalog: catalog,
+    Descript: descript,
+    Source: source,
+    Id:id
+  }).catch(() => {});
+}
+
 
 export function GetAllCourse() {
   const dbref = ref(db);
