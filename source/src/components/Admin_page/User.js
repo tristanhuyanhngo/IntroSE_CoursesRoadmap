@@ -58,11 +58,12 @@ export default function User(props) {
   }
 
   // function deleteUSer() {
-  //   DeleteData(id)
+  //   
   // }
 
   function deleteUSer() {
     props.onChange(id)
+    DeleteData(id)
     console.log('delete child: ', id)
   }
 
