@@ -57,8 +57,13 @@ export default function User(props) {
       );
   }
 
+  // function deleteUSer() {
+  //   DeleteData(id)
+  // }
+
   function deleteUSer() {
-    DeleteData(id)
+    props.onChange(id)
+    console.log('delete child: ', id)
   }
 
   function render_setting() {
@@ -112,7 +117,7 @@ export default function User(props) {
                 data-bs-toggle="tooltip"
                 data-bs-placement="top"
                 title="Delete"
-                onClick={() => deleteUSer()}
+                onClick={deleteUSer}
               >
                 <BsBackspaceFill />
               </button>
