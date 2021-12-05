@@ -4,7 +4,7 @@ import React, { useState,useEffect } from "react";
 import default_avatar from "../../picture/avatar.png";
 import { BiSearchAlt } from "react-icons/bi";
 import User from "./User";
-import { GetAllDataOnce,checktime } from "../../Handler/Database/Data_setup";
+import { DeleteData,GetAllDataOnce,checktime } from "../../Handler/Database/Data_setup";
 
 export default function User_manage() {
   const [users, setUsers] = useState([]);
@@ -26,6 +26,7 @@ export default function User_manage() {
             avatar: default_avatar,
           });
         });
+       
         setUsers(Data)
       }
     });
@@ -42,6 +43,16 @@ export default function User_manage() {
       item[key].toLowerCase().includes(lowercasedFilter)
     );
   });
+
+  function deleteUSer(id) {
+    let data = [];
+    for (let i = 0; i < users.length; i++) {
+      if (users[i].id != id )
+        data.push(users[i])
+    }
+    setUsers(data)
+    console.log('deleted', id)
+  }
 
   return (
     <div className="card border-0 m-3">
@@ -90,6 +101,7 @@ export default function User_manage() {
                 create={user.create}
                 role={user.role}
                 status={user.status}
+                onChange = {deleteUSer}
               />
             ))}
           </tbody>

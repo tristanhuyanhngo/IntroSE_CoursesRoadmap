@@ -1,4 +1,4 @@
-import { getDatabase, ref, get, set, child,remove } from "firebase/database";
+import { getDatabase, ref, get, set, child, remove } from "firebase/database";
 import { app } from "../filebase_config";
 //-----------------------------------------------------------------------------------------//
 const db = getDatabase(app);
@@ -48,7 +48,7 @@ export function InsertData(
   console.log(new Date());
 }
 
-//-----------------------------------------------------------------------------------------//
+
 export function SelectDataUser(userId) {
   const dbref = ref(db);
   return get(child(dbref, "User/" + userId))
@@ -62,7 +62,7 @@ export function SelectDataUser(userId) {
     });
 }
 
-// //-----------------------------------------------------------------------------------------//
+
 export function UpdateData(userId) {
   const fname = document.getElementById("fname").value;
   const lname = document.getElementById("lname").value;
@@ -85,7 +85,7 @@ export function UpdateData(userId) {
   }).catch(() => {});
 }
 
-// //-----------------------------------------------------------------------------------------//
+
 export function InsertSocial(userId) {
   const google = document.getElementById("googleID");
   const github = document.getElementById("githubID");
@@ -110,14 +110,16 @@ export function SelectSocial(userId) {
         const instagram = document.getElementById("instagramID");
         if (snapshot.val().Google != null) google.value = snapshot.val().Google;
         if (snapshot.val().Github != null) github.value = snapshot.val().Github;
-        if (snapshot.val().Facebook != null) facebook.value = snapshot.val().Facebook;
-        if (snapshot.val().Instagram != null) instagram.value = snapshot.val().Instagram;
+        if (snapshot.val().Facebook != null)
+          facebook.value = snapshot.val().Facebook;
+        if (snapshot.val().Instagram != null)
+          instagram.value = snapshot.val().Instagram;
       }
     })
     .catch((error) => {});
 }
 
-//-----------------------------------------------------------------------------------------//
+
 export function checktime(time) {
   const date = new Date(time);
   const dd = date.getDate();
@@ -140,12 +142,12 @@ export function checktime(time) {
   else return yyyy + "-" + mm + "-" + dd;
 }
 
-//-----------------------------------------------------------------------------------------//
+
 export function GetAllDataOnce() {
   const dbref = ref(db);
   return get(child(dbref, "User"))
     .then((snapshot) => {
-        return snapshot
+      return snapshot;
     })
     .catch((error) => {
       console.error(error.message);
@@ -153,11 +155,57 @@ export function GetAllDataOnce() {
 }
 
 
-export function UpdateRole(id,role)
-{
-  set(ref(db, "User/" + id+"/Role"),role).catch(() => {});
+export function UpdateRole(id, role) {
+  set(ref(db, "User/" + id + "/Role"), role).catch(() => {});
 }
+
 
 export function DeleteData(id) {
   remove(ref(db, "User/" + id)).catch(() => {});
+}
+
+export function InsertCourse(
+  id,
+  name,
+  level,
+  num_lesson,
+  catalog,
+  descript,
+  source
+) {
+  set(ref(db, "Course/" + id), {
+    Name: name,
+    Level: level,
+    Num_lesson: num_lesson,
+    Catalog: catalog,
+    Descript: descript,
+    Source: source,
+    Id: id
+  }).catch(() => {});
+}
+
+
+export function UpdateCourse(id,name,level,num_lesson,catalog,descript,source) 
+{
+  set(ref(db, "Course/" + id), {
+    Name: name,
+    Level: level,
+    Num_lesson: num_lesson,
+    Catalog: catalog,
+    Descript: descript,
+    Source: source,
+    Id:id
+  }).catch(() => {});
+}
+
+
+export function GetAllCourse() {
+  const dbref = ref(db);
+  return get(child(dbref, "Course"))
+    .then((snapshot) => {
+      return snapshot;
+    })
+    .catch((error) => {
+      console.error(error.message);
+    });
 }
