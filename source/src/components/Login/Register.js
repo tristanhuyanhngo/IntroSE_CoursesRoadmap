@@ -43,7 +43,9 @@ function Register() {
     async function handSignUp2()
     {
       setWaiting(true);
-      await signup_login_gg();
+      const a = await signup_login_gg();
+      localStorage.setItem('EMAIl',a.email)
+      localStorage.setItem('ID',a.uid)
       setWaiting(false);
     }
 

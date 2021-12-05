@@ -63,7 +63,7 @@ export function uploadAvatar(id) {
       // Handle successful uploads on complete
       // For instance, get the download URL: https://firebasestorage.googleapis.com/...
       getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-        console.log("File available at", downloadURL);
+        localStorage.setItem('uploaded_image', downloadURL);
         deleteAvatar();
       });
     }

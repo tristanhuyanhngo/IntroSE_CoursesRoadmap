@@ -1,4 +1,15 @@
-import { getDatabase, ref, get, set, child, remove } from "firebase/database";
+import {
+  getDatabase,
+  ref,
+  get,
+  set,
+  child,
+  remove,
+  query,
+  equalTo,
+  orderByKey,
+  orderByChild
+} from "firebase/database";
 import { app } from "../filebase_config";
 //-----------------------------------------------------------------------------------------//
 const db = getDatabase(app);
@@ -13,6 +24,7 @@ export function InsertData(
   Birthday,
   Social,
   Email,
+  avatar_url,
   role
 ) {
   if (Birthday !== "") {
@@ -28,6 +40,7 @@ export function InsertData(
       Social_data: Social,
       Role: role,
       Id: id,
+      avatar_url,
       Date_create: new Date().getTime(),
     }).catch(() => {});
   } else {
@@ -42,6 +55,7 @@ export function InsertData(
       Social_data: Social,
       Role: role,
       Id: id,
+      avatar_url,
       Date_create: new Date().getTime(),
     }).catch(() => {});
   }
@@ -198,6 +212,19 @@ export function UpdateCourse(id,name,level,num_lesson,catalog,descript,source)
   }).catch(() => {});
 }
 
+export async function getCourse(courseName) {
+  // const recentCourseRef = query(ref(db, 'Course'), equalTo(courseName));
+  const readNewLogEntries = await get(
+    query(
+      ref(db, "Course"),
+      orderByChild("Name"),
+      equalTo(courseName)
+    )
+    // Filters where "type" is equal to "Request". Single arg here ⬆
+  );
+  console.log(readNewLogEntries.val())
+  return readNewLogEntries.val();
+}
 
 export function GetAllCourse() {
   const dbref = ref(db);
