@@ -27,7 +27,8 @@ function  Admin_page(){
                         {/* Navigate control */}
                         <div className="tab-content" id="myTabContent">
                             <div className="tab-pane fade show active" id="user" role="tabpanel" aria-labelledby="user-tab">
-                                <User_manage />
+                                {/* <User_manage /> */}
+                                <Course_manage />
                             </div>
                             <div className="tab-pane fade" id="course" role="tabpanel" aria-labelledby="course-tab">
                                 <Course_manage />

@@ -18,15 +18,20 @@ export default function Course_admin(props) {
     let Catalog = document.getElementById(id + "catalog").value;
     let Descript = document.getElementById(id + "descript").value;
     let Url = document.getElementById(id + "url").value;
+    let NumLesson = document.getElementById(id + "num_lesson").value;
+    console.log('num:', NumLesson)
     if(Name ==="")
       Name = name
     if(Descript ==="")
       Descript = descript
     if(Url ==="")
       Url = url
+    if (NumLesson ==="")
+      NumLesson = num_lesson
     UpdateCourse(id,Name,Level,num_lesson,Catalog,Descript,Url)
     setName(Name)
     setLevel(Level)
+    setNumLesson(NumLesson)
     setDescript(Descript)
     setCatalog(Catalog)
     setUrl(Url)
@@ -54,12 +59,12 @@ export default function Course_admin(props) {
       return (
         <div className="mt-2 edit-site col-md-8" id={id}>
           <div className="card flex-col px-2 shadow rounded-3">
-            <h1 id="card-title" className="card-title fw-bold text-dark">
+            <h1 id="card-title" className="ps-2 pt-2 card-title fw-bold text-dark">
               Edit course
             </h1>
 
-            <div className="row mb-2">
-              <div className="subtitle col-2 d-flex align-items-center justify-content-end">
+            <div className="row mb-2 pe-3">
+              <div className="subtitle col-2 pe-0 d-flex align-items-center justify-content-end">
                 {" "}
                 Name
               </div>
@@ -74,8 +79,8 @@ export default function Course_admin(props) {
               </div>
             </div>
 
-            <div className="row mb-2">
-              <div className="subtitle col-2 d-flex align-items-center justify-content-end">
+            <div className="row mb-2 pe-3">
+              <div className="subtitle col-2 pe-0 d-flex align-items-center justify-content-end">
                 Level
               </div>
               <div className="col form-floating">
@@ -94,8 +99,8 @@ export default function Course_admin(props) {
               </div>
             </div>
 
-            <div className="row mb-2">
-              <div className="subtitle col-2 d-flex align-items-center justify-content-end">
+            <div className="row mb-2 pe-3">
+              <div className="subtitle col-2 pe-0 d-flex align-items-center justify-content-end">
                 Catalog
               </div>
               <div className="col form-floating">
@@ -114,8 +119,24 @@ export default function Course_admin(props) {
               </div>
             </div>
 
-            <div className="row mb-2 ms-3">
-              <div className="subtitle col-2 d-flex justify-content-end">
+            <div className="row mb-2 pe-3">
+              <div className="subtitle col-3 me-0 d-flex align-items-center justify-content-end">
+                {" "}
+                Num lesson
+              </div>
+              <div className="col">
+                <input
+                  id={id + "num_lesson"}
+                  type="number"
+                  name="coursenumlesson"
+                  className="form-control"
+                  placeholder={num_lesson}
+                />
+              </div>
+            </div>
+
+            <div className="row mb-2 pe-3">
+              <div className="subtitle col-3  ps-0 d-flex justify-content-end">
                 Description
               </div>
               <div className="col">
@@ -129,8 +150,8 @@ export default function Course_admin(props) {
               </div>
             </div>
 
-            <div className="row mb-2">
-              <div className="subtitle col-2 d-flex align-items-center justify-content-end">
+            <div className="row mb-2 pe-3">
+              <div className="subtitle col-2 pe-0 d-flex align-items-center justify-content-end">
                 {" "}
                 Source
               </div>
