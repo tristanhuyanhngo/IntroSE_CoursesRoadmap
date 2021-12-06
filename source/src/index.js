@@ -19,7 +19,7 @@ import Roadmap from './components/Roadmap/Roadmap'
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Setting_account />, */}
+    <Setting_account />,
     {/* <Roadmap />, */}
     {/* <Admin_page />, */}
     {/* <Story_page /> */}

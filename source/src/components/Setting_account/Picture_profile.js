@@ -1,7 +1,8 @@
 import "./setting_account.css";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import { downloadAvatar } from "../../Handler/Storage/StorageHandler";
+import { downloadAvatar,uploadAvatar} from "../../Handler/Storage/StorageHandler";
 import React, { Component} from "react";
+import { getPicture } from "../../Handler/Database/Data_setup";
 
 class Picture_profile extends Component {
   constructor(props) {
@@ -20,6 +21,7 @@ class Picture_profile extends Component {
       }
     };
     reader.readAsDataURL(e.target.files[0]);
+    uploadAvatar(localStorage.getItem("ID"));
   };
 
   uploadImg = () => {
@@ -32,7 +34,7 @@ class Picture_profile extends Component {
   };
 
   render() {
-    downloadAvatar(localStorage.getItem("ID"));
+    downloadAvatar(getPicture(localStorage.getItem("ID")))
     const { profileImg } = this.state;
     return (
       <div className="card flex-col p-2 px-3 border shadow rounded-3">

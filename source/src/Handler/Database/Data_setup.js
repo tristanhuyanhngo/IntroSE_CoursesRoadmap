@@ -8,7 +8,7 @@ import {
   query,
   equalTo,
   orderByKey,
-  orderByChild
+  orderByChild,
 } from "firebase/database";
 import { app } from "../filebase_config";
 //-----------------------------------------------------------------------------------------//
@@ -62,7 +62,6 @@ export function InsertData(
   console.log(new Date());
 }
 
-
 export function SelectDataUser(userId) {
   const dbref = ref(db);
   return get(child(dbref, "User/" + userId))
@@ -76,7 +75,6 @@ export function SelectDataUser(userId) {
     });
 }
 
-
 export function UpdateData(userId) {
   const fname = document.getElementById("fname").value;
   const lname = document.getElementById("lname").value;
@@ -86,6 +84,9 @@ export function UpdateData(userId) {
   const gen = document.getElementById("select").value;
   const birthday = document.getElementById("birthday").value;
   const bio = document.getElementById("bioS").value;
+  const role = document.getElementById("role").value;
+  const url = document.getElementById("avatar_url").value;
+  const create = document.getElementById("Date_create").value;
   let ngayGio = new Date(birthday);
   set(ref(db, "User/" + userId), {
     FirstName: fname,
@@ -96,9 +97,12 @@ export function UpdateData(userId) {
     Gen: gen,
     Birth_day: ngayGio.getTime(),
     Social_data: bio,
+    Role: role,
+    Id: userId,
+    avatar_url: url,
+    Date_create: create,
   }).catch(() => {});
 }
-
 
 export function InsertSocial(userId) {
   const google = document.getElementById("googleID");
@@ -133,7 +137,6 @@ export function SelectSocial(userId) {
     .catch((error) => {});
 }
 
-
 export function checktime(time) {
   const date = new Date(time);
   const dd = date.getDate();
@@ -156,7 +159,6 @@ export function checktime(time) {
   else return yyyy + "-" + mm + "-" + dd;
 }
 
-
 export function GetAllDataOnce() {
   const dbref = ref(db);
   return get(child(dbref, "User"))
@@ -168,11 +170,9 @@ export function GetAllDataOnce() {
     });
 }
 
-
 export function UpdateRole(id, role) {
   set(ref(db, "User/" + id + "/Role"), role).catch(() => {});
 }
-
 
 export function DeleteData(id) {
   remove(ref(db, "User/" + id)).catch(() => {});
@@ -194,13 +194,19 @@ export function InsertCourse(
     Catalog: catalog,
     Descript: descript,
     Source: source,
-    Id: id
+    Id: id,
   }).catch(() => {});
 }
 
-
-export function UpdateCourse(id,name,level,num_lesson,catalog,descript,source) 
-{
+export function UpdateCourse(
+  id,
+  name,
+  level,
+  num_lesson,
+  catalog,
+  descript,
+  source
+) {
   set(ref(db, "Course/" + id), {
     Name: name,
     Level: level,
@@ -208,21 +214,17 @@ export function UpdateCourse(id,name,level,num_lesson,catalog,descript,source)
     Catalog: catalog,
     Descript: descript,
     Source: source,
-    Id:id
+    Id: id,
   }).catch(() => {});
 }
 
 export async function getCourse(courseName) {
   // const recentCourseRef = query(ref(db, 'Course'), equalTo(courseName));
   const readNewLogEntries = await get(
-    query(
-      ref(db, "Course"),
-      orderByChild("Name"),
-      equalTo(courseName)
-    )
+    query(ref(db, "Course"), orderByChild("Name"), equalTo(courseName))
     // Filters where "type" is equal to "Request". Single arg here ⬆
   );
-  console.log(readNewLogEntries.val())
+  console.log(readNewLogEntries.val());
   return readNewLogEntries.val();
 }
 
@@ -231,6 +233,19 @@ export function GetAllCourse() {
   return get(child(dbref, "Course"))
     .then((snapshot) => {
       return snapshot;
+    })
+    .catch((error) => {
+      console.error(error.message);
+    });
+}
+
+export function getPicture(userId) {
+  const dbref = ref(db);
+  return get(child(dbref, "User/" + userId))
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        return snapshot.val().avatar_url;
+      }
     })
     .catch((error) => {
       console.error(error.message);
