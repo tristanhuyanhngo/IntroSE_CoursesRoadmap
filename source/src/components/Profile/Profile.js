@@ -6,7 +6,6 @@ import CompletedProgressBar from "./CompletedProgressBar";
 import { FinishedCourse, CurrentCourse } from "./CourseState";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Avatar from "./Avatar";
-import Picture_profile from "../Setting_account/Picture_profile";
 
 function Profile(params) {
   return (

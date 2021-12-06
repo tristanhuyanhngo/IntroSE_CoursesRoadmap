@@ -2,13 +2,12 @@ import {
   getStorage,
   ref,
   getDownloadURL,
-} from 'firebase/storage';
-
-export function downloadAvatar(imgName) {
-  console.log(imgName);
-
+  uploadBytesResumable,
+  deleteObject,
+} from "firebase/storage";
+export function downloadAvatar(avatarName) {
   const storage = getStorage();
-  getDownloadURL(ref(storage, `images/${imgName}.jpg`))
+  getDownloadURL(ref(storage, `avatars/${avatarName}.jpg`))
     .then((url) => {
       // `url` is the download URL for 'images/stars.jpg'
 
@@ -22,10 +21,66 @@ export function downloadAvatar(imgName) {
       xhr.send();
 
       // Or inserted into an <img> element
-      const img = document.getElementById("Avatar_Image");
-      img.setAttribute("src", url);
+      localStorage.setItem('imgUrl', url);
     })
     .catch((error) => {
       console.error(error.message);
+    });
+}
+
+export function uploadAvatar(id) {
+  const file = document.querySelector("#picture-profile").files[0];
+
+  const storage = getStorage();
+  const storageRef = ref(storage, `avatars/${id.toString()}.jpg`);
+
+  const uploadTask = uploadBytesResumable(storageRef, file);
+
+  // Register three observers:
+  // 1. 'state_changed' observer, called any time the state changes
+  // 2. Error observer, called on failure
+  // 3. Completion observer, called on successful completion
+  uploadTask.on(
+    "state_changed",
+    (snapshot) => {
+      // Observe state change events such as progress, pause, and resume
+      // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+      const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      console.log("Upload is " + progress + "% done");
+      switch (snapshot.state) {
+        case "paused":
+          console.log("Upload is paused");
+          break;
+        case "running":
+          console.log("Upload is running");
+          break;
+      }
+    },
+    (error) => {
+      // Handle unsuccessful uploads
+    },
+    () => {
+      // Handle successful uploads on complete
+      // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+      getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+        localStorage.setItem('uploaded_image', downloadURL);
+        deleteAvatar();
+      });
+    }
+  );
+}
+
+function deleteAvatar() {
+  const storage = getStorage();
+
+  // Create a reference to the file to delete
+  const desertRef = ref(storage, `images/${'001'}.jpg`);
+  // Delete the file
+  deleteObject(desertRef)
+    .then(() => {
+      // File deleted successfully
+    })
+    .catch((error) => {
+      // Uh-oh, an error occurred!
     });
 }

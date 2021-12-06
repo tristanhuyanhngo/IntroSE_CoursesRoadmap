@@ -10,6 +10,7 @@ import reportWebVitals from './reportWebVitals';
 import User_manage from './components/Admin_page/User_manage'
 import Course_manage from './components/Admin_page/Course_manage'
 import Course_admin from './components/Course/Course_admin'
+import Course from './components/Course/Course'
 import Admin_page from './components/Admin_page/Admin_page';
 import Profile from './components/Profile/Profile';
 import Navbar from './components/Homepage/Navbar';
@@ -21,13 +22,11 @@ ReactDOM.render(
   <React.StrictMode>
     <Setting_account />,
     {/* <Roadmap />, */}
-    {/* <User_manage/>, */}
-    {/* <Course_manage />, */}
-    {/* <Admin_page /> */}
+    {/* <Admin_page />, */}
     {/* <Story_page /> */}
-    {/* <Create_info />, */}
     {/* <Login_page />, */}
-    {/* <Profile /> */}
+    {/* <Create_info />, */}
+    {/* <Profile />, */}
     {/* <Router>
       <App />
     </Router> */}

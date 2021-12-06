@@ -1,36 +1,22 @@
 import "./setting_account.css";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+import {
+  SelectDataUser,
+  UpdateData,
+  checktime,
+} from "../../Handler/Database/Data_setup";
+import { uploadAvatar } from "../../Handler/Storage/StorageHandler";
 import React, { Component } from "react";
-import { SelectDataUser, UpdateData } from "../../Handler/Database/Data_setup";
+
 class Personal extends Component {
-  changeinfor = () => {
-    UpdateData();
-  };
-
-  checktime = (time) => {
-    const date = new Date(time);
-    const dd = date.getDate();
-    const mm = date.getMonth() + 1;
-    const yyyy = date.getFullYear();
-
-    if (mm < 10 && dd < 10 && yyyy < 10)
-      return "000" + yyyy + "-0" + mm + "-0" + dd;
-    if (mm < 10 && yyyy < 10) return "00" + yyyy + "-0" + mm + "-" + dd;
-    if (dd < 10 && yyyy < 10) return "000" + yyyy + "-" + mm + "-0" + dd;
-    if (mm < 10 && dd < 10 && yyyy < 100)
-      return "00" + yyyy + "-0" + mm + "-0" + dd;
-    if (dd < 10 && yyyy < 100) return "00" + yyyy + "-" + mm + "-0" + dd;
-    if (mm < 10 && yyyy < 100) return "00" + yyyy + "-0" + mm + "-" + dd;
-    if (mm < 10 && dd < 10 && yyyy < 1000)
-      return "0" + yyyy + "-0" + mm + "-0" + dd;
-    if (mm < 10 && dd < 10) return yyyy + "-0" + mm + "-0" + dd;
-    if (mm < 10) return yyyy + "-0" + mm + "-" + dd;
-    if (dd < 10) return yyyy + "-" + mm + "-0" + dd;
-    else return yyyy + "-" + mm + "-" + dd;
+  changeInfo = () => {
+    UpdateData(localStorage.getItem("ID"));
+    uploadAvatar(localStorage.getItem("ID"));
   };
 
   GetData = () => {
-    SelectDataUser().then((snapshot) => {
+    SelectDataUser(localStorage.getItem("ID")).then((snapshot) => {
       const fname = document.getElementById("fname");
       const lname = document.getElementById("lname");
       const username = document.getElementById("username");
@@ -39,15 +25,20 @@ class Personal extends Component {
       const gen = document.getElementById("select");
       const birthday = document.getElementById("birthday");
       const bio = document.getElementById("bioS");
-
+      const role = document.getElementById("role");
+      const url = document.getElementById("avatar_url");
+      const date_create = document.getElementById("Date_create");
       fname.value = snapshot.FirstName;
       lname.value = snapshot.LastName;
       username.value = snapshot.UserName;
       Email.value = snapshot.email;
       phone.value = snapshot.PhoneNumber;
-      birthday.value = this.checktime(snapshot.Birth_day);
+      birthday.value = checktime(snapshot.Birth_day);
       gen.value = snapshot.Gen;
       bio.value = snapshot.Social_data;
+      role.value = snapshot.Role;
+      url.value = snapshot.avatar_url;
+      date_create.value = snapshot.Date_create;
     });
   };
   render() {
@@ -176,6 +167,9 @@ class Personal extends Component {
               </div>
               <div className="col">
                 <textarea type="text" name="bio" id="bioS" />
+                <input type="text" name="role" id="role" className="form-control" hidden/>
+                <input type="text" name="avatar_url" id="avatar_url" className="form-control" hidden/>
+                <input type="text" name="Date_create" id="Date_create" className="form-control" hidden/>
               </div>
             </div>
           </div>
@@ -183,7 +177,7 @@ class Personal extends Component {
           <div className="d-flex mt-2 justify-content-end">
             <button
               className="btn btn-primary btn-md buttons btn-input"
-              onClick={this.changeinfor}
+              onClick={this.changeInfo}
             >
               SAVE
             </button>

@@ -3,6 +3,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import { downloadAvatar } from '../../Handler/Storage/StorageHandler'
 
 export default function Avatar() {
+  console.log(localStorage.getItem("User"))
   downloadAvatar('001');
   return (
     <div className="container">
@@ -12,7 +13,9 @@ export default function Avatar() {
             <img
               className="avt-setting shadow-lg"
               data-holder-rendered="true"
-              id="Avatar_Image"
+              src={
+                localStorage.getItem("imgUrl") ?? "https://i.imgur.com/G1pXs7D.jpg"
+              }
             />
           </div>
         </div>

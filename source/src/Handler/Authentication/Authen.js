@@ -12,24 +12,26 @@ import { useEffect, useState } from "react";
 
 export function signup(email, password) {
   return createUserWithEmailAndPassword(auth, email, password)
-  .catch(function (error) {
-    console.log(error.code);
-    console.log(error.message);
-  });
+    .catch(function (error) {
+      console.log(error.code);
+      console.log(error.message);
+    });
 }
 
 export function sendEmail() {
   sendEmailVerification(auth.currentUser)
-  .catch(function (error) {
-    console.log(error.code);
-    console.log(error.message);
-  });
+    .catch(function (error) {
+      console.log(error.code);
+      console.log(error.message);
+    });
 }
 
-export function signup_login_gg() {
+export async function signup_login_gg() {
   const provider = new GoogleAuthProvider(app);
-  signInWithPopup(auth, provider).catch((error) => { })
-  getRedirectResult(auth);
+  await signInWithPopup(auth, provider)
+    .catch((error) => { })
+  await getRedirectResult(auth)
+  return auth.currentUser
 }
 
 export function login(email, password) {
