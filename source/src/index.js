@@ -20,16 +20,17 @@ import Roadmap from './components/Roadmap/Roadmap'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Setting_account />,
+    {/* <Setting_account />, */}
     {/* <Roadmap />, */}
     {/* <Admin_page />, */}
     {/* <Story_page /> */}
     {/* <Login_page />, */}
     {/* <Create_info />, */}
     {/* <Profile />, */}
-    {/* <Router>
+    <Router>
       <App />
-    </Router> */}
+    </Router>
+    {/* <Roadmap /> */}
   </React.StrictMode>,
 
   document.getElementById('root')

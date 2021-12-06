@@ -1,8 +1,14 @@
+.course-title {
+  margin-left: 220px;
+  font-size: 30px;
+}
+
 .course-items {
   display: flex;
   justify-content: space-between;
   margin-left: 200px;
   width: 80%;
+  margin-bottom: 20px;
 }
 
 .course-item {

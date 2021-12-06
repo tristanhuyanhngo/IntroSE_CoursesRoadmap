@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const CourseData = [
+export const Featured_storyData = [
     {
         title: 'HTML, CSS từ Zero đến Hero',
         path: '/htmlcss',
