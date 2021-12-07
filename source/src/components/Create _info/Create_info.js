@@ -33,17 +33,20 @@ class Create_info extends Component {
 
   saveInfor = ()=>{
     let id = localStorage.getItem("ID")
-    const Fname = document.getElementById("floatingInputFname").value
-    const Lname = document.getElementById("floatingInputLname").value
-    const Uname = document.getElementById("floatingInputUsername").value 
-    const Phone = document.getElementById("floatingInputPhoneNum").value 
-    const Gender = document.getElementById("floatingSelect").value 
-    const Birthday = document.getElementById("floatingInputBirthday").value 
-    const Social = document.getElementById("floatingInputSocial").value 
-    const Email = document.getElementById("floatingInputEmail").value 
-    InsertData(id,Fname,Lname,Uname,Phone,Gender,Birthday,Social,Email,"User")
-
+    const Fname = document.getElementById("floatingInputFname").value;
+    const Lname = document.getElementById("floatingInputLname").value;
+    const Uname = document.getElementById("floatingInputUsername").value;
+    const Phone = document.getElementById("floatingInputPhoneNum").value;
+    const Gender = document.getElementById("floatingSelect").value;
+    const Birthday = document.getElementById("floatingInputBirthday").value;
+    const Social = document.getElementById("floatingInputSocial").value;
+    const Email = document.getElementById("floatingInputEmail").value;
     uploadAvatar(id);
+    InsertData(id, Fname, Lname, Uname, Phone, Gender, Birthday, Social, Email,
+       localStorage.getItem('uploaded_image'), "User");
+
+    localStorage.removeItem("uploaded_image");
+    console.log('remove');
   }
   render()
   {

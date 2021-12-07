@@ -18,6 +18,7 @@ import Story_page from './components/Story/Story_page'
 import Roadmap from './components/Roadmap/Roadmap'
 import Detail_course from './components/Detail_Course/Detail_course'
 
+
 ReactDOM.render(
   <React.StrictMode>
     {/* <Setting_account />, */}
@@ -27,10 +28,12 @@ ReactDOM.render(
     <Detail_course />
     {/* <Create_info />, */}
     {/* <Login_page />, */}
+    {/* <Create_info />, */}
     {/* <Profile />, */}
     {/* <Router>
       <App />
     </Router> */}
+    {/* <Roadmap /> */}
   </React.StrictMode>,
 
   document.getElementById('root')

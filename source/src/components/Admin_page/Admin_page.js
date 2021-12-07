@@ -4,6 +4,7 @@ import '../../../node_modules/bootstrap/dist/js/bootstrap.bundle';
 import User_manage from './User_manage'
 import Course_manage from './Course_manage'
 import React  from 'react';
+import {getCourse} from '../../Handler/Database/Data_setup'
 
 function  Admin_page(){
         return (

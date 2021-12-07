@@ -28,7 +28,7 @@ export default function Course_admin(props) {
       Url = url
     if (NumLesson ==="")
       NumLesson = num_lesson
-    UpdateCourse(id,Name,Level,num_lesson,Catalog,Descript,Url)
+    UpdateCourse(id,Name,Level,NumLesson,Catalog,Descript,Url)
     setName(Name)
     setLevel(Level)
     setNumLesson(NumLesson)

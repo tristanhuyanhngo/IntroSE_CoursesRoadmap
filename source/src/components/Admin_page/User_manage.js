@@ -23,7 +23,7 @@ export default function User_manage() {
             role: element.val().Role,
             status: stt,
             create: checktime(element.val().Date_create),
-            avatar: default_avatar,
+            avatar: element.val().avatar_url,
           });
         });
        
