@@ -1,7 +1,7 @@
 import "./course_admin.css";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
-import {UpdateCourse} from "../../Handler/Database/Data_setup";
+import { UpdateCourse } from "../../Handler/Database/Data_setup";
 export default function Course_admin(props) {
   const [id, setID] = useState(props.id);
   const [name, setName] = useState(props.name);
@@ -19,22 +19,18 @@ export default function Course_admin(props) {
     let Descript = document.getElementById(id + "descript").value;
     let Url = document.getElementById(id + "url").value;
     let NumLesson = document.getElementById(id + "num_lesson").value;
-    console.log('num:', NumLesson)
-    if(Name ==="")
-      Name = name
-    if(Descript ==="")
-      Descript = descript
-    if(Url ==="")
-      Url = url
-    if (NumLesson ==="")
-      NumLesson = num_lesson
-    UpdateCourse(id,Name,Level,NumLesson,Catalog,Descript,Url)
-    setName(Name)
-    setLevel(Level)
-    setNumLesson(NumLesson)
-    setDescript(Descript)
-    setCatalog(Catalog)
-    setUrl(Url)
+    console.log("num:", NumLesson);
+    if (Name === "") Name = name;
+    if (Descript === "") Descript = descript;
+    if (Url === "") Url = url;
+    if (NumLesson === "") NumLesson = num_lesson;
+    UpdateCourse(id, Name, Level, NumLesson, Catalog, Descript, Url);
+    setName(Name);
+    setLevel(Level);
+    setNumLesson(NumLesson);
+    setDescript(Descript);
+    setCatalog(Catalog);
+    setUrl(Url);
   }
 
   function btn_edit() {
@@ -45,13 +41,13 @@ export default function Course_admin(props) {
   function set_level(id_select) {
     let sl = document.getElementById(id_select);
     let s = sl.options[sl.selectedIndex].value;
-    setLevel(s)
+    setLevel(s);
   }
 
   function set_catalog(id_select) {
     let sl = document.getElementById(id_select);
     let s = sl.options[sl.selectedIndex].value;
-    setCatalog(s)
+    setCatalog(s);
   }
 
   function render_edit_container() {
@@ -59,7 +55,10 @@ export default function Course_admin(props) {
       return (
         <div className="mt-2 edit-site col-md-8" id={id}>
           <div className="card flex-col px-2 shadow rounded-3">
-            <h1 id="card-title" className="ps-2 pt-2 card-title fw-bold text-dark">
+            <h1
+              id="card-title"
+              className="ps-2 pt-2 card-title fw-bold text-dark"
+            >
               Edit course
             </h1>
 
@@ -89,7 +88,7 @@ export default function Course_admin(props) {
                   className="form-select"
                   aria-label="Floating label select example"
                   value={level}
-                  onChange={() => set_level(id+"level")}
+                  onChange={() => set_level(id + "level")}
                 >
                   <option value="beginner">Beginner</option>
                   <option value="intermediate">Intermediate</option>
@@ -109,7 +108,7 @@ export default function Course_admin(props) {
                   className="form-select"
                   aria-label="Floating label select example"
                   value={catalog}
-                  onChange={() => set_catalog(id+"catalog")}
+                  onChange={() => set_catalog(id + "catalog")}
                 >
                   <option value="web">Website</option>
                   <option value="app">Application</option>

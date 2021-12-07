@@ -20,7 +20,7 @@ export function InfoLabel() {
   const [username, setUsername] = useState("");
 
   useEffect(() => {
-    SelectDataUser().then((result) => {
+    SelectDataUser(localStorage.getItem("ID")).then((result) => {
       if (result) {
         const { FirstName, LastName, UserName } = result;
         setFirstName(FirstName);
