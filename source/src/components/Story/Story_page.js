@@ -58,8 +58,6 @@ class Story_page extends Component {
                     }
                 ]
             }
-
-
         ]
     }
 

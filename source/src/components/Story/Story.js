@@ -36,11 +36,11 @@ class Course extends Component {
     render() {
         return (
             <div className="card pb-0 border-0 d-flex align-items-center">
-                <div className='row full mb-4'>
+                <div className='row full mb-3'>
                     <div className = 'card border-0'>
                         <div className='row'>
                             <div className='col-4 col-sm-3 col-md-2 d-flex flex-column align-items-end'>
-                                <img className='avatar img-thumbnail' src={this.state.avatar} alt={this.state.username}/>
+                                <img className='avt-story' src={this.state.avatar} alt={this.state.username}/>
 
                                 <h5 className="card-title fw-bold">
                                     { this.state.username }
@@ -58,14 +58,9 @@ class Course extends Component {
                                     {this.convert_10digit_timestamp()}
                                 </div>
                             </div>
-
                         </div>
-
-                        
                     </div>
-
                 </div>
-
             </div>
         );
     }

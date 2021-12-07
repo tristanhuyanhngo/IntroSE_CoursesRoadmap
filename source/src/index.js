@@ -16,13 +16,15 @@ import Profile from './components/Profile/Profile';
 import Navbar from './components/Homepage/Navbar';
 import Story_page from './components/Story/Story_page'
 import Roadmap from './components/Roadmap/Roadmap'
+import Detail_course from './components/Detail_Course/Detail_course'
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <Setting_account />, */}
     {/* <Roadmap />, */}
-    <Admin_page />,
+    {/* <Admin_page />, */}
     {/* <Story_page /> */}
+    <Detail_course />
     {/* <Create_info />, */}
     {/* <Login_page />, */}
     {/* <Profile />, */}
