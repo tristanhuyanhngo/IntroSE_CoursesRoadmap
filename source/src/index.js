@@ -24,8 +24,8 @@ ReactDOM.render(
     {/* <Setting_account />, */}
     {/* <Roadmap />, */}
     {/* <Admin_page />, */}
-    {/* <Story_page /> */}
-    <Detail_course />
+    <Story_page />
+    {/* <Detail_course /> */}
     {/* <Create_info />, */}
     {/* <Login_page />, */}
     {/* <Create_info />, */}
