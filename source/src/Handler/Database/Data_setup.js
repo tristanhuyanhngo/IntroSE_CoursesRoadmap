@@ -64,7 +64,7 @@ export function InsertData(
 
 export function SelectDataUser(userId) {
   const dbref = ref(db);
-  return get(child(dbref, "User/" + userId))
+  return get(child(dbref, "User/" + userId+"/"))
     .then((snapshot) => {
       if (snapshot.exists()) {
         return snapshot.val();
@@ -178,23 +178,17 @@ export function DeleteData(id) {
   remove(ref(db, "User/" + id)).catch(() => {});
 }
 
-export function InsertCourse(
-  id,
-  name,
-  level,
-  num_lesson,
-  catalog,
-  descript,
-  source
-) {
+export function InsertCourse(id) {
   set(ref(db, "Course/" + id), {
-    Name: name,
-    Level: level,
-    Num_lesson: num_lesson,
-    Catalog: catalog,
-    Descript: descript,
-    Source: source,
+    Name: "",
+    Level: "",
+    Num_lesson: "",
+    Catalog: "",
+    Descript: "",
+    Source: "",
     Id: id,
+    View: 0,
+    Join: 0,
   }).catch(() => {});
 }
 
@@ -215,6 +209,8 @@ export function UpdateCourse(
     Descript: descript,
     Source: source,
     Id: id,
+    View: 0,
+    Join: 0,
   }).catch(() => {});
 }
 
@@ -251,3 +247,28 @@ export function getPicture(userId) {
       console.error(error.message);
     });
 }
+
+export function insertComment(courseID, userID,comment,name,username,avt) {
+  set(ref(db, "Comment/" + courseID + "/" + userID), {
+    Context: comment,
+    Timestamp: new Date().getTime(),
+    ID: userID,
+    Username: username,
+    Name: name,
+    Avatar: avt
+  }).catch(() => {});
+}
+
+export function getComment(courseID) {
+  const dbref = ref(db);
+  return get(child(dbref, "Comment/" + courseID))
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        return snapshot;
+      }
+    })
+    .catch((error) => {
+      console.error(error.message);
+    });
+}
+
