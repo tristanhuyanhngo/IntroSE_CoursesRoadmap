@@ -1,12 +1,10 @@
 import './story.css'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import React, { Component }  from 'react';
+import React, { useState, Component }  from 'react';
 import Story from './Story'
 
-class Story_page extends Component {
-    constructor(props){
-        super(props);
-        this.data = [
+export default function Story_page() {
+    const [data, setData] = useState([
             {
                 user:{
                     name: 'Nguyen Thanh Quan',
@@ -58,13 +56,10 @@ class Story_page extends Component {
                     }
                 ]
             }
-
-
-        ]
-    }
+        ])
 
     // Sort story by time (timestamp)
-    sort=(story)=> {
+    function sort(story) {
         for (let i = 0; i < story.length - 1; i++) 
             for (let j = i + 1; j < story.length; j++) 
                 if (story[i].timestamp < story[j].timestamp) {
@@ -75,23 +70,23 @@ class Story_page extends Component {
         return story
     }
 
-    render_stories=()=>{
+    function render_stories() {
         var stories = [];
 
-        for (let i = 0; i < this.data.length; i++) {
-            for (let j = 0; j < this.data[i].story.length; j++) {
+        for (let i = 0; i < data.length; i++) {
+            for (let j = 0; j < data[i].story.length; j++) {
                 let story = {};
-                story.name = this.data[i].user.name;
-                story.username = this.data[i].user.username;
-                story.avatar = this.data[i].user.avatar;
-                story.content = this.data[i].story[j].content;
-                story.timestamp = this.data[i].story[j].timestamp; 
+                story.name = data[i].user.name;
+                story.username = data[i].user.username;
+                story.avatar = data[i].user.avatar;
+                story.content = data[i].story[j].content;
+                story.timestamp = data[i].story[j].timestamp; 
                 
                 stories.push(story)
             }
         }
 
-        stories = this.sort(stories);
+        stories = sort(stories);
 
         for (let i = 0; i< stories.length; i ++)
             console.log(stories[i].name ,'',stories[i].timestamp)
@@ -109,37 +104,33 @@ class Story_page extends Component {
         });
 
         return story_element;
-    }
+    }   
 
 
-    render () {
-        // var stories = ;
-        return (
-            <div className='d-flex justify-content-center'>
-                <div className="container-lg card mt-5 ">
-                    {/* Header */}
-                    <div className="flex-col p-0 mb-3 border-0 rounded-3">
-                        <h1 id ='card-title' className="card-title ms-3 mt-2 fw-bold text-dark">Story</h1>
-                        <h6 id ='card-subtitle' className="card-subtitle ms-3 mb-3">where you confide</h6>
-                    </div>
+    return (
+        <div className='d-flex justify-content-center'>
+            <div className="container-lg card mt-5 ">
+                {/* Header */}
+                <div className="flex-col p-0 mb-3 border-0 rounded-3">
+                    <h1 id ='card-title' className="card-title ms-3 mt-2 fw-bold text-dark">Story</h1>
+                    <h6 id ='card-subtitle' className="card-subtitle ms-3 mb-3">where you confide</h6>
+                </div>
 
-                    {/* Story */}
-                    {this.render_stories()}
+                {/* Story */}
+                {render_stories()}
 
-                    {/* Share story field */}
-                    <h1 className='card-title fw-bold'>Share your story</h1>
-                    <div className='row mb-3  mx-1 d-flex justify-content-center'>
-                        <textarea type='text'  name="story"  className='col mb-3 share-story' contenteditable />
-                        <button type='submit' className="col-sm-2 btn btn-primary btn-md ms-1">
-                            SHARE
-                        </button>
-                    </div>
+                {/* Share story field */}
+                <h1 className='card-title fw-bold'>Share your story</h1>
+                <div className='row mb-3  mx-1 d-flex justify-content-center'>
+                    <textarea type='text'  name="story"  className='col mb-3 share-story' contenteditable />
+                    <button type='submit' className="col-sm-2 btn btn-primary btn-md ms-1">
+                        SHARE
+                    </button>
                 </div>
             </div>
+        </div>
     )
-  }
 }
 
-export default Story_page;
 
 

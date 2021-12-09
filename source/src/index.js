@@ -16,6 +16,7 @@ import Profile from './components/Profile/Profile';
 import Navbar from './components/Homepage/Navbar';
 import Story_page from './components/Story/Story_page'
 import Roadmap from './components/Roadmap/Roadmap'
+import Detail_course from './components/Detail_Course/Detail_course'
 
 
 ReactDOM.render(
@@ -23,13 +24,15 @@ ReactDOM.render(
     {/* <Setting_account />, */}
     {/* <Roadmap />, */}
     {/* <Admin_page />, */}
-    {/* <Story_page /> */}
+    <Story_page />
+    {/* <Detail_course /> */}
+    {/* <Create_info />, */}
     {/* <Login_page />, */}
     {/* <Create_info />, */}
     {/* <Profile />, */}
-    <Router>
+    {/* <Router>
       <App />
-    </Router>
+    </Router> */}
     {/* <Roadmap /> */}
   </React.StrictMode>,
 

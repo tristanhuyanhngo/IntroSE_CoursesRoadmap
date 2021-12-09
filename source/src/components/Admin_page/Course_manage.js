@@ -22,6 +22,8 @@ export default function Course_manage() {
             catalog: element.val().Catalog,
             descript: element.val().Descript,
             source: element.val().Source,
+            view: element.val().View,
+            join: element.val().Join
           });
         });
         setCourses(Data);
@@ -57,7 +59,6 @@ export default function Course_manage() {
 
   function addCourse() {
     let ID = generateRandom(20);
-    console.log(ID)
     let data = [];
     data.push({
       id: ID,
@@ -67,8 +68,10 @@ export default function Course_manage() {
       catalog: "",
       descript: "",
       source: "",
+      View: 0,
+      Join: 0
     });
-    InsertCourse(ID, "", "", "", "", "", "");
+    InsertCourse(ID);
     for (let i = 0; i < courses.length; i++) data.push(courses[i]);
     setCourses(data);
   }
@@ -121,6 +124,8 @@ export default function Course_manage() {
             descript={course.descript}
             source={course.source}
             catalog={course.catalog}
+            view = {course.view}
+            join = {course.join}
           />
         ))}
       </div>
