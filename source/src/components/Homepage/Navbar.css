@@ -1,7 +1,7 @@
 .dropsidebar {
   background-color: #060b26;
   height: 100%;
-  position: fixed;
+  position: absolute;
   align-items: center;
   --width: 96px;
   left: 0;

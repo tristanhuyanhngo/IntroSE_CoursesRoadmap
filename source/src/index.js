@@ -24,15 +24,15 @@ ReactDOM.render(
     {/* <Setting_account />, */}
     {/* <Roadmap />, */}
     {/* <Admin_page />, */}
-    <Story_page />
+    {/* <Story_page /> */}
     {/* <Detail_course /> */}
     {/* <Create_info />, */}
     {/* <Login_page />, */}
     {/* <Create_info />, */}
     {/* <Profile />, */}
-    {/* <Router>
+    <Router>
       <App />
-    </Router> */}
+    </Router>
     {/* <Roadmap /> */}
   </React.StrictMode>,
 
