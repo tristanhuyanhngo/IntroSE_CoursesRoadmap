@@ -1,4 +1,0 @@
-1. Weekly Report 2
-2. Revised Software Architecture
-3. UI Prototype
-4. Weekly Meeting Report 2
