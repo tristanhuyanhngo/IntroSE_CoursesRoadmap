@@ -27,12 +27,12 @@ ReactDOM.render(
     {/* <Story_page /> */}
     {/* <Detail_course /> */}
     {/* <Create_info />, */}
-    {/* <Login_page />, */}
+    <Login_page />,
     {/* <Create_info />, */}
     {/* <Profile />, */}
-    <Router>
+    {/* <Router>
       <App />
-    </Router>
+    </Router> */}
     {/* <Roadmap /> */}
   </React.StrictMode>,
 
