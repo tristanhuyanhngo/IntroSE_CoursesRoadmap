@@ -3,38 +3,26 @@ import React from 'react';
 export const CourseData = [
     {
         title: 'HTML, CSS từ Zero đến Hero',
-        path: '/htmlcss',
+        path: '/detailCourse',
         image: "/2.png",
         cName: 'course-item'
     },
     {
         title: 'JavaScript Cơ Bản',
-        path: '/javascript',
+        path: '/detailCourse',
         image: "/1.png",
         cName: 'course-item'
     },
     {
         title: 'Kiến thức nhập môn',
-        path: '/introduction',
-        image: "/7.png",
+        path: '/detailCourse',
+        image: "/5.png",
         cName: 'course-item'
     },
     {
         title: 'Responsive Với Grid System',
-        path: '/responsive-web-design',
+        path: '/detailCourse',
         image: "/3.png",
-        cName: 'course-item'
-    },
-    {
-        title: 'Node & ExpressJS',
-        path: '/nodejs',
-        image: "/6.png",
-        cName: 'course-item'
-    },
-    {
-        title: 'JavaScript Nâng Cao',
-        path: '/javascript-nang-cao',
-        image: "/12.png",
         cName: 'course-item'
     }
 ];

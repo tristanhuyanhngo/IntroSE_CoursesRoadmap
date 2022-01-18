@@ -13,12 +13,6 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
-    title: 'Catalog',
-    path: '/catalog',
-    icon: <IoIcons.IoIosKeypad />,
-    cName: 'nav-text'
-  },
-  {
     title: 'Road map',
     path: '/roadmap',
     icon: <RiIcons.RiRoadMapFill />,
@@ -37,9 +31,15 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
-    title: 'About us',
-    path: '/aboutus',
-    icon: <BsIcons.BsFillInfoCircleFill />,
+    title: 'Account',
+    path: '/account',
+    icon: <FaIcons.FaUserAlt />,
+    cName: 'nav-text'
+  },
+  {
+    title: 'My course',
+    path: '/mycourse',
+    icon: <BsIcons.BsBookFill />,
     cName: 'nav-text'
   },
   {

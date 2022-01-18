@@ -5,11 +5,13 @@ import React from 'react';
 import { useRef, useState } from 'react';
 import { login, signup_login_gg } from '../../Handler/Authentication/Authen'
 import { BiUser, BiKey } from 'react-icons/bi';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
   const [Waiting, setWaiting] = useState(false);
   const floatingInputEmail = useRef()
   const floatingPassword = useRef()
+  let navigate = useNavigate();
 
   async function handSignIn() {
     const email = floatingInputEmail.current.value
@@ -17,13 +19,16 @@ function Login() {
     setWaiting(true);
     try {
       const a = await login(email, pass);
-      localStorage.setItem('EMAIl', a.user.email)
-      localStorage.setItem('ID', a.user.uid)
+      localStorage.setItem('EMAIl', a.user.email);
+      localStorage.setItem('ID', a.user.uid);
     }
     catch {
       window.alert("error")
     }
     setWaiting(false);
+    if (localStorage.getItem('ID')) {
+      navigate('/');
+    }
   }
 
   async function handSignIn2() {
@@ -32,6 +37,9 @@ function Login() {
     localStorage.setItem('EMAIl', a.email)
     localStorage.setItem('ID', a.uid)
     setWaiting(false);
+    if (localStorage.getItem('ID')) {
+      navigate('/');
+    }
   }
 
   return (

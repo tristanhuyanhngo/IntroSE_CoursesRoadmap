@@ -167,9 +167,9 @@ class Personal extends Component {
               </div>
               <div className="col">
                 <textarea type="text" name="bio" id="bioS" />
-                <input type="text" name="role" id="role" className="form-control" hidden/>
-                <input type="text" name="avatar_url" id="avatar_url" className="form-control" hidden/>
-                <input type="text" name="Date_create" id="Date_create" className="form-control" hidden/>
+                <input type="text" name="role" id="role" className="form-control" hidden />
+                <input type="text" name="avatar_url" id="avatar_url" className="form-control" hidden />
+                <input type="text" name="Date_create" id="Date_create" className="form-control" hidden />
               </div>
             </div>
           </div>

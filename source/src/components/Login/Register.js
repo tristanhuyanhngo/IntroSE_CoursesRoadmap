@@ -5,6 +5,7 @@ import { sendEmail, signup } from '../../Handler/Authentication/Authen.js'
 import { signup_login_gg } from '../../Handler/Authentication/Authen.js'
 import { useRef, useState } from 'react';
 import { BiUser, BiKey } from 'react-icons/bi';
+import { useNavigate } from 'react-router-dom';
 
 
 function Register() {
@@ -13,6 +14,8 @@ function Register() {
   const floatingInputEmail = useRef()
   const floatingPassword = useRef()
   const floatingPasswordConfirm = useRef()
+
+  let navigate = useNavigate();
 
   async function handSignUp() {
     const email = floatingInputEmail.current.value;
@@ -36,6 +39,9 @@ function Register() {
       }
     }
     setWaiting(false);
+    if (localStorage.getItem('ID')) {
+      navigate('/createInfo');
+    }
   }
 
   async function handSignUp2() {
@@ -44,6 +50,9 @@ function Register() {
     localStorage.setItem('EMAIl', a.email)
     localStorage.setItem('ID', a.uid)
     setWaiting(false);
+    if (localStorage.getItem('ID')) {
+      navigate('/createInfo');
+    }
   }
 
   return (
